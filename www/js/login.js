@@ -62,13 +62,15 @@ var app = {
                     },
                     success: function (response) {
                         if (response.status == 1) {
+                            
+                            var name = response.student_arr.first_name + ' ' + response.student_arr.last_name; 
 
-                            localStorage.setItem('name', response.student_arr.name);
+                            localStorage.setItem('name', name);
                             localStorage.setItem('uname', response.student_arr.email);
 
                             localStorage.login = "true";
                             localStorage.email = response.student_arr.email;
-                            localStorage.name = response.student_arr.name;
+                            localStorage.name = name;
                             window.location.href = "home.html";
                         }
                         else {
