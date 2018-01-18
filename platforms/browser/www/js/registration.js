@@ -67,7 +67,14 @@ var app = {
                 if (confirm_password == "") {
                     $('#confirm_password').css('border-color', 'red');
                 }
+                // $('#first_name').css('border-color', 'red');
+                // $('#last_name').css('border-color', 'red');
+                // $('#email').css('border-color', 'red');
+                // $('#mobile').css('border-color', 'red');
+                // $('#password').css('border-color', 'red');
+                // $('#confirm_password').css('border-color', 'red');
             }
+
             else{
 				$(".se-pre-con").show();
                 $.ajax({
