@@ -59,7 +59,7 @@ var app = {
                     $('#email').css('border-color', 'red');
                 }
                 if (email != "") {
-                    var expr = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+                    var expr = /^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/;
                     if (!$.trim(email).match(expr))
                     {
                         $('#email').css('border-color', 'red');
