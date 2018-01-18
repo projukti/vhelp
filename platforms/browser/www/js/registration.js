@@ -58,13 +58,7 @@ var app = {
                 if (email == "") {
                     $('#email').css('border-color', 'red');
                 }
-                if (email != "") {
-                    var expr = /^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/;
-                    if (!$.trim(email).match(expr))
-                    {
-                        $('#email').css('border-color', 'red');
-                    }
-                }
+                
                 if (mobile == "") {
                     $('#mobile').css('border-color', 'red');
                 }
@@ -77,40 +71,51 @@ var app = {
             }
 
             else{
-				$(".se-pre-con").show();
-                $.ajax({
-                    type: "post",
-                    url: "https://bebongstore.com/vhelp/manage_api/registration",
-                    data: datas,
-					datatype:'json',
-                    beforeSend: function () {
-                        $('#btnReg').prop('disabled', true);
-                    },
-                    success: function (response) {
-                        var da = $.parseJSON(response);
-                        // console.log(d.status);
-                        $('#btnReg').prop('disabled', false);
-                        if (da.status==1){
-							$('#msg').css('display','none');
-                            window.location.href = "profile.html";   
-                        }
-                        else if (da.status == 2){
-							navigator.notification.beep(1);
-							showAlert();
-							window.location.href = "login.html";
-                        }
-						else {
-                            // console.log('Mismatch');
-                            $('#password').css('border-color', 'red');
-                            $('#confirm_password').css('border-color', 'red');
-                            $('#password').val('');
-                            $('#confirm_password').val('');
-                            $('#btnReg').prop('disabled', false);                            
-							navigator.notification.beep(1);
-							showcnfpass();
-						}
+                $(".se-pre-con").show();
+                
+                if (email != "") {
+                    var expr = /^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/;
+                    if (!$.trim(email).match(expr)) {
+                        $('#email').css('border-color', 'red');
                     }
-                });
+                }
+                else
+                {
+                    $.ajax({
+                        type: "post",
+                        url: "https://bebongstore.com/vhelp/manage_api/registration",
+                        data: datas,
+                        datatype: 'json',
+                        beforeSend: function () {
+                            $('#btnReg').prop('disabled', true);
+                        },
+                        success: function (response) {
+                            var da = $.parseJSON(response);
+                            // console.log(d.status);
+                            $('#btnReg').prop('disabled', false);
+                            if (da.status == 1) {
+                                $('#msg').css('display', 'none');
+                                window.location.href = "profile.html";
+                            }
+                            else if (da.status == 2) {
+                                navigator.notification.beep(1);
+                                showAlert();
+                                window.location.href = "login.html";
+                            }
+                            else {
+                                // console.log('Mismatch');
+                                $('#password').css('border-color', 'red');
+                                $('#confirm_password').css('border-color', 'red');
+                                $('#password').val('');
+                                $('#confirm_password').val('');
+                                $('#btnReg').prop('disabled', false);
+                                navigator.notification.beep(1);
+                                showcnfpass();
+                            }
+                        }
+                    });
+                }
+                
             }
 		});	
     },
