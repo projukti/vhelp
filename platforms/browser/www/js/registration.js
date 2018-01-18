@@ -67,19 +67,13 @@ var app = {
                 if (confirm_password == "") {
                     $('#confirm_password').css('border-color', 'red');
                 }
-                // $('#first_name').css('border-color', 'red');
-                // $('#last_name').css('border-color', 'red');
-                // $('#email').css('border-color', 'red');
-                // $('#mobile').css('border-color', 'red');
-                // $('#password').css('border-color', 'red');
-                // $('#confirm_password').css('border-color', 'red');
             }
 
             else{
 				$(".se-pre-con").show();
                 $.ajax({
                     type: "post",
-                    url: "https://bebongstore.com/nxias/manage_api/registration",
+                    url: "https://bebongstore.com/vhelp/manage_api/registration",
                     data: datas,
 					datatype:'json',
                     beforeSend: function () {
@@ -100,9 +94,13 @@ var app = {
                         }
 						else {
                             // console.log('Mismatch');
+                            $('#password').css('border-color', 'red');
+                            $('#confirm_password').css('border-color', 'red');
+                            $('#password').val('');
+                            $('#confirm_password').val('');
+                            $('#btnReg').prop('disabled', false);                            
 							navigator.notification.beep(1);
 							showcnfpass();
-							window.location.href = "registration.html"; 
 						}
                     }
                 });
