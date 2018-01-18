@@ -79,6 +79,8 @@ var app = {
                             $('#txtUsername').val('');
                             $('#txtPassword').val('');
                             $('#btnLogin').prop('disabled', false);
+                            $('#login-err').show();
+                            $('#login-err').text('Invalid email or password');
                         }
                     }
                 });

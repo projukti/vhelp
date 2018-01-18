@@ -12,13 +12,13 @@
     />
     <title>Login</title>
 
-    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/style.css" />
 
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script src="js/bootstrap.min.js"></script>
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 </head>
 <body style="background-color:#FFCC00;">
     <div class="container">
@@ -28,10 +28,13 @@
                 <div style="margin-top:6%;" class="text-center">
                     <div>
                         <form action="" method="post" name="Login_Form" class="form-signin">
-                            <h1 class="form-signin-heading">Sign In to your V-Help Account </h1>
+                            <h1 class="form-signin-heading"><i class="fa fa-user"></i>Sign In to your V-Help Account </h1>
                             <hr class="colorgraph">
                             <br>
-
+                            <div class="form-group">
+                                <h1 class="alert alert-danger" id="login-err" style="display:none;font-size:36px;"><i class="fa fa-user"></i></h1>
+                            </div>
+                            
                             <div class="form-group">
                                 <input type="email" class="form-control" name="email" id="txtUsername" placeholder="Email ID" required="" style="font-size:36px;"
                                 />
