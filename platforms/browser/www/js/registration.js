@@ -58,6 +58,13 @@ var app = {
                 if (email == "") {
                     $('#email').css('border-color', 'red');
                 }
+                if (email != "") {
+                    var expr = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+                    if (!$.trim(email).match(expr))
+                    {
+                        $('#email').css('border-color', 'red');
+                    }
+                }
                 if (mobile == "") {
                     $('#mobile').css('border-color', 'red');
                 }
@@ -85,7 +92,7 @@ var app = {
                         $('#btnReg').prop('disabled', false);
                         if (da.status==1){
 							$('#msg').css('display','none');
-                             window.location.href = "home.html";   
+                            window.location.href = "profile.html";   
                         }
                         else if (da.status == 2){
 							navigator.notification.beep(1);
