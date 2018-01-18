@@ -42,9 +42,9 @@ var app = {
             var first_name = $('#first_name').val();
             var last_name = $('#last_name').val();
             var email = $("#email").val();
-            var mobile = $("#mobilemobile").val();
-            var password = $("#passwordpassword").val();
-            var confirm_password = $("#confirm_passwordconfirm_password").val();
+            var mobile = $("#mobile").val();
+            var password = $("#password").val();
+            var confirm_password = $("#confirm_password").val();
 
             var datas = { 'first_name': first_name, 'last_name': last_name, 'email': email, 'mobile': mobile, 'password': password, 'confirm_password': confirm_password };
             if (first_name == "" || last_name == "" || email == "" || mobile == "" || password == "" || confirm_password=="")
