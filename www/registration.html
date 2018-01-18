@@ -10,15 +10,21 @@
     />
     <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'"
     />
-    <title>Login</title>
+    <title>Registration</title>
 
-    
+    <!-- CSS Files ---->
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/style.css" />
 
-    <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+    <!-- CSS Files ---->
+
+    <!-- JS files ---->
     <script src="js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+    <!-- JS files ---->
 </head>
 <body style="background-color:#FFCC00;">
     <div class="container">
@@ -28,27 +34,30 @@
                 <div style="margin-top:6%;" class="text-center">
                     <div>
                         <form action="" method="post" name="Login_Form" class="form-signin">
-                            <h1 class="form-signin-heading"><i class="fa fa-user"></i>Sign In to your V-Help Account </h1>
+                            <h1 class="form-signin-heading">Ready to Join? Create a V-Help Account </h1>
                             <hr class="colorgraph">
                             <br>
                             <div class="form-group">
-                                <p class="alert alert-danger" role="alert" id="login-err" style="display:none;font-size:36px;"><i class="fa fa-user"></i></p>
-                            </div>
-                            
-                            <div class="form-group">
-                                <input type="email" class="form-control" name="email" id="txtUsername" placeholder="Email ID" required="" style="font-size:36px;"
+                                <input type="text" class="form-control " name="name" placeholder="Name" required="" autofocus="" style="font-size:36px;"
                                 />
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" name="pw" id="txtPassword" placeholder="Password" required="" style="font-size:36px;"
+                                <input type="email" class="form-control" name="email" placeholder="Email ID" required="" style="font-size:36px;" />
+                            </div>
+                            <div class="form-group">
+                                <input type="number" class="form-control" name="mob" placeholder="Mobile Number" required="" style="font-size:36px;" />
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" name="pw" placeholder="Password" required="" style="font-size:36px;" />
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" name="con-pw" placeholder="Confirm Password" required="" style="font-size:36px;"
                                 />
                             </div>
-                            <button class="btn btn-lg btn-primary btn-block" id="btnLogin" style="font-size:40px;" name="Submit" value="Login" type="button">Take me to V-Help</button>
+                            <button class="btn btn-lg btn-primary btn-block" style="font-size:40px;" name="Submit" value="Login" type="Submit">Create My Account</button>
                             <br />
-                            <h1>
-                                <a href="registration.html">Not registered ?</a>
-                                <br>
-                                <a href="#">Forgot Password?</a>
+                            <h1>V-Help user?
+                                <a href="#">Login Here</a>
                             </h1>
                         </form>
                     </div>
@@ -57,7 +66,7 @@
         </div>
     </div>
     <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/login.js"></script>
+    <script type="text/javascript" src="js/registration.js"></script>
     <script type="text/javascript">
         app.initialize();
     </script>
