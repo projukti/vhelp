@@ -153,8 +153,13 @@ function checkConnection() {
     states[Connection.CELL_4G] = 'Cell 4G connection';
     states[Connection.CELL] = 'Cell generic connection';
     states[Connection.NONE] = 'No network connection';
-
+    navigator.notification.alert(
+        'No Internet Connection.',
+        alertDismissed,
+        'Alert!', 
+        'OK' 
+    );
     // alert('Connection type: ' + states[networkState]);
-    alert('No Internet Connection');
+    // alert('No Internet Connection');
     // navigator.app.exitApp();
 }

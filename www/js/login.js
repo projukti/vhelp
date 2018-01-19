@@ -116,7 +116,12 @@ function checkConnection() {
     states[Connection.NONE] = 'No network connection';
 
     // alert('Connection type: ' + states[networkState]);
-    alert('No Internet Connection');
+    navigator.notification.alert(
+        'No Internet Connection.',
+        alertDismissed,
+        'Alert!',
+        'OK'
+    );
     // navigator.app.exitApp();
 }
 
