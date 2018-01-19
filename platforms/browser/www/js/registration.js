@@ -18,14 +18,14 @@
  */
 var app = {
     // Application Constructor
-    initialize: function() {
+    initialize: function () {
         this.bindEvents();
     },
     // Bind Event Listeners
     //
     // Bind any events that are required on startup. Common events are:
     // 'load', 'deviceready', 'offline', and 'online'.
-    bindEvents: function() {
+    bindEvents: function () {
         document.addEventListener('deviceready', this.onDeviceReady, false);
         document.addEventListener("offline", checkConnection, false);
     },
@@ -33,12 +33,9 @@ var app = {
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
-    onDeviceReady: function() {
+    onDeviceReady: function () {
         // app.receivedEvent('deviceready');
-		$('#btnReg').click(function () { 
-									 
-        
-		
+        $('#btnReg').click(function () {
             var first_name = $('#first_name').val();
             var last_name = $('#last_name').val();
             var email = $("#email").val();
@@ -47,9 +44,8 @@ var app = {
             var confirm_password = $("#confirm_password").val();
 
             var datas = { 'first_name': first_name, 'last_name': last_name, 'email': email, 'mobile': mobile, 'password': password, 'confirm_password': confirm_password };
-            if (first_name == "" || last_name == "" || email == "" || mobile == "" || password == "" || confirm_password=="")
-            {
-                if (first_name == ""){
+            if (first_name == "" || last_name == "" || email == "" || mobile == "" || password == "" || confirm_password == "") {
+                if (first_name == "") {
                     $('#first_name').css('border-color', 'red');
                 }
                 if (last_name == "") {
@@ -58,7 +54,7 @@ var app = {
                 if (email == "") {
                     $('#email').css('border-color', 'red');
                 }
-                
+
                 if (mobile == "") {
                     $('#mobile').css('border-color', 'red');
                 }
@@ -69,57 +65,58 @@ var app = {
                     $('#confirm_password').css('border-color', 'red');
                 }
             }
-
-            else{
-                $(".se-pre-con").show();
-                
-                if (email != "") {
-                    var expr = /^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/;
-                    if (!$.trim(email).match(expr)) {
-                        $('#email').css('border-color', 'red');
-                    }
-                }
-                else
-                {
-                    $.ajax({
-                        type: "post",
-                        url: "https://bebongstore.com/vhelp/manage_api/registration",
-                        data: datas,
-                        datatype: 'json',
-                        beforeSend: function () {
-                            $('#btnReg').prop('disabled', true);
-                        },
-                        success: function (response) {
-                            var da = $.parseJSON(response);
-                            // console.log(d.status);
-                            $('#btnReg').prop('disabled', false);
-                            if (da.status == 1) {
-                                $('#msg').css('display', 'none');
-                                window.location.href = "profile.html";
-                            }
-                            else if (da.status == 2) {
-                                navigator.notification.beep(1);
-                                showAlert();
-                                window.location.href = "login.html";
-                            }
-                            else {
-                                // console.log('Mismatch');
-                                $('#password').css('border-color', 'red');
-                                $('#confirm_password').css('border-color', 'red');
-                                $('#password').val('');
-                                $('#confirm_password').val('');
-                                $('#btnReg').prop('disabled', false);
-                                navigator.notification.beep(1);
-                                showcnfpass();
-                            }
-                        }
-                    });
-                }
-                
+            var expr = /^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/;
+            if (email != "" && !$.trim(email).match(expr)) {
+                $('#email').css('border-color', 'red');
             }
-		});	
+            else {
+                $(".se-pre-con").show();
+                $.ajax({
+                    type: "post",
+                    url: "https://bebongstore.com/vhelp/manage_api/registration",
+                    data: datas,
+                    datatype: 'json',
+                    beforeSend: function () {
+                        $('#btnReg').prop('disabled', true);
+                    },
+                    success: function (response) {
+                        var da = $.parseJSON(response);
+                        $('#btnReg').prop('disabled', false);
+                        if (da.status == 1) {
+                            $('#msg').css('display', 'none');
+                            // var full_name = response.fist_name + " " +response.last_name;
+                            localStorage.setItem('name', da.name);
+                            localStorage.setItem('uname', da.email);
+
+                            localStorage.login = "true";
+                            localStorage.email = da.email;
+                            localStorage.name = da.name;
+
+                            window.location.href = "profile.html";
+                        }
+                        else if (da.status == 2) {
+                            navigator.notification.beep(1);
+                            showAlert();
+                            window.location.href = "login.html";
+                        }
+                        else {
+                            // console.log('Mismatch');
+                            $('#password').css('border-color', 'red');
+                            $('#confirm_password').css('border-color', 'red');
+                            $('#password').val('');
+                            $('#confirm_password').val('');
+                            $('#btnReg').prop('disabled', false);
+                            navigator.notification.beep(1);
+                            showcnfpass();
+                        }
+                    }
+                });
+                // }
+
+            }
+        });
     },
-    
+
 };
 function showAlert() {
     navigator.notification.alert(
@@ -153,11 +150,12 @@ function checkConnection() {
     states[Connection.CELL_4G] = 'Cell 4G connection';
     states[Connection.CELL] = 'Cell generic connection';
     states[Connection.NONE] = 'No network connection';
+
     navigator.notification.alert(
         'No Internet Connection.',
         alertDismissed,
-        'Alert!', 
-        'OK' 
+        'Alert!',
+        'OK'
     );
     // alert('Connection type: ' + states[networkState]);
     // alert('No Internet Connection');
