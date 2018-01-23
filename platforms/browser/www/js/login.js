@@ -47,7 +47,7 @@ var app = {
             else if ($('#txtUsername').val() == "") {
                 $('#txtPassword').css('border-color', 'red');
             }
-            else {
+            else if ($('#txtUsername').val() != "" || $('#txtPassword').val() != ""){
                 var user_name = $('#txtUsername').val();
                 var password = $('#txtPassword').val();
                 var datas = { 'user_name': user_name, 'password': password };
@@ -62,12 +62,9 @@ var app = {
                     },
                     success: function (response) {
                         if (response.status == 1) {
-                            
                             var name = response.student_arr.first_name + ' ' + response.student_arr.last_name; 
-
                             localStorage.setItem('name', name);
                             localStorage.setItem('uname', response.student_arr.email);
-
                             localStorage.login = "true";
                             localStorage.email = response.student_arr.email;
                             localStorage.name = name;
