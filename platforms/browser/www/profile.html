@@ -70,20 +70,16 @@
             function onSuccess(imgData) {
                  imgData="data:image/jpg;base64,"+ imgData;
                 var datas={'email':localStorage.getItem('email'),'image': imgData};
+                $("#pimage").attr("src", imgData);
                 $.ajax({
                     type: "post",
                     url: "https://bebongstore.com/vhelp/manage_api/image_upload/",
                     data: datas,
-                    dataType: "json",
-                     beforeSend: function () {
-                        // Animate loader off screen
-                        $(".se-pre-con").show();
-                    }
+                    dataType: "json"                    
                 }).done(function (res) {
                    // console.log(res.photo);
                     if(res.status==1){
-                         $(".se-pre-con").show();
-                        $("#pimage").attr("src", "https://bebongstore.com/vhelp/uploads/student/" + res.photo);
+                       alert("Image uploaded successfully");
                     }
                 });
                 
