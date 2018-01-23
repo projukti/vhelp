@@ -47,7 +47,7 @@ var app = {
             else if ($('#txtUsername').val() == "") {
                 $('#txtPassword').css('border-color', 'red');
             }
-            else if ($('#txtUsername').val() != "" || $('#txtPassword').val() != ""){
+            else{
                 var user_name = $('#txtUsername').val();
                 var password = $('#txtPassword').val();
                 var datas = { 'user_name': user_name, 'password': password };
