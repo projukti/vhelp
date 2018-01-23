@@ -83,13 +83,14 @@ var app = {
                 $('#lblBoard').text(response.studentDetail.twelveth_board);
                 $('#lblPaypalId').text(response.studentDetail.paypalid);
                 $('#lblAddress').text(response.studentDetail.address);
+                $("#pimage").attr("src", "http://bebongstore.com/vhelp/material/" + response.studentDetail.photo);
                 $(".se-pre-con").hide();
             }
         });
 
 
         // This Function Get Image From Server
-        // var urls = "https://bebongstore.com/nxias/manage_api/image_view";
+        // var urls = "https://bebongstore.com/vhelp/manage_api/display_profile_image";
         // var userdata = localStorage.getItem('uname');
         // // console.log(userdata);
         // var datas = { 'email': userdata };
@@ -99,7 +100,7 @@ var app = {
         //     data: datas,
         //     dataType: "json",
         //     success: function (response) {
-        //         pfURL = "http://bebongstore.com/nxias/uploads/student/";
+        //         pfURL = "http://bebongstore.com/vhelp/material/";
         //         if (response.status) {
         //             $("#pimage").attr("src", pfURL + response.prof_image);
         //         } else {
@@ -187,9 +188,9 @@ var app = {
         $('#btnAddressEdit').click(function () {
             $('#btnAddressSubmit').css('display', 'block');
             $('#btnAddressEdit').css('display', 'none');
-            $('#txtAddressEmailID').css('display', 'block');
-            $('#txtAddressEmailID').val($('#lblAddressId').text());
-            $('#lblAddressId').css('display', 'none');
+            $('#txtAddress').css('display', 'block');
+            $('#txtAddress').val($('#lblAddressId').text());
+            $('#lblAddress').css('display', 'none');
         });
 
 
@@ -234,120 +235,122 @@ var app = {
             $('#cityf').css('display', 'none');
         });
 
-        // Course Edit Button Click
-        // $('#btnCourseEdit').click(function () {
-        //     $('#btnCourseSubmit').css('display', 'block');
-        //     $('#btnCourseEdit').css('display', 'none');
-        //     $('#ddlCouese').css('display', 'block');
-        //     $('#coursef').css('display', 'none');
-        //     var modeValue = $('#coursef').text();
-        //     $("#ddlCouese option[value='" + modeValue + "']").attr("selected", "selected");
-        //     // alert($('#modef').text());
-        //     // $('.ddlMode[value=' + $('#modef').text()+']').attr('selected', 'selected');
-        //     $('#coursef').css('display', 'none');
-        // });
-
 
         // *************************************************************************************
         // This Section For Update Profile
 
         // Update Name Here
-        $('#btnFnameSubmit').click(function () {
-            var name = $('#txtFname').val();
+        $('#btnNameSave').click(function () {
+            var name = $('#txtName').val();
             var updateFld = 'name';
-            var labelName = 'namef';
+            var labelName = 'lblName';
+            var editBtn = 'btnNameEdit';
+            var submitBtn = 'btnNameSave';
+            var inputFld = 'txtName';
             if (name == "") {
-                $('#txtFname').css('border-color', 'red');
+                $('#txtName').css('border-color', 'red');
             }
             else {
-                updateProfile(name, updateFld, labelName);
+                updateProfile(name, updateFld, labelName, editBtn, submitBtn,inputFld);
             }
         });
 
 
         // Update Phone Here
-        $('#btnPhoneSubmit').click(function () {
-            var phone = $('#txtPhone').val();
-            var updateFld = 'mobile_num';
-            var labelName = 'nof';
+        $('#btnMobileSubmit').click(function () {
+            var phone = $('#txtMobile').val();
+            var updateFld = 'phone';
+            var labelName = 'lblMobile';
+            var editBtn = 'btnMobileEdit';
+            var submitBtn = 'btnMobileSubmit';
+            var inputFld = 'txtMobile';
             if (phone == "") {
-                $('#txtPhone').css('border-color', 'red');
+                $('#txtMobile').css('border-color', 'red');
             }
             else {
-                updateProfile(phone, updateFld, labelName);
+                updateProfile(phone, updateFld, labelName, editBtn, submitBtn, inputFld);
             }
         });
 
-        // Update Qualification Here
-        $('#btnQualificationSubmit').click(function () {
-            var qualification = $('#txtQualification').val();
-            var updateFld = 'qualification';
-            var labelName = 'qualif';
-            if (qualification == "") {
-                $('#txtQualification').css('border-color', 'red');
+        // Update Address Here
+        $('#btnAddressSubmit').click(function () {
+            var address = $('#txtAddress').val();
+            var updateFld = 'address';
+            var labelName = 'lblAddress';
+            var editBtn = 'btnAddressEdit';
+            var submitBtn = 'btnAddressSubmit';
+            var inputFld = 'txtAddress';
+            if (address == "") {
+                $('#txtAddress').css('border-color', 'red');
             }
             else {
-                updateProfile(qualification, updateFld, labelName);
+                updateProfile(address, updateFld, labelName, editBtn, submitBtn, inputFld);
             }
         });
 
-        // Update Mode Here
-        // $('#btnModeSubmit').click(function () {
-        //     var mode = $('#ddlMode').val();
-        //     var updateFld = 'mode';
-        //		var labelName = 'namef';
-        //     if (mode == "") {
-        //         $('#ddlMode').css('border-color', 'red');
-        //     }
-        //     else {
-        //         updateProfile(name, updateFld, labelName);
-        //     }
-        // });
-
-        // Update State Here
-        $('#btnStateSubmit').click(function () {
-            var state = $('#ddlState').val();
-            var updateFld = 'state';
-            var labelName = 'statef';
-            if (state == "") {
-                $('#ddlState').css('border-color', 'red');
+        // Update Grade Here
+        $('#btnGradeSubmit').click(function () {
+            var grade = $('#txtGrade').val();
+            var updateFld = 'twelveth_grade';
+            var labelName = 'lblGrade';
+            var editBtn = 'btnMGradeEdit';
+            var submitBtn = 'btnGradeSubmit';
+            var inputFld = 'txtGrade';
+            if (grade == "") {
+                $('#txtGrade').css('border-color', 'red');
             }
             else {
-                updateProfile(state, updateFld, labelName);
+                updateProfile(grade, updateFld, labelName, editBtn, submitBtn, inputFld);
             }
         });
 
-        // Update City Here
-        $('#btnCitySave').click(function () {
-            var city = $('#ddlCity').val();
-            var updateFld = 'city';
-            var labelName = 'cityf';
-            if (city == "") {
-                $('#ddlCity').css('border-color', 'red');
+        // Update Percentage Here
+        $('#btnPercentSubmit').click(function () {
+            var percentage = $('#txtPercentage').val();
+            var updateFld = 'twelveth_percentage';
+            var labelName = 'lblPercentage';
+            var editBtn = 'btnPercentEdit';
+            var submitBtn = 'btnPercentSubmit';
+            var inputFld = 'txtPercentage';
+            if (percentage == "") {
+                $('#txtPercentage').css('border-color', 'red');
             }
             else {
-                updateProfile(city, updateFld, labelName);
+                updateProfile(percentage, updateFld, labelName, editBtn, submitBtn, inputFld);
             }
         });
 
-        // // Update Course Here
-        // $('#btnCourseSubmit').click(function () {
-        //     var course = $('#ddlCouese').val();
-        //     if (course == "") {
-        //         $('#ddlCouese').css('border-color', 'red');
-        //     }
-        //     else {
-        //         $.ajax({
-        //             type: "method",
-        //             url: "url",
-        //             data: "data",
-        //             dataType: "dataType",
-        //             success: function (response) {
+        // Update Board Here
+        $('#btnBoardSubmit').click(function () {
+            var Board = $('#txtBoard').val();
+            var updateFld = 'twelveth_board';
+            var labelName = 'lblBoard';
+            var editBtn = 'btnBoardEdit';
+            var submitBtn = 'btnBoardSubmit';
+            var inputFld = 'txtBoard';
+            if (Board == "") {
+                $('#txtBoard').css('border-color', 'red');
+            }
+            else {
+                updateProfile(Board, updateFld, labelName, editBtn, submitBtn, inputFld);
+            }
+        });
 
-        //             }
-        //         });
-        //     }
-        // });
+        // Update PaypalId Here
+        $('#btnPaypalSubmit').click(function () {
+            var PaypalId = $('#txtPaypalEmailID').val();
+            var updateFld = 'paypalid';
+            var labelName = 'lblPaypalId';
+            var editBtn = 'btnPaypalEdit';
+            var submitBtn = 'btnPaypalSubmit';
+            var inputFld = 'txtPaypalEmailID';
+            if (PaypalId == "") {
+                $('#txtPaypalEmailID').css('border-color', 'red');
+            }
+            else {
+                updateProfile(PaypalId, updateFld, labelName, editBtn, submitBtn, inputFld);
+            }
+        });
 
 
         // ***********************************************************************************************
@@ -369,9 +372,9 @@ var app = {
 };
 
 
-function updateProfile(updateValue, updateFld, labelName) {
-    var urls = "https://bebongstore.com/nxias/manage_api/profile_update";
-    datas = { 'update_value': updateValue, 'field': updateFld, 'email': localStorage.email, 'labelName': labelName };
+function updateProfile(updateValue, updateFld, labelName, editBtn, submitBtn, inputFld) {
+    var urls = "https://bebongstore.com/vhelp/manage_api/profile_update";
+    datas = { 'update_value': updateValue, 'field': updateFld, 'email': localStorage.email };
     $.ajax({
         type: "POST",
         url: urls,
@@ -383,9 +386,14 @@ function updateProfile(updateValue, updateFld, labelName) {
         },
         success: function (response) {
             if (response.status == 1) {
-                //alert(updateFld + ' Change To ' + updateValue+' Successfully');
-                window.location.href = "profile.html";
-                //$('#'+labelName).val(updateValue);
+                if (updateFld=="name"){
+                    localStorage.setItem('name',updateValue);
+                }
+                $('#' + labelName).text(updateValue);
+                $('#' + labelName).show();
+                $('#' + editBtn).show();
+                $('#' + submitBtn).hide();
+                $('#' + inputFld).hide();
             }
         }
     });
