@@ -52,20 +52,6 @@
                 });
             });
 
-            // upload select 
-            // $("#but_select").click(function () {
-            //     navigator.camera.getPicture(onSuccess, onFail, {
-            //         quality: 70,
-            //         sourceType: Camera.PictureSourceType.CAMERA,
-            //         allowEdit: true,
-            //         encodingType: 0,
-            //         destinationType: Camera.DestinationType.DATA_URL,
-            //         targetWidth: 640,
-            //         targetHeight: 640,
-            //         cameraDirection: 1
-            //     });
-            // });
-
             // Change image source and upload photo to server
             function onSuccess(imgData) {
                 imgData = "data:image/jpg;base64," + imgData;
@@ -82,33 +68,6 @@
                         window.plugins.toast.showLongBottom('Image uploaded successfully');
                     }
                 });
-
-                // // Set image source
-                // var image = document.getElementById('pimage');
-                // image.src = imageURI + '?' + Math.random();
-
-                // var options = new FileUploadOptions();
-                // options.fileKey = "file";
-                // options.fileName = imageURI.substr(imageURI.lastIndexOf('/') + 1);
-                // options.mimeType = "image/jpeg";
-
-                // var params = {};
-                // params.value1 = "test";
-                // params.value2 = "param";
-
-                // options.params = params;
-                // options.chunkedMode = false;
-
-                // // var sendData={'img_data': imageURI,'email':localStorage.email };
-                // // alert(sendData);
-                // var ft = new FileTransfer();
-                // ft.upload(imageURI, "http://bebongstore.com/vhelp/manage_api/image_upload" + localStorage.email, function (result) {
-                //     // da = $.parseJSON(result);
-                //     alert('successfully uploaded');
-                //     // if(da.st)
-                // }, function (error) {
-                //     alert('error : ' + JSON.stringify(error));
-                // }, options);
             }
             function onFail(message) {
                 window.plugins.toast.showLongBottom('Failed because: ' + message);

@@ -41,9 +41,7 @@ var app = {
             var email = $("#email").val();
             var mobile = $("#mobile").val();
             var password = $("#password").val();
-            var confirm_password = $("#confirm_password").val();
-
-            var datas = { 'first_name': first_name, 'last_name': last_name, 'email': email, 'mobile': mobile, 'password': password, 'confirm_password': confirm_password };
+            var confirm_password = $("#confirm_password").val(); 
             if (first_name == "" || last_name == "" || email == "" || mobile == "" || password == "" || confirm_password == "") {
                 if (first_name == "") {
                     $('#first_name').css('border-color', 'red');
@@ -69,8 +67,9 @@ var app = {
             if (email != "" && !$.trim(email).match(expr)) {
                 $('#email').css('border-color', 'red');
             }
-            else {
+            if (first_name != "" && last_name != "" && email != "" && mobile != "" && password != "" && confirm_password != "") {
                 $(".se-pre-con").show();
+                var datas = { 'first_name': first_name, 'last_name': last_name, 'email': email, 'mobile': mobile, 'password': password, 'confirm_password': confirm_password };
                 $.ajax({
                     type: "post",
                     url: "https://bebongstore.com/vhelp/manage_api/registration",
