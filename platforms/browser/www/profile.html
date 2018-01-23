@@ -74,10 +74,15 @@
                     type: "post",
                     url: "https://bebongstore.com/vhelp/manage_api/image_upload/",
                     data: datas,
-                    dataType: "json"
+                    dataType: "json",
+                     beforeSend: function () {
+                        // Animate loader off screen
+                        $(".se-pre-con").show();
+                    }
                 }).done(function (res) {
                    // console.log(res.photo);
                     if(res.status==1){
+                         $(".se-pre-con").show();
                         $("#pimage").attr("src", "https://bebongstore.com/vhelp/uploads/student/" + res.photo);
                     }
                 });
