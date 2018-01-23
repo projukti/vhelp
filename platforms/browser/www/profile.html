@@ -41,14 +41,6 @@
             // take picture from camera
             $('#but_take').click(function () {
                 navigator.camera.getPicture(onSuccess, onFail, {
-                    quality: 20,
-                    destinationType: Camera.DestinationType.FILE_URL
-                });
-            });
-
-            // upload select 
-            $("#but_select").click(function () {
-                navigator.camera.getPicture(onSuccess, onFail, {
                     quality: 70,
                     sourceType: Camera.PictureSourceType.CAMERA,
                     allowEdit: true,
@@ -59,6 +51,20 @@
                     cameraDirection: 1
                 });
             });
+
+            // upload select 
+            // $("#but_select").click(function () {
+            //     navigator.camera.getPicture(onSuccess, onFail, {
+            //         quality: 70,
+            //         sourceType: Camera.PictureSourceType.CAMERA,
+            //         allowEdit: true,
+            //         encodingType: 0,
+            //         destinationType: Camera.DestinationType.DATA_URL,
+            //         targetWidth: 640,
+            //         targetHeight: 640,
+            //         cameraDirection: 1
+            //     });
+            // });
 
             // Change image source and upload photo to server
             function onSuccess(imgData) {
