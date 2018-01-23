@@ -83,7 +83,7 @@ var app = {
                 $('#lblBoard').text(response.studentDetail.twelveth_board);
                 $('#lblPaypalId').text(response.studentDetail.paypalid);
                 $('#lblAddress').text(response.studentDetail.address);
-                $("#pimage").attr("src", "http://bebongstore.com/vhelp/material/" + response.studentDetail.photo);
+                $("#pimage").attr("src", "http://bebongstore.com/vhelp/uploads/student" + response.studentDetail.photo);
                 $(".se-pre-con").hide();
             }
         });
