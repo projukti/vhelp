@@ -75,6 +75,7 @@ var app = {
                 $(".se-pre-con").show();
             },
             success: function (response) {
+                console.log(response.studentDetail.photo);
                 $('#lblName').text(localStorage.getItem('name'));
                 $('#lblEmail').text(localStorage.getItem('email'));
                 $('#lblMobile').text(response.studentDetail.phone);
@@ -83,7 +84,7 @@ var app = {
                 $('#lblBoard').text(response.studentDetail.twelveth_board);
                 $('#lblPaypalId').text(response.studentDetail.paypalid);
                 $('#lblAddress').text(response.studentDetail.address);
-                $("#pimage").attr("src", "http://bebongstore.com/vhelp/uploads/student" + response.studentDetail.photo);
+                $("#pimage").attr("src", "http://bebongstore.com/vhelp/uploads/" + response.studentDetail.photo);
                 $(".se-pre-con").hide();
             }
         });
