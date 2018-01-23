@@ -10,7 +10,7 @@
   "cordova-plugin-code-push": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-code-push"
+      "id": "cordova-plugin-code-push@~1.11.2"
     },
     "is_top_level": true,
     "variables": {}
@@ -18,7 +18,7 @@
   "cordova-plugin-file": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-file@~4.3.3"
+      "id": "cordova-plugin-file@latest"
     },
     "is_top_level": true,
     "variables": {}
@@ -107,6 +107,14 @@
     "source": {
       "type": "registry",
       "id": "cordova-plugin-vibration@~2.1.5"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-file-transfer": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-file-transfer"
     },
     "is_top_level": true,
     "variables": {}

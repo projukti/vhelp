@@ -88,27 +88,6 @@ var app = {
             }
         });
 
-
-        // This Function Get Image From Server
-        // var urls = "https://bebongstore.com/vhelp/manage_api/display_profile_image";
-        // var userdata = localStorage.getItem('uname');
-        // // console.log(userdata);
-        // var datas = { 'email': userdata };
-        // $.ajax({
-        //     type: "post",
-        //     url: urls,
-        //     data: datas,
-        //     dataType: "json",
-        //     success: function (response) {
-        //         pfURL = "http://bebongstore.com/vhelp/material/";
-        //         if (response.status) {
-        //             $("#pimage").attr("src", pfURL + response.prof_image);
-        //         } else {
-        //             $("#pimage").attr("src", pfURL + response.prof_image);
-        //         }
-        //     }
-        // });
-
         // *************************************************************************************
         // This Section For Edit Button click
 

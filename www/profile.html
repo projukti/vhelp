@@ -34,6 +34,62 @@
             background: url(img/Interwind.gif) center no-repeat #fff;
         }
     </style>
+    <script type='text/javascript'>
+
+        $(document).ready(function () {
+
+            // take picture from camera
+            $('#but_take').click(function () {
+                navigator.camera.getPicture(onSuccess, onFail, {
+                    quality: 20,
+                    destinationType: Camera.DestinationType.FILE_URL
+                });
+            });
+
+            // upload select 
+            $("#but_select").click(function () {
+                navigator.camera.getPicture(onSuccess, onFail, {
+                    quality: 50,
+                    sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
+                    allowEdit: true,
+                    destinationType: Camera.DestinationType.FILE_URI
+                });
+            });
+
+            // Change image source and upload photo to server
+            function onSuccess(imageURI) {
+                // Set image source
+                var image = document.getElementById('pimage');
+                image.src = imageURI + '?' + Math.random();
+
+                var options = new FileUploadOptions();
+                options.fileKey = "file";
+                options.fileName = imageURI.substr(imageURI.lastIndexOf('/') + 1);
+                options.mimeType = "image/jpeg";
+
+                var params = {};
+                params.value1 = "test";
+                params.value2 = "param";
+
+                options.params = params;
+                options.chunkedMode = false;
+
+                // var sendData={'img_data': imageURI,'email':localStorage.email };
+                // alert(sendData);
+                var ft = new FileTransfer();
+                ft.upload(imageURI, "http://bebongstore.com/vhelp/material/" + localStorage.email, function (result) {
+                    // da = $.parseJSON(result);
+                    alert('successfully uploaded');
+                    // if(da.st)
+                }, function (error) {
+                    alert('error : ' + JSON.stringify(error));
+                }, options);
+            }
+            function onFail(message) {
+                alert('Failed because: ' + message);
+            }
+        });
+    </script>
 </head>
 
 <body style="background-color:#FFFFFF;">
@@ -89,7 +145,7 @@
 
                             <div class="form-group text-center" style="margin-bottom:30px; padding:20px 0px 20px 0px; background-image:url(images-vhelp/profilebg.jpg); background-repeat:no-repeat; background-size:cover;">
                                 <img src="" width="40%" id="pimage" style="border-radius:50%;" />
-                                <img src="images-vhelp/camera.png" width="10%" id="upfile1" style="cursor:pointer; margin-left:-100px; margin-bottom:-240px;"
+                                <img src="images-vhelp/camera.png" width="10%" id="but_take" style="cursor:pointer; margin-left:-100px; margin-bottom:-240px;"
                                 />
                             </div>
 
@@ -199,64 +255,64 @@
 
 <!-- for file upload -->
 <script> 
-    $(document).ready(function (e) {
-        $(".showonhover").click(function () {
-            $("#selectfile").trigger('click');
-        });
-    });
+    // $(document).ready(function (e) {
+    //     $(".showonhover").click(function () {
+    //         $("#selectfile").trigger('click');
+    //     });
+    // });
 
 
-    var input = document.querySelector('input[type=file]'); // see Example 4
+    // var input = document.querySelector('input[type=file]'); // see Example 4
 
-    input.onchange = function () {
-        var file = input.files[0];
+    // input.onchange = function () {
+    //     var file = input.files[0];
 
-        drawOnCanvas(file);   // see Example 6
-        displayAsImage(file); // see Example 7
-    };
+    //     drawOnCanvas(file);   // see Example 6
+    //     displayAsImage(file); // see Example 7
+    // };
 
-    function drawOnCanvas(file) {
-        var reader = new FileReader();
+    // function drawOnCanvas(file) {
+    //     var reader = new FileReader();
 
-        reader.onload = function (e) {
-            var dataURL = e.target.result,
-                c = document.querySelector('canvas'), // see Example 4
-                ctx = c.getContext('2d'),
-                img = new Image();
+    //     reader.onload = function (e) {
+    //         var dataURL = e.target.result,
+    //             c = document.querySelector('canvas'), // see Example 4
+    //             ctx = c.getContext('2d'),
+    //             img = new Image();
 
-            img.onload = function () {
-                c.width = img.width;
-                c.height = img.height;
-                ctx.drawImage(img, 0, 0);
-            };
+    //         img.onload = function () {
+    //             c.width = img.width;
+    //             c.height = img.height;
+    //             ctx.drawImage(img, 0, 0);
+    //         };
 
-            img.src = dataURL;
-        };
+    //         img.src = dataURL;
+    //     };
 
-        reader.readAsDataURL(file);
-    }
+    //     reader.readAsDataURL(file);
+    // }
 
-    function displayAsImage(file) {
-        var imgURL = URL.createObjectURL(file),
-            img = document.createElement('img');
+    // function displayAsImage(file) {
+    //     var imgURL = URL.createObjectURL(file),
+    //         img = document.createElement('img');
 
-        img.onload = function () {
-            URL.revokeObjectURL(imgURL);
-        };
+    //     img.onload = function () {
+    //         URL.revokeObjectURL(imgURL);
+    //     };
 
-        img.src = imgURL;
-        document.body.appendChild(img);
-    }
+    //     img.src = imgURL;
+    //     document.body.appendChild(img);
+    // }
 
-    $("#upfile1").click(function () {
-        $("#file1").trigger('click');
-    });
-    $("#upfile2").click(function () {
-        $("#file2").trigger('click');
-    });
-    $("#upfile3").click(function () {
-        $("#file3").trigger('click');
-    });
+    // $("#upfile1").click(function () {
+    //     $("#file1").trigger('click');
+    // });
+    // $("#upfile2").click(function () {
+    //     $("#file2").trigger('click');
+    // });
+    // $("#upfile3").click(function () {
+    //     $("#file3").trigger('click');
+    // });
 </script>
 <!-- for file upload -->
 
