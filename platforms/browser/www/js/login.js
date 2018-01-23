@@ -68,7 +68,7 @@ var app = {
                             localStorage.login = "true";
                             localStorage.email = response.student_arr.email;
                             localStorage.name = name;
-                            window.location.href = "home.html";
+                            window.location.href = "profile.html";
                         }
                         else {
                             $('#txtUsername').css('border-color', 'red');
