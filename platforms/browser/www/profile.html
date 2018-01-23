@@ -1,202 +1,264 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Untitled Document</title>
 
-	<!-- CSS Files ----->
-	<link rel="stylesheet" href="css/font-awesome.min.css" />
+<head>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=viewport-height, target-densitydpi=device-dpi"
+    />
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'"
+    />
+    <title>Profile</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/style.css" />
-
-    <!-- CSS Files ----->
-    
-    <!-- JS files ---->
-    <script src="js/bootstrap.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
-	<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js'></script>
-    <!-- JS files ---->
+    <script src="js/bootstrap.min.js"></script>
+    <style>
+        .no-js #loader {
+            display: none;
+        }
 
-  
+        .js #loader {
+            display: block;
+            position: absolute;
+            left: 100px;
+            top: 0;
+        }
+
+        .se-pre-con {
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background: url(img/Interwind.gif) center no-repeat #fff;
+        }
+    </style>
 </head>
 
 <body style="background-color:#FFFFFF;">
-<div  style="background-color:#FFCC00; color:#333333; padding:16px 16px 16px 16px; margin-bottom:500px;" class="topperone">
-<div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="#"><i class="fa fa-dashboard"></i> &nbsp;Dashboard</a>
-  <a href="#"><i class="fa fa-clone"></i> &nbsp;Subjects</a>
-  <a href="#"><i class="fa fa-files-o"></i> &nbsp;Services</a>
-  <a href="#"><i class="fa fa-file-text-o"></i> &nbsp;Platform</a>
-  <a href="#"><i class="fa fa-picture-o"></i> &nbsp;References</a>
-  <a href="#"><i class="fa fa-envelope"></i> &nbsp;Enquiry</a>
-  <a href="#"><i class="fa fa-comment"></i> &nbsp;Notifications</a>
-  <a href="#"><i class="fa fa-user"></i> &nbsp;Profile</a>
-  <a href="#"><i class="fa fa-home"></i> &nbsp;About Us</a>
-  <a href="#"><i class="fa fa-edit"></i> &nbsp;Terms of Use</a>
-  <a href="#"><i class="fa fa-sign-out"></i> &nbsp;Log Out</a>
-</div>
+    <div class="se-pre-con"></div>
+    <div style="background-color:#FFCC00; color:#333333; padding:16px 16px 16px 16px; margin-bottom:500px;" class="topperone">
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="#">
+                <i class="fa fa-dashboard"></i> &nbsp;Dashboard</a>
+            <a href="#">
+                <i class="fa fa-clone"></i> &nbsp;Subjects</a>
+            <a href="#">
+                <i class="fa fa-files-o"></i> &nbsp;Services</a>
+            <a href="#">
+                <i class="fa fa-file-text-o"></i> &nbsp;Platform</a>
+            <a href="#">
+                <i class="fa fa-picture-o"></i> &nbsp;References</a>
+            <a href="#">
+                <i class="fa fa-envelope"></i> &nbsp;Enquiry</a>
+            <a href="#">
+                <i class="fa fa-comment"></i> &nbsp;Notifications</a>
+            <a href="#">
+                <i class="fa fa-user"></i> &nbsp;Profile</a>
+            <a href="#">
+                <i class="fa fa-home"></i> &nbsp;About Us</a>
+            <a href="#">
+                <i class="fa fa-edit"></i> &nbsp;Terms of Use</a>
+            <a href="#">
+                <i class="fa fa-sign-out"></i> &nbsp;Log Out</a>
+        </div>
 
-<!--<h2>Animated Sidenav Example</h2>
+        <!--<h2>Animated Sidenav Example</h2>
 <p>Click on the element below to open the side navigation menu.</p> -->
 
-<span style="font-size:60px;cursor:pointer;" onclick="openNav()">&#9776; <strong>V-Help</strong></span> 
+        <span style="font-size:60px;cursor:pointer;" onclick="openNav()">&#9776;
+            <strong>V-Help</strong>
+        </span>
 
-<span class="pull-right" style="font-size:40px; padding-top:20px;" ><i class="fa fa-user"></i> &nbsp;Profile</span>
-</div>
-
-
-<div onclick="closeNav()">
-<div style="padding:120px 15px 15px 15px;"> 
-	<div class="well">
-    	
-        
-        <div class="alert alert-info">
-        
-                                <div style="padding:10px; border:1px solid #006633; margin-bottom:30px;">
-                                <form action="" method="post" class="form-signin">   
-                                <h1 class="form-signin-heading">Edit Your Profile</h1>
-			  <hr class="colorgraph"><br>    
-			 
-             <div class="form-group text-center" style="margin-bottom:30px; padding:20px 0px 20px 0px; background-image:url(images-vhelp/profilebg.jpg); background-repeat:no-repeat; background-size:cover;">
-             <img src="images-vhelp/profile-image.jpg" width="40%" style="border-radius:50%;" />        
-             <input type="file" id="file1" name="image" accept="image/*" capture style="display:none"/>
-<img src="images-vhelp/camera.png" width="10%" id="upfile1" style="cursor:pointer; margin-left:-100px; margin-bottom:-240px;" />
-             
-             
-             </div>
-             
-              <div class="form-group"  style="font-size:45px;">
-			  <span>Name: Linda Smith</span> <span class="pull-right"><i class="fa fa-edit"></i> <i class="fa fa-check-circle" style="color:#009900;"></i></span>
-              <input type="text" class="form-control " name="name" placeholder="Name" required="" autofocus="" style="font-size:36px; " />
-              </div>
-              <div class="form-group"   style="font-size:45px;">
-			   <span>Email: linda.smith@gmail.com</span>
-              </div> 	
-              <div class="form-group"  style="font-size:45px;">
-			  <span>Mobile: (555) 555-1234</span> <span class="pull-right"><i class="fa fa-edit"></i> <i class="fa fa-check-circle" style="color:#009900;"></i></span>
-              <input type="number" class="form-control" name="mob" placeholder="Mobile Number" required="" style="font-size:36px;" />    
-              </div> 
-              <div class="form-group"  style="font-size:45px;">
-			  <span>Qualification: 10+2</span> <span class="pull-right"><i class="fa fa-edit"></i> <i class="fa fa-check-circle" style="color:#009900;"></i></span>
-              <input type="text" class="form-control" name="qualificatio" placeholder="Qualification" required="" style="font-size:36px;" />    
-              </div> 
-              <div class="form-group"   style="font-size:45px;">
-			   <span>Paypal: linda.smith@gmail.com</span> <span class="pull-right"><i class="fa fa-edit"></i> <i class="fa fa-check-circle" style="color:#009900;"></i></span>
-               <input type="email" class="form-control" name="qualificatio" placeholder="Paypal Email ID" required="" style="font-size:36px;" /> 
-              </div>
-       
-
-		</form>	
-                                </div>
-                              
-                              
-        </div>
-        
+        <span class="pull-right" style="font-size:40px; padding-top:20px;">
+            <i class="fa fa-user"></i> &nbsp;Profile</span>
     </div>
-</div>
-</div>
+
+
+    <div onclick="closeNav()">
+        <div style="padding:120px 15px 15px 15px;">
+            <div class="well">
+                <div class="alert alert-info">
+                    <div style="padding:10px; border:1px solid #006633; margin-bottom:30px;">
+                        <form action="" method="post" class="form-signin">
+                            <h1 class="form-signin-heading">Edit Your Profile</h1>
+                            <hr class="colorgraph">
+                            <br>
+
+                            <div class="form-group text-center" style="margin-bottom:30px; padding:20px 0px 20px 0px; background-image:url(images-vhelp/profilebg.jpg); background-repeat:no-repeat; background-size:cover;">
+                                <img src="images-vhelp/profile-image.jpg" width="40%" style="border-radius:50%;" />
+                                <input type="file" id="file1" name="image" accept="image/*" capture style="display:none" />
+                                <img src="images-vhelp/camera.png" width="10%" id="upfile1" style="cursor:pointer; margin-left:-100px; margin-bottom:-240px;"
+                                />
+                            </div>
+
+                            <div class="form-group" style="font-size:45px;">
+                                Name : <span id="lblName" style="color:black;"></span>
+                                <span class="pull-right">
+                                    <i class="fa fa-edit" id="btnNameEdit"></i>
+                                    <i class="fa fa-check-circle" style="color:#009900;display:none;" id="btnNameSave"></i>
+                                </span>
+                                <input type="text" class="form-control " id="txtName" placeholder="Name" autofocus="" style="font-size:36px; display:none;" />
+                            </div>
+                            <div class="form-group" style="font-size:45px;">
+                                Email : <span id="lblEmail" style="color:black;"></span>
+                            </div>
+                            <div class="form-group" style="font-size:45px;">
+                                Mobile : <span id="lblMobile" style="color:black;"></span>
+                                <span class="pull-right">
+                                    <i class="fa fa-edit" id="btnMobileEdit"></i>
+                                    <i class="fa fa-check-circle" style="color:#009900;display:none;" id="btnMobileSubmit"></i>
+                                </span>
+                                <input type="number" class="form-control" id="txtMobile" placeholder="Mobile Number" required="" style="font-size:36px;display:none;" />
+                            </div>
+                            <div class="form-group" style="font-size:45px;">
+                                Address : <span id="lblAddress" style="color:black;"></span>
+                                <span class="pull-right">
+                                    <i class="fa fa-edit" id="btnAddressEdit"></i>
+                                    <i class="fa fa-check-circle" style="color:#009900;display:none;" id="btnAddressSubmit"></i>
+                                </span>
+                                <textarea id="txtAddress" class="form-control" style="font-size:36px;display:none;"></textarea>
+                            </div>
+                            <div class="form-group" style="font-size:45px;">
+                                <span>Grade<sup>12th</sup> : <span id="lblGrade" style="color:black;"></span></span>
+                                <span class="pull-right">
+                                    <i class="fa fa-edit" id="btnGradeEdit"></i>
+                                    <i class="fa fa-check-circle" style="color:#009900;display:none;" id="btnGradeSubmit"></i>
+                                </span>
+                                <input type="text" class="form-control" placeholder="Grade 12th" id="txtGrade" style="font-size:36px;display:none;"
+                                />
+                            </div>
+                            <div class="form-group" style="font-size:45px;">
+                                <span>Percentage <sup>12th</sup> : <label id="lblPercentage" style="color:black;"></label> <span  style="color:black;">%</span></span>
+                                <span class="pull-right">
+                                    <i class="fa fa-edit" id="btnPercentEdit"></i>
+                                    <i class="fa fa-check-circle" style="color:#009900;display:none;" id="btnPercentSubmit"></i>
+                                </span>
+                                <input type="text" class="form-control"  id="txtPercentage" placeholder="Percentage 12th" required="" style="font-size:36px;display:none;"/>
+                            </div>
+                            <div class="form-group" style="font-size:45px;">
+                                <span>Board<sup>12th</sup> : <span id="lblBoard" style="color:black;"></span> </span>
+                                <span class="pull-right">
+                                    <i class="fa fa-edit" id="btnBoardEdit"></i>
+                                    <i class="fa fa-check-circle" style="color:#009900;display:none;" id="btnBoardSubmit"></i>
+                                </span>
+                                <input type="text" class="form-control" placeholder="Board Class 12th" style="font-size:36px;display:none;" id="txtBoard"/>
+                            </div>
+                            <div class="form-group" style="font-size:45px;">
+                                Paypal : <span id="lblPaypalId" style="color:black;"></span>
+                                <span class="pull-right">
+                                    <i class="fa fa-edit" id="btnPaypalEdit"></i>
+                                    <i class="fa fa-check-circle" style="color:#009900;display:none;" id="btnPaypalSubmit"></i>
+                                </span>
+                                <input type="email" class="form-control" placeholder="Paypal Email ID" id="txtPaypalEmailID" style="font-size:36px;display:none;"/>
+                            </div>
+                        </form>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
 
 
 
 
-<div class="footer">
-  <p style="font-size:60px;">
-  <marquee direction="left">
-     Aleks &nbsp;&nbsp;&nbsp;&nbsp; 
-     MyMathLab&nbsp;&nbsp;&nbsp;&nbsp;
-     MyStatLab &nbsp;&nbsp;&nbsp;&nbsp;
-     MathXL &nbsp;&nbsp;&nbsp;&nbsp;
-     PearsonLAB &nbsp;&nbsp;&nbsp;&nbsp;
-     WileyPlus &nbsp;&nbsp;&nbsp;&nbsp;
-     WebAssign &nbsp;&nbsp;&nbsp;&nbsp;
-     CengageNow &nbsp;&nbsp;&nbsp;&nbsp;
-     MyaccountingLab &nbsp;&nbsp;&nbsp;&nbsp;
-     Connect &nbsp;&nbsp;&nbsp;&nbsp;
-     MyeconLAB &nbsp;&nbsp;&nbsp;&nbsp;
-     Apex Learning &nbsp;&nbsp;&nbsp;&nbsp;
-     Aplia &nbsp;&nbsp;&nbsp;&nbsp;
-     SPSS &nbsp;&nbsp;&nbsp;&nbsp;
-     BlackBoard
-     </marquee>
-  </p>
-</div>
+    <div class="footer">
+        <p style="font-size:60px;">
+            <marquee direction="left">
+                Aleks &nbsp;&nbsp;&nbsp;&nbsp; MyMathLab&nbsp;&nbsp;&nbsp;&nbsp; MyStatLab &nbsp;&nbsp;&nbsp;&nbsp; MathXL &nbsp;&nbsp;&nbsp;&nbsp;
+                PearsonLAB &nbsp;&nbsp;&nbsp;&nbsp; WileyPlus &nbsp;&nbsp;&nbsp;&nbsp; WebAssign &nbsp;&nbsp;&nbsp;&nbsp;
+                CengageNow &nbsp;&nbsp;&nbsp;&nbsp; MyaccountingLab &nbsp;&nbsp;&nbsp;&nbsp; Connect &nbsp;&nbsp;&nbsp;&nbsp;
+                MyeconLAB &nbsp;&nbsp;&nbsp;&nbsp; Apex Learning &nbsp;&nbsp;&nbsp;&nbsp; Aplia &nbsp;&nbsp;&nbsp;&nbsp;
+                SPSS &nbsp;&nbsp;&nbsp;&nbsp; BlackBoard
+            </marquee>
+        </p>
+    </div>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script src="js/jquery.smoothState.min.js"></script>
+    <script type="text/javascript" src="js/profile.js"></script>
+    <script type="text/javascript">
+        app.initialize();
+    </script>
 </body>
 
 <!-- for navbar open close -->
 <script>
-function openNav() {
-    document.getElementById("mySidenav").style.width = "450px";
-}
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "450px";
+    }
 
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-}
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
 </script>
 <!-- for navbar open close -->
 
 <!-- for file upload -->
 <script> 
-$(document).ready(function(e) {
-        $(".showonhover").click(function(){
-			$("#selectfile").trigger('click');
-		});
+    $(document).ready(function (e) {
+        $(".showonhover").click(function () {
+            $("#selectfile").trigger('click');
+        });
     });
 
 
-var input = document.querySelector('input[type=file]'); // see Example 4
+    var input = document.querySelector('input[type=file]'); // see Example 4
 
-input.onchange = function () {
-  var file = input.files[0];
+    input.onchange = function () {
+        var file = input.files[0];
 
-  drawOnCanvas(file);   // see Example 6
-  displayAsImage(file); // see Example 7
-};
-
-function drawOnCanvas(file) {
-  var reader = new FileReader();
-
-  reader.onload = function (e) {
-    var dataURL = e.target.result,
-        c = document.querySelector('canvas'), // see Example 4
-        ctx = c.getContext('2d'),
-        img = new Image();
-
-    img.onload = function() {
-      c.width = img.width;
-      c.height = img.height;
-      ctx.drawImage(img, 0, 0);
+        drawOnCanvas(file);   // see Example 6
+        displayAsImage(file); // see Example 7
     };
 
-    img.src = dataURL;
-  };
+    function drawOnCanvas(file) {
+        var reader = new FileReader();
 
-  reader.readAsDataURL(file);
-}
+        reader.onload = function (e) {
+            var dataURL = e.target.result,
+                c = document.querySelector('canvas'), // see Example 4
+                ctx = c.getContext('2d'),
+                img = new Image();
 
-function displayAsImage(file) {
-  var imgURL = URL.createObjectURL(file),
-      img = document.createElement('img');
+            img.onload = function () {
+                c.width = img.width;
+                c.height = img.height;
+                ctx.drawImage(img, 0, 0);
+            };
 
-  img.onload = function() {
-    URL.revokeObjectURL(imgURL);
-  };
+            img.src = dataURL;
+        };
 
-  img.src = imgURL;
-  document.body.appendChild(img);
-}
+        reader.readAsDataURL(file);
+    }
 
-$("#upfile1").click(function () {
-    $("#file1").trigger('click');
-});
-$("#upfile2").click(function () {
-    $("#file2").trigger('click');
-});
-$("#upfile3").click(function () {
-    $("#file3").trigger('click');
-});
+    function displayAsImage(file) {
+        var imgURL = URL.createObjectURL(file),
+            img = document.createElement('img');
+
+        img.onload = function () {
+            URL.revokeObjectURL(imgURL);
+        };
+
+        img.src = imgURL;
+        document.body.appendChild(img);
+    }
+
+    $("#upfile1").click(function () {
+        $("#file1").trigger('click');
+    });
+    $("#upfile2").click(function () {
+        $("#file2").trigger('click');
+    });
+    $("#upfile3").click(function () {
+        $("#file3").trigger('click');
+    });
 </script>
 <!-- for file upload -->
+
 </html>
