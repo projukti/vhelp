@@ -1,250 +1,128 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Untitled Document</title>
-
-	<!-- CSS Files ----->
-	<link rel="stylesheet" href="css/font-awesome.min.css" />
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/style.css" />
-
-    <!-- CSS Files ----->
-    
-    <!-- JS files ---->
-    <script src="js/bootstrap.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    
-    <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
-	<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js'></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- JS files ---->
-	
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="msapplication-tap-highlight" content="no" />
+  <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src * content: data:; media-src *"
+  />
+  <title>Subjects</title>
+  <link rel="stylesheet" href="css/font-awesome.min.css" />
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+  <script src="js/bootstrap.min.js"></script>
+  <style>
+    .no-js #loader {
+      display: none;
+    }
   
+    .js #loader {
+      display: block;
+      position: absolute;
+      left: 100px;
+      top: 0;
+    }
+  
+    .se-pre-con {
+      position: fixed;
+      left: 0px;
+      top: 0px;
+      width: 100%;
+      height: 100%;
+      z-index: 9999;
+      background: url(img/Interwind.gif) center no-repeat #fff;
+    }
+  </style>
 </head>
 
 <body style="background-color:#FFFFFF;">
-<div  style="background-color:#FFCC00; color:#333333; padding:16px 16px 16px 16px; margin-bottom:500px;" class="topperone">
-<div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="#"><i class="fa fa-dashboard"></i> &nbsp;Dashboard</a>
-  <a href="#"><i class="fa fa-clone"></i> &nbsp;Subjects</a>
-  <a href="#"><i class="fa fa-files-o"></i> &nbsp;Services</a>
-  <a href="#"><i class="fa fa-file-text-o"></i> &nbsp;Platform</a>
-  <a href="#"><i class="fa fa-picture-o"></i> &nbsp;References</a>
-  <a href="#"><i class="fa fa-envelope"></i> &nbsp;Enquiry</a>
-  <a href="#"><i class="fa fa-comment"></i> &nbsp;Notifications</a>
-  <a href="#"><i class="fa fa-user"></i> &nbsp;Profile</a>
-  <a href="#"><i class="fa fa-home"></i> &nbsp;About Us</a>
-  <a href="#"><i class="fa fa-edit"></i> &nbsp;Terms of Use</a>
-  <a href="#"><i class="fa fa-sign-out"></i> &nbsp;Log Out</a>
-</div>
+  <div class="se-pre-con"></div>
+  <div style="background-color:#FFCC00; color:#333333; padding:16px 16px 16px 16px; margin-bottom:500px;" class="topperone">
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="#">
+        <i class="fa fa-dashboard"></i> &nbsp;Dashboard</a>
+      <a href="#">
+        <i class="fa fa-clone"></i> &nbsp;Subjects</a>
+      <a href="#">
+        <i class="fa fa-files-o"></i> &nbsp;Services</a>
+      <a href="#">
+        <i class="fa fa-file-text-o"></i> &nbsp;Platform</a>
+      <a href="#">
+        <i class="fa fa-picture-o"></i> &nbsp;References</a>
+      <a href="#">
+        <i class="fa fa-envelope"></i> &nbsp;Enquiry</a>
+      <a href="#">
+        <i class="fa fa-comment"></i> &nbsp;Notifications</a>
+      <a href="#">
+        <i class="fa fa-user"></i> &nbsp;Profile</a>
+      <a href="#">
+        <i class="fa fa-home"></i> &nbsp;About Us</a>
+      <a href="#">
+        <i class="fa fa-edit"></i> &nbsp;Terms of Use</a>
+      <a href="#">
+        <i class="fa fa-sign-out"></i> &nbsp;Log Out</a>
+    </div>
 
-<!--<h2>Animated Sidenav Example</h2>
+    <!--<h2>Animated Sidenav Example</h2>
 <p>Click on the element below to open the side navigation menu.</p> -->
 
-<span style="font-size:60px;cursor:pointer;" onclick="openNav()">&#9776; <strong>V-Help</strong></span> 
+    <span style="font-size:60px;cursor:pointer;" onclick="openNav()">&#9776;
+      <strong>V-Help</strong>
+    </span>
 
-<span class="pull-right" style="font-size:40px; padding-top:20px;" ><i class="fa fa-files-o"></i> &nbsp;Services Offered</span>
-</div>
-
-
-<div onclick="closeNav()">
-<div style="padding:120px 15px 15px 15px;"> 
-	<div class="well">
-    	
-        
-        <div class="alert alert-info">
-        
-                                <div style="padding:10px; margin-bottom:30px;">
-                                	<div class="panel-group" id="accordion">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title" style="font-size:40px;">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" style="text-decoration:none;"> <img src="images-vhelp/class.png" width="128" /> Online Class</a>
-        </h4>
-      </div>
-      <div id="collapse1" class="panel-collapse collapse in">
-        <div class="panel-body" style="font-size:40px;">Algebra is the study of mathematical symbols and the rules for manipulating these symbols; it is a unifying thread of almost all of maths.</div>
-      </div>
-    </div>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title" style="font-size:40px;">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" style="text-decoration:none;"> <img src="images-vhelp/homework.png" width="128" />  Online Homework</a>
-        </h4>
-      </div>
-      <div id="collapse2" class="panel-collapse collapse">
-        <div class="panel-body" style="font-size:40px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
-      </div>
-    </div>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title" style="font-size:40px;">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3" style="text-decoration:none;"> <img src="images-vhelp/assess.png" width="128" />   Mid-Term & Final Assessment</a>
-        </h4>
-      </div>
-      <div id="collapse3" class="panel-collapse collapse">
-        <div class="panel-body" style="font-size:40px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
-      </div>
-    </div>
-    
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title" style="font-size:40px;">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse4" style="text-decoration:none;"> <img src="images-vhelp/discussion.png" width="128" /> Online Discussions</a>
-        </h4>
-      </div>
-      <div id="collapse4" class="panel-collapse collapse">
-        <div class="panel-body" style="font-size:40px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
-      </div>
-    </div>
-    
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title" style="font-size:40px;">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse5" style="text-decoration:none;"> <img src="images-vhelp/quiz.png" width="128" /> Online Quizzes</a>
-        </h4>
-      </div>
-      <div id="collapse5" class="panel-collapse collapse">
-        <div class="panel-body" style="font-size:40px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
-      </div>
-    </div>
-    
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title" style="font-size:40px;">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse6" style="text-decoration:none;"> <img src="images-vhelp/tutor.png" width="128" />  Online Tutoring</a>
-        </h4>
-      </div>
-      <div id="collapse6" class="panel-collapse collapse">
-        <div class="panel-body" style="font-size:40px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
-      </div>
-    </div>
-    
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title" style="font-size:40px;">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse7" style="text-decoration:none;"> <img src="images-vhelp/essay.png" width="128" /> Essay Writing</a>
-        </h4>
-      </div>
-      
-    </div>
-    
-    
-    
-    
+    <span class="pull-right" style="font-size:40px; padding-top:20px;">
+      <i class="fa fa-files-o"></i> &nbsp;Services Offered</span>
   </div>
-                                </div>
-                              
-                              
+
+
+  <div onclick="closeNav()">
+    <div style="padding:120px 15px 15px 15px;">
+      <div class="well">
+
+
+        <div class="alert alert-info">
+
+          <div style="padding:10px; margin-bottom:30px;">
+            <div class="panel-group" id="accordion">    
+            </div>
+          </div>
         </div>
-        
+      </div>
     </div>
-</div>
-</div>
+  </div>
 
-
-
-
-<div class="footer">
-  <p style="font-size:60px;">
-  <marquee direction="left">
-     Aleks &nbsp;&nbsp;&nbsp;&nbsp; 
-     MyMathLab&nbsp;&nbsp;&nbsp;&nbsp;
-     MyStatLab &nbsp;&nbsp;&nbsp;&nbsp;
-     MathXL &nbsp;&nbsp;&nbsp;&nbsp;
-     PearsonLAB &nbsp;&nbsp;&nbsp;&nbsp;
-     WileyPlus &nbsp;&nbsp;&nbsp;&nbsp;
-     WebAssign &nbsp;&nbsp;&nbsp;&nbsp;
-     CengageNow &nbsp;&nbsp;&nbsp;&nbsp;
-     MyaccountingLab &nbsp;&nbsp;&nbsp;&nbsp;
-     Connect &nbsp;&nbsp;&nbsp;&nbsp;
-     MyeconLAB &nbsp;&nbsp;&nbsp;&nbsp;
-     Apex Learning &nbsp;&nbsp;&nbsp;&nbsp;
-     Aplia &nbsp;&nbsp;&nbsp;&nbsp;
-     SPSS &nbsp;&nbsp;&nbsp;&nbsp;
-     BlackBoard
-     </marquee>
-  </p>
-</div>
+  <div class="footer">
+    <p style="font-size:60px;">
+      <marquee direction="left">
+        Aleks &nbsp;&nbsp;&nbsp;&nbsp; MyMathLab&nbsp;&nbsp;&nbsp;&nbsp; MyStatLab &nbsp;&nbsp;&nbsp;&nbsp; MathXL &nbsp;&nbsp;&nbsp;&nbsp;
+        PearsonLAB &nbsp;&nbsp;&nbsp;&nbsp; WileyPlus &nbsp;&nbsp;&nbsp;&nbsp; WebAssign &nbsp;&nbsp;&nbsp;&nbsp; CengageNow
+        &nbsp;&nbsp;&nbsp;&nbsp; MyaccountingLab &nbsp;&nbsp;&nbsp;&nbsp; Connect &nbsp;&nbsp;&nbsp;&nbsp; MyeconLAB &nbsp;&nbsp;&nbsp;&nbsp;
+        Apex Learning &nbsp;&nbsp;&nbsp;&nbsp; Aplia &nbsp;&nbsp;&nbsp;&nbsp; SPSS &nbsp;&nbsp;&nbsp;&nbsp; BlackBoard
+      </marquee>
+    </p>
+  </div>
+  <script type="text/javascript" src="cordova.js"></script>
+  <script src="js/jquery.smoothState.min.js"></script>
+  <script type="text/javascript" src="js/service.js"></script>
+  <script type="text/javascript">
+    app.initialize();
+  </script>
 </body>
 
 <!-- for navbar open close -->
 <script>
-function openNav() {
+  function openNav() {
     document.getElementById("mySidenav").style.width = "450px";
-}
+  }
 
-function closeNav() {
+  function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
-}
+  }
 </script>
 <!-- for navbar open close -->
 
-<!-- for file upload -->
-<script> 
-$(document).ready(function(e) {
-        $(".showonhover").click(function(){
-			$("#selectfile").trigger('click');
-		});
-    });
-
-
-var input = document.querySelector('input[type=file]'); // see Example 4
-
-input.onchange = function () {
-  var file = input.files[0];
-
-  drawOnCanvas(file);   // see Example 6
-  displayAsImage(file); // see Example 7
-};
-
-function drawOnCanvas(file) {
-  var reader = new FileReader();
-
-  reader.onload = function (e) {
-    var dataURL = e.target.result,
-        c = document.querySelector('canvas'), // see Example 4
-        ctx = c.getContext('2d'),
-        img = new Image();
-
-    img.onload = function() {
-      c.width = img.width;
-      c.height = img.height;
-      ctx.drawImage(img, 0, 0);
-    };
-
-    img.src = dataURL;
-  };
-
-  reader.readAsDataURL(file);
-}
-
-function displayAsImage(file) {
-  var imgURL = URL.createObjectURL(file),
-      img = document.createElement('img');
-
-  img.onload = function() {
-    URL.revokeObjectURL(imgURL);
-  };
-
-  img.src = imgURL;
-  document.body.appendChild(img);
-}
-
-$("#upfile1").click(function () {
-    $("#file1").trigger('click');
-});
-$("#upfile2").click(function () {
-    $("#file2").trigger('click');
-});
-$("#upfile3").click(function () {
-    $("#file3").trigger('click');
-});
-</script>
-<!-- for file upload -->
 </html>

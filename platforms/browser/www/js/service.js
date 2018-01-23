@@ -39,27 +39,27 @@ var app = {
         // Get All Subject
         $.ajax({
             type: "post",
-            url: "https://bebongstore.com/vhelp/manage_api/get_subject",
+            url: "https://bebongstore.com/vhelp/manage_api/get_service",
             data: "data",
             dataType: "json",
             beforeSend: function () {
-              $(".se-pre-con").show();
+                $(".se-pre-con").show();
             },
             success: function (response) {
-                var count=1;
-                $.each(response.subjects, function (val, text) { 
-                    var subjectImage = text.subject_image;
-                    var subjectName = text.subject_name;
-                    var subjectDescription = text.description;
+                var count = 1;
+                $.each(response.services, function (val, text) {
+                    var serviceImage = text.service_image;
+                    var serviceName = text.service_name;
+                    var serviceDescription = text.description;
 
-                    if(count==1){
-                        var className="in";
+                    if (count == 1) {
+                        var className = "in";
                     }
-                    else{
+                    else {
                         var className = "";
                     }
-                    
-                    $('#accordion').append('<div class="panel panel-default"><div class= "panel-heading"><h4 class="panel-title" style="font-size:40px;"><a data-toggle="collapse" data-parent="#accordion" href="#collapse' + count + '" style="text-decoration:none;"><img src="https://bebongstore.com/vhelp/uploads/subject/' + subjectImage + '" width="128" /> ' + subjectName + '</a></h4></div ><div id="collapse' + count + '" class="panel-collapse collapse '+className+'"><div class="panel-body" style="font-size:40px;">' + subjectDescription +'</div></div></div >');
+
+                    $('#accordion').append('<div class="panel panel-default"><div class= "panel-heading"><h4 class="panel-title" style="font-size:40px;"><a data-toggle="collapse" data-parent="#accordion" href="#collapse' + count + '" style="text-decoration:none;"><img src="https://bebongstore.com/vhelp/uploads/service/' + serviceImage + '" width="128" />  ' + serviceName + '</a></h4></div ><div id="collapse' + count + '" class="panel-collapse collapse ' + className + '"><div class="panel-body" style="font-size:40px;">' + serviceDescription +'</div></div></div >');
                     count++;
                 });
                 $(".se-pre-con").hide();
