@@ -7,13 +7,7 @@
     "files": {}
   },
   "installed_plugins": {
-    "cordova-plugin-zip": {
-      "PACKAGE_NAME": "com.phonegap.helloworld"
-    },
     "cordova-plugin-code-push": {
-      "PACKAGE_NAME": "com.phonegap.helloworld"
-    },
-    "cordova-plugin-file": {
       "PACKAGE_NAME": "com.phonegap.helloworld"
     },
     "cordova-plugin-network-information": {
@@ -28,9 +22,6 @@
     "cordova-plugin-camera": {
       "PACKAGE_NAME": "com.phonegap.helloworld"
     },
-    "cordova-plugin-media-capture": {
-      "PACKAGE_NAME": "com.phonegap.helloworld"
-    },
     "cordova-plugin-geolocation": {
       "PACKAGE_NAME": "com.phonegap.helloworld"
     },
@@ -41,6 +32,12 @@
       "PACKAGE_NAME": "com.phonegap.helloworld"
     },
     "cordova-plugin-vibration": {
+      "PACKAGE_NAME": "com.phonegap.helloworld"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "com.phonegap.helloworld"
+    },
+    "cordova-plugin-media-capture": {
       "PACKAGE_NAME": "com.phonegap.helloworld"
     }
   },
