@@ -63,7 +63,7 @@ var app = {
                             $('#txtUsername').css('border-color', 'red');
                             $('#txtUsername').val('');
                             $('#btnLogin').prop('disabled', false);
-                            window.plugins.toast.showLongBottom('Email doesn\'t match') ; 
+                            window.plugins.toast.showLongBottom('Email not registered with us') ; 
                         }
                     }
                 });
