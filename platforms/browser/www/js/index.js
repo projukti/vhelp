@@ -66,7 +66,7 @@ var app = {
                         localStorage.login = "true";
 
                         window.setTimeout(function () {
-                            window.location.href = "home.html";
+                            window.location.href = "profile.html";
                         }, 4000);
                     }
                 }
