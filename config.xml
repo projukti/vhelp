@@ -107,4 +107,5 @@
     <plugin name="cordova-plugin-code-push" spec="~1.11.2" />
     <plugin name="cordova-plugin-file" spec="~6.0.1" />
     <plugin name="cordova-plugin-media-capture" spec="~3.0.1" />
+    <plugin name="cordova-plugin-x-toast" spec="~2.6.0" />
 </widget>

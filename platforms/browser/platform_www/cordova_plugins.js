@@ -488,6 +488,19 @@ module.exports = [
         "id": "cordova-plugin-media-capture.CaptureProxy",
         "pluginId": "cordova-plugin-media-capture",
         "runs": true
+    },
+    {
+        "file": "plugins/cordova-plugin-x-toast/www/Toast.js",
+        "id": "cordova-plugin-x-toast.Toast",
+        "pluginId": "cordova-plugin-x-toast",
+        "clobbers": [
+            "window.plugins.toast"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-x-toast/test/tests.js",
+        "id": "cordova-plugin-x-toast.tests",
+        "pluginId": "cordova-plugin-x-toast"
     }
 ];
 module.exports.metadata = 
@@ -507,7 +520,8 @@ module.exports.metadata =
     "cordova-plugin-inappbrowser": "1.7.2",
     "cordova-plugin-vibration": "2.1.6",
     "cordova-plugin-file": "6.0.1",
-    "cordova-plugin-media-capture": "3.0.1"
+    "cordova-plugin-media-capture": "3.0.1",
+    "cordova-plugin-x-toast": "2.6.0"
 }
 // BOTTOM OF METADATA
 });

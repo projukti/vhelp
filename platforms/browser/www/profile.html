@@ -68,21 +68,21 @@
 
             // Change image source and upload photo to server
             function onSuccess(imgData) {
-                 imgData="data:image/jpg;base64,"+ imgData;
-                var datas={'email':localStorage.getItem('email'),'image': imgData};
+                imgData = "data:image/jpg;base64," + imgData;
+                var datas = { 'email': localStorage.getItem('email'), 'image': imgData };
                 $("#pimage").attr("src", imgData);
                 $.ajax({
                     type: "post",
                     url: "https://bebongstore.com/vhelp/manage_api/image_upload/",
                     data: datas,
-                    dataType: "json"                    
+                    dataType: "json"
                 }).done(function (res) {
-                   // console.log(res.photo);
-                    if(res.status==1){
-                       alert("Image uploaded successfully");
+                    // console.log(res.photo);
+                    if (res.status == 1) {
+                        window.plugins.toast.showLongBottom('Image uploaded successfully');
                     }
                 });
-                
+
                 // // Set image source
                 // var image = document.getElementById('pimage');
                 // image.src = imageURI + '?' + Math.random();
@@ -111,7 +111,7 @@
                 // }, options);
             }
             function onFail(message) {
-                alert('Failed because: ' + message);
+                window.plugins.toast.showLongBottom('Failed because: ' + message);
             }
         });
     </script>
@@ -175,26 +175,32 @@
                             </div>
 
                             <div class="form-group" style="font-size:45px;">
-                                Name : <span id="lblName" style="color:black;"></span>
+                                Name :
+                                <span id="lblName" style="color:black;"></span>
                                 <span class="pull-right">
                                     <i class="fa fa-edit" id="btnNameEdit"></i>
                                     <i class="fa fa-check-circle" style="color:#009900;display:none;" id="btnNameSave"></i>
                                 </span>
-                                <input type="text" class="form-control " id="txtName" placeholder="Name" autofocus="" style="font-size:36px; display:none;" />
+                                <input type="text" class="form-control " id="txtName" placeholder="Name" autofocus="" style="font-size:36px; display:none;"
+                                />
                             </div>
                             <div class="form-group" style="font-size:45px;">
-                                Email : <span id="lblEmail" style="color:black;"></span>
+                                Email :
+                                <span id="lblEmail" style="color:black;"></span>
                             </div>
                             <div class="form-group" style="font-size:45px;">
-                                Mobile : <span id="lblMobile" style="color:black;"></span>
+                                Mobile :
+                                <span id="lblMobile" style="color:black;"></span>
                                 <span class="pull-right">
                                     <i class="fa fa-edit" id="btnMobileEdit"></i>
                                     <i class="fa fa-check-circle" style="color:#009900;display:none;" id="btnMobileSubmit"></i>
                                 </span>
-                                <input type="number" class="form-control" id="txtMobile" placeholder="Mobile Number" required="" style="font-size:36px;display:none;" />
+                                <input type="number" class="form-control" id="txtMobile" placeholder="Mobile Number" required="" style="font-size:36px;display:none;"
+                                />
                             </div>
                             <div class="form-group" style="font-size:45px;">
-                                Address : <span id="lblAddress" style="color:black;"></span>
+                                Address :
+                                <span id="lblAddress" style="color:black;"></span>
                                 <span class="pull-right">
                                     <i class="fa fa-edit" id="btnAddressEdit"></i>
                                     <i class="fa fa-check-circle" style="color:#009900;display:none;" id="btnAddressSubmit"></i>
@@ -202,37 +208,50 @@
                                 <textarea id="txtAddress" class="form-control" style="font-size:36px;display:none;"></textarea>
                             </div>
                             <div class="form-group" style="font-size:45px;">
-                                <span>Grade<sup>12th</sup> : <span id="lblGrade" style="color:black;"></span></span>
+                                <span>Grade
+                                    <sup>12th</sup> :
+                                    <span id="lblGrade" style="color:black;"></span>
+                                </span>
                                 <span class="pull-right">
                                     <i class="fa fa-edit" id="btnGradeEdit"></i>
                                     <i class="fa fa-check-circle" style="color:#009900;display:none;" id="btnGradeSubmit"></i>
                                 </span>
-                                <input type="text" class="form-control" placeholder="Grade 12th" id="txtGrade" style="font-size:36px;display:none;"
-                                />
+                                <input type="text" class="form-control" placeholder="Grade 12th" id="txtGrade" style="font-size:36px;display:none;" />
                             </div>
                             <div class="form-group" style="font-size:45px;">
-                                <span>Percentage <sup>12th</sup> : <label id="lblPercentage" style="color:black;"></label> <span  style="color:black;">%</span></span>
+                                <span>Percentage
+                                    <sup>12th</sup> :
+                                    <label id="lblPercentage" style="color:black;"></label>
+                                    <span style="color:black;">%</span>
+                                </span>
                                 <span class="pull-right">
                                     <i class="fa fa-edit" id="btnPercentEdit"></i>
                                     <i class="fa fa-check-circle" style="color:#009900;display:none;" id="btnPercentSubmit"></i>
                                 </span>
-                                <input type="text" class="form-control"  id="txtPercentage" placeholder="Percentage 12th" required="" style="font-size:36px;display:none;"/>
+                                <input type="text" class="form-control" id="txtPercentage" placeholder="Percentage 12th" required="" style="font-size:36px;display:none;"
+                                />
                             </div>
                             <div class="form-group" style="font-size:45px;">
-                                <span>Board<sup>12th</sup> : <span id="lblBoard" style="color:black;"></span> </span>
+                                <span>Board
+                                    <sup>12th</sup> :
+                                    <span id="lblBoard" style="color:black;"></span>
+                                </span>
                                 <span class="pull-right">
                                     <i class="fa fa-edit" id="btnBoardEdit"></i>
                                     <i class="fa fa-check-circle" style="color:#009900;display:none;" id="btnBoardSubmit"></i>
                                 </span>
-                                <input type="text" class="form-control" placeholder="Board Class 12th" style="font-size:36px;display:none;" id="txtBoard"/>
+                                <input type="text" class="form-control" placeholder="Board Class 12th" style="font-size:36px;display:none;" id="txtBoard"
+                                />
                             </div>
                             <div class="form-group" style="font-size:45px;">
-                                Paypal : <span id="lblPaypalId" style="color:black;"></span>
+                                Paypal :
+                                <span id="lblPaypalId" style="color:black;"></span>
                                 <span class="pull-right">
                                     <i class="fa fa-edit" id="btnPaypalEdit"></i>
                                     <i class="fa fa-check-circle" style="color:#009900;display:none;" id="btnPaypalSubmit"></i>
                                 </span>
-                                <input type="email" class="form-control" placeholder="Paypal Email ID" id="txtPaypalEmailID" style="font-size:36px;display:none;"/>
+                                <input type="email" class="form-control" placeholder="Paypal Email ID" id="txtPaypalEmailID" style="font-size:36px;display:none;"
+                                />
                             </div>
                         </form>
                     </div>
