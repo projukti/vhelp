@@ -76,7 +76,8 @@
                     data: datas,
                     dataType: "json"
                 }).done(function (res) {
-                    if(res==1){
+                   // console.log(res.photo);
+                    if(res.status==1){
                         $("#pimage").attr("src", "https://bebongstore.com/vhelp/uploads/student/" + res.photo);
                     }
                 });
