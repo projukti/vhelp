@@ -77,7 +77,7 @@
                 // var sendData={'img_data': imageURI,'email':localStorage.email };
                 // alert(sendData);
                 var ft = new FileTransfer();
-                ft.upload(imageURI, "http://bebongstore.com/vhelp/material/" + localStorage.email, function (result) {
+                ft.upload(imageURI, "http://bebongstore.com/vhelp/manage_api/image_upload" + localStorage.email, function (result) {
                     // da = $.parseJSON(result);
                     alert('successfully uploaded');
                     // if(da.st)
