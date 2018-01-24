@@ -501,6 +501,14 @@ module.exports = [
         "file": "plugins/cordova-plugin-x-toast/test/tests.js",
         "id": "cordova-plugin-x-toast.tests",
         "pluginId": "cordova-plugin-x-toast"
+    },
+    {
+        "file": "plugins/cordova-plugin-screen-orientation/www/screenorientation.js",
+        "id": "cordova-plugin-screen-orientation.screenorientation",
+        "pluginId": "cordova-plugin-screen-orientation",
+        "clobbers": [
+            "cordova.plugins.screenorientation"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -521,7 +529,8 @@ module.exports.metadata =
     "cordova-plugin-vibration": "2.1.6",
     "cordova-plugin-file": "6.0.1",
     "cordova-plugin-media-capture": "3.0.1",
-    "cordova-plugin-x-toast": "2.6.0"
+    "cordova-plugin-x-toast": "2.6.0",
+    "cordova-plugin-screen-orientation": "3.0.1"
 }
 // BOTTOM OF METADATA
 });

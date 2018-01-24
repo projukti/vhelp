@@ -29,6 +29,8 @@ var app = {
         document.addEventListener('deviceready', this.onDeviceReady, false);
         // document.addEventListener("backbutton", onBackKeyDown, false);
         document.addEventListener("offline", checkConnection, false);
+        screen.orientation.lock('portrait');
+        screen.orientation.lock();
     },
     // deviceready Event Handler
     //
@@ -62,6 +64,8 @@ var app = {
                     $('#accordion').append('<div class="panel panel-default"><div class= "panel-heading"><h4 class="panel-title" style="font-size:40px;"><a data-toggle="collapse" data-parent="#accordion" href="#collapse' + count + '" style="text-decoration:none;"><img src="https://bebongstore.com/vhelp/uploads/subject/' + subjectImage + '" width="128" /> ' + subjectName + '</a></h4></div ><div id="collapse' + count + '" class="panel-collapse collapse '+className+'"><div class="panel-body" style="font-size:40px;">' + subjectDescription +'</div></div></div >');
                     count++;
                 });
+            },
+            complete: function () {
                 $(".se-pre-con").hide();
             }
         });
