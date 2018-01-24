@@ -5,7 +5,9 @@
   "short_name": "VHELP",
   "version": "com.phonegap.helloworld",
   "description": "Education Help App",
-  "author": "Projukti Team",
+  "author": "V-Team",
   "icons": [],
-  "start_url": "index.html"
+  "orientation": "portrait",
+  "start_url": "index.html",
+  "theme_color": "#323232"
 }
