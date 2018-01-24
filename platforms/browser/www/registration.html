@@ -22,39 +22,39 @@
     <div class="container">
         <div class="row">
             <div class="topper">
-                <img src="images-vhelp/icon-vhelp.png" width="25%" />
+                
                 <div style="margin-top:6%;" class="text-center">
                     <div>
-                        <form action="" method="post" name="Login_Form" class="form-signin">
-                            <h1 class="form-signin-heading">Ready to Join? Create a V-Help Account </h1>
+                        <form action="" method="post" name="Login_Form" class="form-signin" style="padding:20px; max-width:96%;">
+                             <h4 class="form-signin-heading"><img src="images-vhelp/icon-vhelp.png" width="8%" /> Create a V-Help Account </h4>
                             <hr class="colorgraph">
-                            <br>
-                            <div class="form-group">
-                                <input type="text" class="form-control " name="first_name" id="first_name" placeholder="First Name" autofocus="" style="font-size:36px;"
+                            
+                            <div class="form-group forform-group">
+                                <input type="text" class="form-control input-sm" name="first_name" id="first_name" placeholder="First Name" 
                                 />
                             </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control " name="last_name" id="last_name" placeholder="Last Name" autofocus="" style="font-size:36px;"
+                            <div class="form-group forform-group">
+                                <input type="text" class="form-control " name="last_name" id="last_name" placeholder="Last Name"  
                                 />
                             </div>
-                            <div class="form-group">
-                                <input type="email" class="form-control" name="email" id="email" placeholder="Email ID" style="font-size:36px;" />
+                            <div class="form-group forform-group">
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Email ID"  />
                             </div>
-                            <div class="form-group">
-                                <input type="number" class="form-control" name="mob" id="mobile" placeholder="Mobile Number" style="font-size:36px;" />
+                            <div class="form-group forform-group">
+                                <input type="number" class="form-control" name="mob" id="mobile" placeholder="Mobile Number"  />
                             </div>
-                            <div class="form-group">
-                                <input type="password" class="form-control" name="pw" id="password" placeholder="Password" style="font-size:36px;" />
+                            <div class="form-group forform-group">
+                                <input type="password" class="form-control" name="pw" id="password" placeholder="Password"  />
                             </div>
-                            <div class="form-group">
-                                <input type="password" class="form-control" name="con-pw" id="confirm_password" placeholder="Confirm Password" style="font-size:36px;"
+                            <div class="form-group forform-group">
+                                <input type="password" class="form-control" name="con-pw" id="confirm_password" placeholder="Confirm Password" 
                                 />
                             </div>
-                            <button class="btn btn-lg btn-primary btn-block" style="font-size:40px;" id="btnReg" name="Submit" value="Login" type="button">Create My Account</button>
-                            <br />
-                            <h1>V-Help user?
+                            <button class="btn  btn-primary btn-block"  id="btnReg" name="Submit" value="Login" type="button">Create My Account</button>
+                            
+                            <h5>V-Help user?
                                 <a href="login.html">Login Here</a>
-                            </h1>
+                            </h5>
                         </form>
                     </div>
                 </div>
@@ -65,11 +65,7 @@
     <script type="text/javascript" src="js/registration.js"></script>
     <script type="text/javascript">
         app.initialize();
-        /* global PullToRefresh */
-        PullToRefresh.init({
-            mainElement: '#main',
-            onRefresh: function () { alert('refresh') }
-        });
+        
     </script>
 </body>
 

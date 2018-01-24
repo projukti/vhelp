@@ -79,7 +79,7 @@ transition: background-image 1s ease;
 	border-bottom:none;
 	border-left:none;
 	border-right:none;
-	font-size:20px;
+	/*font-size:20px;*/
 	color:#666666;
 	font-family: 'Barlow', sans-serif;
 }
@@ -104,14 +104,18 @@ hr.style13 {
 
 .form-signin-heading {
   text-align:center;
-  margin-bottom: 30px;
+  /*margin-bottom: 30px;*/
 }
 
 .form-control {
   position: relative;
   font-size: 16px;
   height: auto;
-  padding: 10px;
+  /*padding: 10px;*/
+}
+
+.forform-group{
+	margin-bottom: 6px !important;
 }
 
 input[type="text"] {
@@ -121,7 +125,7 @@ input[type="text"] {
 }
 
 input[type="password"] {
-  margin-bottom: 20px;
+  /*margin-bottom: 20px;*/
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
@@ -155,14 +159,14 @@ input[type="password"] {
 }
 
 .sidenav a {
-    padding: 20px 8px 20px 32px;
+    padding: 12px 8px 12px 20px;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 18px;
     color: #818181;
     display: block;
     transition: 0.3s;
 	border-bottom: 1px dashed #ccc;
-	font-size:36px;
+	
 }
 
 .sidenav a:hover {
@@ -171,10 +175,10 @@ input[type="password"] {
 
 .sidenav .closebtn {
     position: absolute;
-    top: -50px;
+    top: -30px;
     right: 25px;
 	margin-bottom::50px;
-    font-size: 120px;
+    font-size: 60px;
     margin-left: 50px;
 	border:none;
 }

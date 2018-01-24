@@ -86,66 +86,66 @@
         <!--<h2>Animated Sidenav Example</h2>
 <p>Click on the element below to open the side navigation menu.</p> -->
 
-        <span style="font-size:60px;cursor:pointer;" onclick="openNav()">&#9776;
-            <strong>V-Help</strong>
+        <span onclick="openNav()" style="font-size:18px;">
+        &#9776; <strong>V-Help</strong>
         </span>
 
-        <span class="pull-right" style="font-size:40px; padding-top:20px;">
+        <span class="pull-right">
             <i class="fa fa-user"></i> &nbsp;Profile</span>
     </div>
 
 
     <div onclick="closeNav()">
-        <div style="padding:120px 15px 15px 15px;">
+        <div>
             <div class="well">
                 <div class="alert alert-info">
-                    <div style="padding:10px; border:1px solid #006633; margin-bottom:30px;">
-                        <form action="" method="post" class="form-signin" style="padding:40px;max-width:96%;" >
-                            <h1 class="form-signin-heading">Edit Your Profile</h1>
+                    <div style="padding-top:40px; margin-bottom:30px;">
+                        <form action="" method="post" class="form-signin" style="padding:20px;max-width:100%;" >
+                            <h4 class="form-signin-heading">Edit Your Profile</h4>
                             <hr class="colorgraph">
-                            <br>
+                            
 
                             <div class="form-group text-center" style="margin-bottom:30px; padding:20px 0px 20px 0px; background-image:url(images-vhelp/profilebg.jpg); background-repeat:no-repeat; background-size:cover;">
                                 <img src="" width="40%" id="pimage" style="border-radius:50%;" />
-                                <img src="images-vhelp/camera.png" width="10%" id="but_take" style="cursor:pointer; margin-left:-100px; margin-bottom:-240px;"
+                                <img src="images-vhelp/camera.png" width="10%" id="but_take" style=" margin-left:-60px; margin-bottom:-100px;"
                                 />
                             </div>
 
-                            <div class="form-group" style="font-size:45px;">
+                            <div class="form-group">
                                 Name :
                                 <span id="lblName" style="color:black;"></span>
                                 <span class="pull-right">
                                     <i class="fa fa-edit" id="btnNameEdit"></i>
                                     <i class="fa fa-check-circle" style="color:#009900;display:none;" id="btnNameSave"></i>
                                 </span>
-                                <input type="text" class="form-control " id="txtName" placeholder="Name" autofocus="" style="font-size:36px; display:none;"
+                                <input type="text" class="form-control " id="txtName" placeholder="Name" autofocus="" style="display:none;"
                                 />
                             </div>
-                            <div class="form-group" style="font-size:45px;">
+                            <div class="form-group">
                                 Email :
-                                <span id="lblEmail" style="color:black;"></span>
+                                <span id="lblEmail" ></span>
                             </div>
-                            <div class="form-group" style="font-size:45px;">
+                            <div class="form-group" >
                                 Mobile :
                                 <span id="lblMobile" style="color:black;"></span>
                                 <span class="pull-right">
                                     <i class="fa fa-edit" id="btnMobileEdit"></i>
                                     <i class="fa fa-check-circle" style="color:#009900;display:none;" id="btnMobileSubmit"></i>
                                 </span>
-                                <input type="number" class="form-control" id="txtMobile" placeholder="Mobile Number" required="" style="font-size:36px;display:none;"
+                                <input type="number" class="form-control" id="txtMobile" placeholder="Mobile Number" required="" style="display:none;"
                                 />
                             </div>
-                            <div class="form-group" style="font-size:45px;">
+                            <div class="form-group">
                                 Address :
                                 <span id="lblAddress" style="color:black;"></span>
                                 <span class="pull-right">
                                     <i class="fa fa-edit" id="btnAddressEdit"></i>
                                     <i class="fa fa-check-circle" style="color:#009900;display:none;" id="btnAddressSubmit"></i>
                                 </span>
-                                <textarea id="txtAddress" class="form-control" style="font-size:36px;display:none;"></textarea>
+                                <textarea id="txtAddress" class="form-control" style="display:none;"></textarea>
                             </div>
-                            <div class="form-group" style="font-size:45px;">
-                                <span>Qualification :<span id="lblGrade" style="color:black;"></span>
+                            <div class="form-group">
+                                <span>Qualification : <span id="lblGrade" style="color:black;"></span>
                                 </span>
                                 <span class="pull-right">
                                     <i class="fa fa-edit" id="btnGradeEdit"></i>
@@ -154,14 +154,14 @@
                                 <input type="text" class="form-control" placeholder="Grade 12th" id="txtGrade" style="font-size:36px;display:none;" />
                             </div>
                             
-                            <div class="form-group" style="font-size:45px;">
+                            <div class="form-group" >
                                 Paypal-Id :
                                 <span id="lblPaypalId" style="color:black;"></span>
                                 <span class="pull-right">
                                     <i class="fa fa-edit" id="btnPaypalEdit"></i>
                                     <i class="fa fa-check-circle" style="color:#009900;display:none;" id="btnPaypalSubmit"></i>
                                 </span>
-                                <input type="email" class="form-control" placeholder="Paypal Email ID" id="txtPaypalEmailID" style="font-size:36px;display:none;"
+                                <input type="email" class="form-control" placeholder="Paypal Email ID" id="txtPaypalEmailID" style="display:none;"
                                 />
                             </div>
                         </form>
@@ -178,7 +178,7 @@
 
 
     <div class="footer">
-        <p style="font-size:60px;">
+        <p style="font-size:20px;">
             <marquee direction="left">
                 Aleks &nbsp;&nbsp;&nbsp;&nbsp; MyMathLab&nbsp;&nbsp;&nbsp;&nbsp; MyStatLab &nbsp;&nbsp;&nbsp;&nbsp; MathXL &nbsp;&nbsp;&nbsp;&nbsp;
                 PearsonLAB &nbsp;&nbsp;&nbsp;&nbsp; WileyPlus &nbsp;&nbsp;&nbsp;&nbsp; WebAssign &nbsp;&nbsp;&nbsp;&nbsp;
@@ -198,13 +198,7 @@
 
 <!-- for navbar open close -->
 <script>
-    function openNav() {
-        document.getElementById("mySidenav").style.width = "450px";
-    }
-
-    function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-    }
+    
 </script>
 <!-- for navbar open close -->
 

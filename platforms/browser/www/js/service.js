@@ -62,7 +62,7 @@ var app = {
                         var className = "";
                     }
 
-                    $('#accordion').append('<div class="panel panel-default"><div class= "panel-heading"><h4 class="panel-title" style="font-size:40px;"><a data-toggle="collapse" data-parent="#accordion" href="#collapse' + count + '" style="text-decoration:none;"><img src="https://bebongstore.com/vhelp/uploads/service/' + serviceImage + '" width="128" />  ' + serviceName + '</a></h4></div ><div id="collapse' + count + '" class="panel-collapse collapse ' + className + '"><div class="panel-body" style="font-size:40px;">' + serviceDescription +'</div></div></div >');
+                    $('#accordion').append('<div class="panel panel-default"><div class= "panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse' + count + '" style="text-decoration:none;"><img src="https://bebongstore.com/vhelp/uploads/service/' + serviceImage + '" width="20%" />  ' + serviceName + '</a></h4></div ><div id="collapse' + count + '" class="panel-collapse collapse ' + className + '"><div class="panel-body">' + serviceDescription +'</div></div></div >');
                     count++;
                 });
                 $(".se-pre-con").hide();
