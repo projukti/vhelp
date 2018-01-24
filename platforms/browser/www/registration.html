@@ -65,6 +65,11 @@
     <script type="text/javascript" src="js/registration.js"></script>
     <script type="text/javascript">
         app.initialize();
+        /* global PullToRefresh */
+        PullToRefresh.init({
+            mainElement: '#main',
+            onRefresh: function () { alert('refresh') }
+        });
     </script>
 </body>
 
