@@ -34,9 +34,7 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        if (localStorage.login == "false") {
-            // First Check Is Loged In In Database            
-
+        if (localStorage.login == "false" || localStorage.login == null || localStorage.login == undefined) {
             window.setTimeout(function () {
                 window.location.href = "login.html";
             }, 4000);
