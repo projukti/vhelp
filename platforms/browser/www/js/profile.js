@@ -34,8 +34,8 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function () {
-        // app.receivedEvent('deviceready');
-        // var element = document.getElementById('deviceProperties');
+        // This For Block Screen Rotation
+        screen.orientation.lock('portrait');
 
         // This Code For Logout
         $('#btnLogout').click(function () {

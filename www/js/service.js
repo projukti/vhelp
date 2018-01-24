@@ -36,6 +36,9 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function () {
 
+        // This For Block Screen Rotation
+        screen.orientation.lock('portrait');
+
         // Get All Subject
         $.ajax({
             type: "post",
