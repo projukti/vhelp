@@ -29,15 +29,13 @@ var app = {
         document.addEventListener('deviceready', this.onDeviceReady, false);
         // document.addEventListener("backbutton", onBackKeyDown, false);
         document.addEventListener("offline", checkConnection, false);
-        screen.orientation.lock('portrait');
-        screen.orientation.lock();
     },
     // deviceready Event Handler
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function () {
-
+        screen.orientation.lock('portrait');
         // Get All Subject
         $.ajax({
             type: "post",
