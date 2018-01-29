@@ -52,7 +52,7 @@ var app = {
                     var platformName = text.platform_name;
 
                     
-                    $('#accordion').append('<div class="row"><div class="col-xs-12 col-md-12"><div class="alert alert-warning"><img src="https://bebongstore.com/vhelp/uploads/platform/' + platformImage + '" width="100%" /></div></div></div>');
+                    $('#plt').append('<div class="row"><div class="col-xs-12 col-md-12"><div class="alert alert-warning"><img src="https://bebongstore.com/vhelp/uploads/platform/' + platformImage + '" width="100%" /></div></div></div>');
                 });
             },
             complete: function () {
