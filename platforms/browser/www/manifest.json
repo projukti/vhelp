@@ -3,7 +3,7 @@
   "display": "standalone",
   "name": "VHELP",
   "short_name": "VHELP",
-  "version": "com.phonegap.helloworld",
+  "version": "com.onlineeducationservice.vhelp",
   "description": "Education Help App",
   "author": "V-Team",
   "icons": [],
