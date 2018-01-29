@@ -48,7 +48,6 @@
         <icon height="58" platform="ios" src="www/res/icon/ios/icon-small@2x.png" width="58" />
         <icon height="87" platform="ios" src="www/res/icon/ios/icon-small@3x.png" width="87" />
     </platform>
-    
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -71,4 +70,5 @@
     <plugin name="cordova-plugin-media-capture" spec="~3.0.1" />
     <plugin name="cordova-plugin-x-toast" spec="~2.6.0" />
     <plugin name="cordova-plugin-screen-orientation" spec="~3.0.1" />
+    <plugin name="cordova-plugin-local-notification" spec="~0.9.0-beta.2" />
 </widget>

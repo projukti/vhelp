@@ -45,6 +45,9 @@
     },
     "cordova-plugin-screen-orientation": {
       "PACKAGE_NAME": "com.phonegap.helloworld"
+    },
+    "cordova-plugin-local-notification": {
+      "PACKAGE_NAME": "com.onlineeducationservice.vhelp"
     }
   },
   "dependent_plugins": {
@@ -59,6 +62,9 @@
     },
     "cordova-plugin-compat": {
       "PACKAGE_NAME": "com.phonegap.helloworld"
+    },
+    "cordova-plugin-badge": {
+      "PACKAGE_NAME": "com.onlineeducationservice.vhelp"
     }
   }
 }
