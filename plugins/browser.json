@@ -49,6 +49,9 @@
     "cordova-plugin-firebase-messaging": {
       "HANDLER_ACTION": "FCM_NOTIFICATION_HANDLER",
       "PACKAGE_NAME": "com.onlineeducationservice.vhelp"
+    },
+    "cordova-plugin-fcm": {
+      "PACKAGE_NAME": "com.onlineeducationservice.vhelp"
     }
   },
   "dependent_plugins": {
