@@ -54,53 +54,7 @@ var app = {
         // This For Block Screen Rotation
         screen.orientation.lock('portrait');
 
-        $('#btnLogin').click(function () {
-            if ($('#txtUsername').val() == "" || $('#txtPassword').val() == "") {
-                $('#txtUsername').css('border-color', 'red');
-                $('#txtPassword').css('border-color', 'red');
-            }
-            else if ($('#txtUsername').val() == "") {
-                $('#txtUsername').css('border-color', 'red');
-            }
-            else if ($('#txtUsername').val() == "") {
-                $('#txtPassword').css('border-color', 'red');
-            }
-            else{
-                var user_name = $('#txtUsername').val();
-                var password = $('#txtPassword').val();
-                var datas = { 'user_name': user_name, 'password': password };
-                $(".se-pre-con").show();
-                $.ajax({
-                    type: "post",
-                    url: "http://bebongstore.com/vhelp/manage_api/login",
-                    data: datas,
-                    dataType: 'json',
-                    beforeSend: function () {
-                        $('#btnLogin').prop('disabled', true);
-                    },
-                    success: function (response) {
-                        if (response.status == 1) {
-                            var name = response.student_arr.first_name + ' ' + response.student_arr.last_name; 
-                            localStorage.setItem('name', name);
-                            localStorage.setItem('uname', response.student_arr.email);
-                            localStorage.login = "true";
-                            localStorage.email = response.student_arr.email;
-                            localStorage.name = name;
-                            window.location.href = "home.html";
-                        }
-                        else {
-                            $('#txtUsername').css('border-color', 'red');
-                            $('#txtPassword').css('border-color', 'red');
-                            $('#txtUsername').val('');
-                            $('#txtPassword').val('');
-                            $('#btnLogin').prop('disabled', false);
-                            $('#login-err').show();
-                            $('#login-err').text('Invalid email or password');
-                        }
-                    }
-                });
-            }
-        });
+        
     },
     // Update DOM on a Received Event
     receivedEvent: function (id) {

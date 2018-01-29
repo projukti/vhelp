@@ -95,7 +95,7 @@ var app = {
                             localStorage.email = da.email;
                             localStorage.name = da.name;
 
-                            window.location.href = "profile.html";
+                            window.location.href = "home.html";
                         }
                         else if (da.status == 2) {
                             navigator.notification.beep(1);

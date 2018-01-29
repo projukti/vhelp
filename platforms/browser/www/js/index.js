@@ -83,7 +83,7 @@ var app = {
                         localStorage.login = "true";
 
                         window.setTimeout(function () {
-                            window.location.href = "profile.html";
+                            window.location.href = "home.html";
                         }, 4000);
                     }
                 }
