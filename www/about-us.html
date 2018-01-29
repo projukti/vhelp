@@ -16,7 +16,6 @@
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/sidebar.js"></script>
-    <script src="js/pulltorefresh.js"></script>
     <style>
         .no-js #loader {
             display: none;
@@ -42,7 +41,7 @@
 </head>
 
 <body style="background-color:#FFFFFF;" id="main">
-    <div class="se-pre-con"></div>
+    <!-- <div class="se-pre-con"></div> -->
     <div style="background-color:#FFCC00; color:#333333; padding:16px 16px 16px 16px; margin-bottom:500px;" class="topperone">
         <div id="mySidenav" class="sidenav">
 
@@ -67,26 +66,9 @@
     </div>
 
     <div class="footer">
-        <!-- <p style="font-size:20px;">
-            <marquee direction="left">
-                Aleks &nbsp;&nbsp;&nbsp;&nbsp; MyMathLab&nbsp;&nbsp;&nbsp;&nbsp; MyStatLab &nbsp;&nbsp;&nbsp;&nbsp; MathXL &nbsp;&nbsp;&nbsp;&nbsp;
-                PearsonLAB &nbsp;&nbsp;&nbsp;&nbsp; WileyPlus &nbsp;&nbsp;&nbsp;&nbsp; WebAssign &nbsp;&nbsp;&nbsp;&nbsp;
-                CengageNow &nbsp;&nbsp;&nbsp;&nbsp; MyaccountingLab &nbsp;&nbsp;&nbsp;&nbsp; Connect &nbsp;&nbsp;&nbsp;&nbsp;
-                MyeconLAB &nbsp;&nbsp;&nbsp;&nbsp; Apex Learning &nbsp;&nbsp;&nbsp;&nbsp; Aplia &nbsp;&nbsp;&nbsp;&nbsp;
-                SPSS &nbsp;&nbsp;&nbsp;&nbsp; BlackBoard
-            </marquee>
-        </p> -->
+
     </div>
     <script type="text/javascript" src="cordova.js"></script>
-    <script src="js/jquery.smoothState.min.js"></script>
-    <script type="text/javascript">
-        app.initialize();
-        /* global PullToRefresh */
-        PullToRefresh.init({
-            mainElement: '#main',
-            onRefresh: function () { window.location.href = "about-us.html"; }
-        });
-    </script>
 </body>
 
 
