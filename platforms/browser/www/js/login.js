@@ -115,14 +115,7 @@ function checkConnection() {
     states[Connection.CELL] = 'Cell generic connection';
     states[Connection.NONE] = 'No network connection';
 
-    // alert('Connection type: ' + states[networkState]);
-    navigator.notification.alert(
-        'No Internet Connection.',
-        alertDismissed,
-        'Alert!',
-        'OK'
-    );
-    // navigator.app.exitApp();
+    window.plugins.toast.showLongBottom('No internet connection detected');
 }
 
 

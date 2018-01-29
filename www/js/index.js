@@ -105,20 +105,8 @@ function checkConnection() {
     states[Connection.CELL_4G] = 'Cell 4G connection';
     states[Connection.CELL] = 'Cell generic connection';
     states[Connection.NONE] = 'No network connection';
-
-    //alert('Connection type: ' + states[networkState]);
-    // navigator.notification.alert(
-    //     'No Internet Connection.',
-    //     alertDismissed,
-    //     'Alert!',
-    //     'OK'
-    // );
+    
+    window.plugins.toast.showLongBottom('No internet connection detected');
     navigator.app.exitApp();
-    // if (navigator.app) {
-    //     navigator.app.exitApp();
-    // } else if (navigator.device) {
-    //     navigator.device.exitApp();
-    // } else {
-    //     window.close();
-    // }
+    
 }
