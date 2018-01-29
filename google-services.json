@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "209656519465",
+    "firebase_url": "https://v-help.firebaseio.com",
+    "project_id": "v-help",
+    "storage_bucket": "v-help.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:209656519465:android:ee87b6f77b994fb2",
+        "android_client_info": {
+          "package_name": "com.onlineeducationservice.vhelp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "209656519465-nl4t0n0thql26gn952ub1g63iaonksje.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDt_PBBN_Ztf9LPo-fial3DzzjUfhOv7NE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

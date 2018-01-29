@@ -35,6 +35,21 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
 
+        // This Function ForPUsh notification
+        //FCMPlugin.onNotification( onNotificationCallback(data), successCallback(msg), errorCallback(err) )
+        //Here you define your application behaviour based on the notification data.
+        FCMPlugin.onNotification(function (data) {
+            if (data.wasTapped) {
+                //Notification was received on device tray and tapped by the user.
+                alert(JSON.stringify(data));
+                alert('app off');
+            } else {
+                //Notification was received in foreground. Maybe the user needs to be notified.
+                alert(JSON.stringify(data));
+                alert('app on');
+            }
+        });
+
         // This For Block Screen Rotation
         screen.orientation.lock('portrait');
 

@@ -60,23 +60,15 @@
 
 
   <div onclick="closeNav()">
-    <div style="padding-top:40px">
-      <div class="well">
-
-
-        <div class="alert alert-info">
-
-          <div>
-            <div class="panel-group" id="accordion">
-
-             
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div style="padding:120px 15px 15px 15px;">
+            <!--<div class="row">
+				<div class="col-xs-12 col-md-12">
+					<div class="alert alert-warning"><img src="platform/mymathlab.png" width="100%" /></div>					
+				</div>
+			</div>-->    
+</div>
+</div>
+  
   <div class="footer">
     <p style="font-size:20px;">
       <marquee direction="left">
@@ -89,13 +81,13 @@
   </div>
   <script type="text/javascript" src="cordova.js"></script>
   <script src="js/jquery.smoothState.min.js"></script>
-  <script type="text/javascript" src="js/subject.js"></script>
+  <script type="text/javascript" src="js/platform.js"></script>
   <script type="text/javascript">
     app.initialize();
     /* global PullToRefresh */
       PullToRefresh.init({
         mainElement: '#main',
-        onRefresh: function () { window.location.href="subject.html"; }
+        onRefresh: function () { window.location.href="platform.html"; }
       });
   </script>
 </body>
