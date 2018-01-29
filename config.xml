@@ -70,4 +70,7 @@
     <plugin name="cordova-plugin-media-capture" spec="~3.0.1" />
     <plugin name="cordova-plugin-x-toast" spec="~2.6.0" />
     <plugin name="cordova-plugin-screen-orientation" spec="~3.0.1" />
+    <plugin name="cordova-plugin-firebase-messaging" spec="https://github.com/blakgeek/cordova-plugin-firebase-messaging">
+        <variable name="HANDLER_ACTION" value="FCM_NOTIFICATION_HANDLER" />
+    </plugin>
 </widget>

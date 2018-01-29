@@ -509,6 +509,23 @@ module.exports = [
         "clobbers": [
             "cordova.plugins.screenorientation"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-firebase-core/www/firebaseCorePlugin.js",
+        "id": "cordova-plugin-firebase-core.FirebaseCorePlugin",
+        "pluginId": "cordova-plugin-firebase-core",
+        "clobbers": [
+            "FirebaseCore",
+            "FirebaseCorePlugin"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-firebase-messaging/www/FirebaseMessagingPlugin.js",
+        "id": "cordova-plugin-firebase-messaging.FirebaseMessagingPlugin",
+        "pluginId": "cordova-plugin-firebase-messaging",
+        "clobbers": [
+            "FirebaseMessagingPlugin"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -530,7 +547,10 @@ module.exports.metadata =
     "cordova-plugin-file": "6.0.1",
     "cordova-plugin-media-capture": "3.0.1",
     "cordova-plugin-x-toast": "2.6.0",
-    "cordova-plugin-screen-orientation": "3.0.1"
+    "cordova-plugin-screen-orientation": "3.0.1",
+    "cordova-plugin-cocoapod-support": "1.3.0",
+    "cordova-plugin-firebase-core": "1.1.3",
+    "cordova-plugin-firebase-messaging": "1.5.1"
 }
 // BOTTOM OF METADATA
 });

@@ -1,0 +1,69 @@
+{
+  "_from": "git+https://github.com/blakgeek/cordova-plugin-firebase-messaging.git",
+  "_id": "cordova-plugin-fireabase-messaging@1.5.1",
+  "_inBundle": false,
+  "_location": "/cordova-plugin-fireabase-messaging",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "https://github.com/blakgeek/cordova-plugin-firebase-messaging",
+    "rawSpec": "https://github.com/blakgeek/cordova-plugin-firebase-messaging",
+    "saveSpec": "git+https://github.com/blakgeek/cordova-plugin-firebase-messaging.git",
+    "fetchSpec": "https://github.com/blakgeek/cordova-plugin-firebase-messaging.git",
+    "gitCommittish": null
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/blakgeek/cordova-plugin-firebase-messaging.git#2585aa14afaaad9a1e318a86dd8dcfeaec0f4302",
+  "_spec": "https://github.com/blakgeek/cordova-plugin-firebase-messaging",
+  "_where": "C:\\wamp64\\www\\android\\vhelp",
+  "author": {
+    "name": "Carlos \"blakgeek\" Lawton"
+  },
+  "bugs": {
+    "url": "https://github.com/blakgeek/cordova-plugin-firebase-messaging/issues"
+  },
+  "bundleDependencies": false,
+  "contributes": [
+    {
+      "name": "Felipe Echanique Torres"
+    }
+  ],
+  "cordova_name": "Cordova Firebase Messaging Plugin",
+  "deprecated": false,
+  "description": "Adds support for Firebase Cloud Messaging to your Cordova app",
+  "devDependencies": {
+    "libxmljs": "^0.18.4"
+  },
+  "homepage": "https://github.com/blakgeek/cordova-plugin-firebase-messaging#readme",
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios",
+    "notifications",
+    "cloud",
+    "messaging",
+    "push",
+    "firebase",
+    "fcm",
+    "ios",
+    "android",
+    "cordova"
+  ],
+  "license": "MIT",
+  "name": "cordova-plugin-fireabase-messaging",
+  "platforms": [
+    "android",
+    "ios"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blakgeek/cordova-plugin-firebase-messaging.git"
+  },
+  "scripts": {
+    "postversion": "node scripts/sync-plugin-version.js; git add plugin.xml; git commit plugin.xml -m \"v${npm_package_version}\""
+  },
+  "version": "1.5.1"
+}
