@@ -16,6 +16,7 @@
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/sidebar.js"></script>
+    <script src="js/pulltorefresh.js"></script>
     <style>
         .no-js #loader {
             display: none;
@@ -69,9 +70,15 @@
 
     </div>
     <script type="text/javascript" src="cordova.js"></script>
+    <script src="js/jquery.smoothState.min.js"></script>
     <script type="text/javascript" src="js/notification.js"></script>
     <script type="text/javascript">
         app.initialize();
+        /* global PullToRefresh */
+         PullToRefresh.init({
+                mainElement: '#main',
+                onRefresh: function () { window.location.href = "subject.html"; }
+            });
     </script>
 </body>
 
