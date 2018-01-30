@@ -29,7 +29,7 @@ var app = {
         document.addEventListener('deviceready', this.onDeviceReady, false);
         document.addEventListener("offline", checkConnection, false);
     },
-    
+
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
@@ -38,32 +38,38 @@ var app = {
         screen.orientation.lock('portrait');
 
         // This Section For Get Dynamic Notification
+        var datas = { 'notification_id': localStorage.getItem('notification_id')};
         $.ajax({
             type: "post",
-            url: "https://bebongstore.com/vhelp/manage_api/notification_list",
+            url: "https://bebongstore.com/vhelp/manage_api/notification_detail",
+            data: datas,
             dataType: "json",
             beforeSend: function () {
                 $(".se-pre-con").show();
             },
             success: function (response) {
-                $.each(response.notifications, function (val, text) { 
-
-                    var notification_id=text.notification_id;
+                $.each(response.notification, function (val, text) { 
+                    var notification_id = text.notification_id;
                     var notification_title = text.title;
-                    var notification_date=text.noti_date;
+                    var notification_date = text.noti_date;
 
-                    var formattedDate = new Date(notification_date); 
-                    var d = formattedDate.getDate(); 
-                    var m = formattedDate.getMonth(); 
-                    m += 1; 
+                    var formattedDate = new Date(notification_date);
+                    var d = formattedDate.getDate();
+                    var m = formattedDate.getMonth();
+                    m += 1;
                     // JavaScript months are 0-11 
-                    var y = formattedDate.getFullYear(); 
-                    var noti_date=d + "-" + m + "-" + y;
+                    var y = formattedDate.getFullYear();
+                    var noti_date = d + "-" + m + "-" + y;
 
-                    $('#content-section').append('<div class="alert alert-warning notification" onclick="notification_click(' + notification_id + ')"> <strong>' + notification_title + '</strong> <br><p class="text-danger" align="right">' + noti_date +'</p></div>');
-
-                    $(".se-pre-con").hide();
+                    var notification_content = text.content;
+                    var notification_image = text.notification_image;
+                    var notification_link = text.notification_link;
+                    
+                    $('#content-section').append('<div class="well clearfix"><div class="row"><div class="col-xs-12"><div class="row"> <h4 class="col-xs-12"><strong style="font-size:14px">' + notification_title + '</strong></h4></div>' + notification_content + '<br><img src="https://bebongstore.com/vhelp/uploads/notification/' + notification_image + '" alt="" class="img-responsive"><br><strong>'+notification_link+'</strong></div></div></div>');
                 });
+            },
+            complete: function () {
+                $(".se-pre-con").hide();
             }
         });
     },
@@ -86,10 +92,6 @@ function checkConnection() {
     window.plugins.toast.showLongBottom('No internet connection detected');
 }
 
-function notification_click(id){
-    localStorage.setItem('notification_id', id);
-    location.href="notification_details.html";
-}
 
 
 
