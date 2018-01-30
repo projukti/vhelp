@@ -18,8 +18,31 @@
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script src="js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <style>
+        .no-js #loader {
+            display: none;
+        }
+    
+        .js #loader {
+            display: block;
+            position: absolute;
+            left: 100px;
+            top: 0;
+        }
+    
+        .se-pre-con {
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background: url(img/Interwind.gif) center no-repeat #fff;
+        }
+    </style>
 </head>
 <body style="background-color:#FFCC00;">
+    <div class="se-pre-con"></div>
     <div class="container">
         <div class="row">
             <div class="topper">
@@ -35,24 +58,10 @@
                             
                             <div class="form-group">
                                 <select class="form-control" id="ddlEnq3">
-                                    <option value="Not Sure About The Platform">Not Sure About The Platform</option>
-                                    <option value="Pearson Lab">Pearson Lab</option>
-                                    <option value="My Math Lab">My Math Lab</option>
-                                    <option value="My Stat Lab">My Stat Lab</option>
-                                    <option value="My Accounting Lab">My Accounting Lab</option>
-                                    <option value="My Econ Lab">My Econ Lab</option>
-                                    <option value="Math XL">Math XL</option>
-                                    <option value="Wiley Plus">Wiley Plus</option>
-                                    <option value="Web Assign">Web Assign</option>
-                                    <option value="Connect">Connect</option>
-                                    <option value="Cengage Now">Cengage Now</option>
-                                    <option value="Aleks">Aleks</option>
-                                    <option value="Apex Learning">Apex Learning</option>
-                                    <option value="Aplia">Aplia</option>
-                                    <option value="SPSS">SPSS</option>
-                                    <option value="Black Board">Black Board</option>
                                 </select>
-
+                            </div>
+                            <div class="form-group">
+                                <textarea id="txtDescription" class="form-control" placeholder="Message"></textarea>
                             </div>
                             
                             <button class="btn btn-lg btn-primary btn-block" id="btnEnq3" type="button">Submit</button>

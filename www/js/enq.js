@@ -37,46 +37,119 @@ var app = {
         // This For Block Screen Rotation
         screen.orientation.lock('portrait');
 
+        // This Section For Get All subject Dynamically
+        $.ajax({
+            type: "post",
+            url: "https://bebongstore.com/vhelp/manage_api/get_subject",
+            data: "data",
+            dataType: "json",
+            beforeSend: function () {
+                $(".se-pre-con").show();
+            },
+            success: function (response) {
+                $.each(response.subjects, function (val, text) {
+                    var subjectName = text.subject_name;
+                    $('#ddlEnq1').append($('<option></option>').val(subjectName).html(subjectName));
+                });
+            },
+            complete: function () {
+                $(".se-pre-con").hide();
+            }
+        });
+
+        // This Section For Get All Services Dynamically
+        $.ajax({
+            type: "post",
+            url: "https://bebongstore.com/vhelp/manage_api/get_service",
+            data: "data",
+            dataType: "json",
+            beforeSend: function () {
+                $(".se-pre-con").show();
+            },
+            success: function (response) {
+                $.each(response.services, function (val, text) {
+                    var serviceName = text.service_name;
+                    $('#ddlEnq2').append($('<option></option>').val(serviceName).html(serviceName));
+                });
+            },
+            complete: function () {
+                $(".se-pre-con").hide();
+            }
+        });
+
+        // This Section For Get All Platform Dynamically
+        $.ajax({
+            type: "post",
+            url: "https://bebongstore.com/vhelp/manage_api/get_platform",
+            data: "data",
+            dataType: "json",
+            beforeSend: function () {
+                $(".se-pre-con").show();
+            },
+            success: function (response) {
+                $.each(response.platforms, function (val, text) {
+                    var platformName = text.platform_name;
+                    $('#ddlEnq3').append($('<option></option>').val(platformName).html(platformName));
+                });
+            },
+            complete: function () {
+                $(".se-pre-con").hide();
+            }
+        });
+
+
         // Enquery Page 1 Button Click
-        $('#btnEnq1').click(function () { 
-            var datas = { 'subject': $('#ddlEnq1').val(), 'email': localStorage.getItem('uname')};
+        $('#btnEnq1').click(function () {
+            var datas = { 'subject': $('#ddlEnq1').val(), 'email': localStorage.getItem('uname') };
             $.ajax({
                 type: "post",
-                url: "https://bebongstore.com/vhelp/manage_api/",
+                url: "https://bebongstore.com/vhelp/manage_api/enquiry1",
                 data: datas,
                 dataType: "JSON",
                 success: function (response) {
-                    
+                    if (response.status==1){
+                        window.location.href = "enq2.html";
+                    }
                 }
             });
-        }); 
+        });
 
         // Enquery Page 2 Button Click
         $('#btnEnq2').click(function () {
-            var datas = { 'avail': $('#ddlEnq2').val(), 'email': localStorage.getItem('uname') };
+            var datas = { 'service': $('#ddlEnq2').val(), 'email': localStorage.getItem('uname') };
             $.ajax({
                 type: "post",
-                url: "https://bebongstore.com/vhelp/manage_api/",
+                url: "https://bebongstore.com/vhelp/manage_api/enquiry2",
                 data: datas,
                 dataType: "JSON",
                 success: function (response) {
-
+                    if (response.status == 1) {
+                        window.location.href = "enq3.html";
+                    }
                 }
             });
         });
 
         // Enquery Page 3 Button Click
         $('#btnEnq3').click(function () {
-            var datas = { 'platform': $('#ddlEnq3').val(), 'email': localStorage.getItem('uname') };
-            $.ajax({
-                type: "post",
-                url: "https://bebongstore.com/vhelp/manage_api/",
-                data: datas,
-                dataType: "JSON",
-                success: function (response) {
-
-                }
-            });
+            if ($('#txtDescription').val() != "" && $('#ddlEnq3').val()!="") {
+                var datas = { 'platform': $('#ddlEnq3').val(), 'email': localStorage.getItem('uname'), 'description': $('#txtDescription').val() };
+                $.ajax({
+                    type: "post",
+                    url: "https://bebongstore.com/vhelp/manage_api/enquiry3",
+                    data: datas,
+                    dataType: "JSON",
+                    success: function (response) {
+                        if (response.status==1){
+                            window.plugins.toast.showLongBottom('Your enquiry has been submitted');
+                            window.location.href = "home.html";
+                        }
+                    }
+                });
+            }
+            else{
+                $('#txtDescription').css('border-color', 'red');
+            }
         });
     },
     // Update DOM on a Received Event
