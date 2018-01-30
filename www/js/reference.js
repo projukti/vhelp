@@ -39,7 +39,7 @@ var app = {
         // Get All Subject
         $.ajax({
             type: "post",
-            url: "https://bebongstore.com/vhelp/manage_api/get_platform",
+            url: "https://bebongstore.com/vhelp/manage_api/get_reference",
             data: "data",
             dataType: "json",
             beforeSend: function () {
@@ -47,7 +47,7 @@ var app = {
             },
             success: function (response) {
                 var count = 1;
-                $.each(response.platforms, function (val, text) {
+                $.each(response.references, function (val, text) {
                     var refImage = text.ref_image;
                     var refrmName = text.ref_name;
 

@@ -53,7 +53,7 @@ var app = {
 
         // Enquery Page 2 Button Click
         $('#btnEnq2').click(function () {
-            var datas = { 'subject': $('#ddlEnq2').val(), 'email': localStorage.getItem('uname') };
+            var datas = { 'avail': $('#ddlEnq2').val(), 'email': localStorage.getItem('uname') };
             $.ajax({
                 type: "post",
                 url: "https://bebongstore.com/vhelp/manage_api/",
@@ -67,7 +67,7 @@ var app = {
 
         // Enquery Page 3 Button Click
         $('#btnEnq3').click(function () {
-            var datas = { 'subject': $('#ddlEnq3').val(), 'email': localStorage.getItem('uname') };
+            var datas = { 'platform': $('#ddlEnq3').val(), 'email': localStorage.getItem('uname') };
             $.ajax({
                 type: "post",
                 url: "https://bebongstore.com/vhelp/manage_api/",
