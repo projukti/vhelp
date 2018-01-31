@@ -35,6 +35,10 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
 
+
+
+        
+        FCMPlugin.subscribeToTopic('note');
         // This Function ForPUsh notification
         //FCMPlugin.onNotification( onNotificationCallback(data), successCallback(msg), errorCallback(err) )
         //Here you define your application behaviour based on the notification data.
