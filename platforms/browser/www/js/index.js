@@ -44,12 +44,12 @@ var app = {
                 //Notification was received on device tray and tapped by the user.
                 // alert(JSON.stringify(data));
                 // alert('app off');
-                var datas =  JSON.stringify(data);
-                alert(datas.noti_id);
+                // var datas =  JSON.stringify(data);
+                alert(data.noti_id);
             } else {
                 //Notification was received in foreground. Maybe the user needs to be notified.
-                var datas = JSON.stringify(data);
-                alert(datas.noti_id);
+                // var datas = JSON.stringify(data);
+                alert(data.noti_id);
             }
         });
 
