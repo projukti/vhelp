@@ -5,7 +5,7 @@
   "short_name": "VHELP",
   "version": "com.onlineeducationservice.vhelp",
   "description": "Education Help App",
-  "author": "V-Team",
+  "author": "VTeam",
   "icons": [],
   "orientation": "portrait",
   "start_url": "index.html",
