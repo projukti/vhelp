@@ -35,26 +35,7 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         var device_uuid = {'device_uuid':device.uuid} ;
-
-        // Send UUID to Server
-        // $.ajax({
-        //     type: "post",
-        //     url: "https://bebongstore.com/vhelp/manage_api/get_token",
-        //     data: device_uuid,
-        //     dataType: "json",
-        //     success: function (response) {
-                
-        //     }
-        // });
-
-        
-
-        // FCMPlugin.subscribeToTopic('notification_all');
-        // This Function ForPUsh notification
-        //FCMPlugin.onNotification( onNotificationCallback(data), successCallback(msg), errorCallback(err) )
-        //Here you define your application behaviour based on the notification data.
         FCMPlugin.onNotification(function (data) {
-
             if (data.wasTapped) {
                 //Notification was received on device tray and tapped by the user.
                 // alert(JSON.stringify(data));
@@ -67,7 +48,7 @@ var app = {
                 alert(data.noti_id);
             }
         });
-        FCMPlugin.onTokenRefresh(function (token) {
+        FCMPlugin.getToken(function (token) {
             alert(token);
             console.log(token);
         });
