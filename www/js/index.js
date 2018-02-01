@@ -89,15 +89,17 @@ var app = {
             if (data.wasTapped) {
                 //Notification was received on device tray and tapped by the user.
                  //alert(JSON.stringify(data));
-                 alert('app off');
-                 //var datas =  JSON.stringify(data);
-                 alert(data.noti_id);
+                 
+                //alert(data.noti_id);
                // window.location.href = "notification1.html";
+			   	localStorage.setItem('notification_id', data.noti_id);
+				location.href = "notification_details.html";
             } else {
                 //Notification was received in foreground. Maybe the user needs to be notified.
                 // var datas = JSON.stringify(data);
-                 alert('app on');
-                 alert(data.noti_id);
+                 localStorage.setItem('notification_id', data.noti_id);
+				location.href = "notification_details.html";
+               //  alert(data.noti_id);
                 //window.location.href = "notification1.html";
             }
         });
