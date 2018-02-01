@@ -50,7 +50,7 @@ var app = {
                     console.log(response.status);
                     if (localStorage.login == "false" || localStorage.login == null || localStorage.login == undefined) {
                         // window.setTimeout(function () {
-                            window.location.href = "login.html";
+                            //window.location.href = "login.html";
                         // }, 4000);
                     }
                     else {
