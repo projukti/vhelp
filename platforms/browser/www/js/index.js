@@ -98,6 +98,7 @@ var app = {
                 // var datas = JSON.stringify(data);
                 // alert('app on');
                 // alert(data.noti_id);
+				 alert(JSON.stringify(data));
                 window.location.href = "notification1.html";
             }
         });
