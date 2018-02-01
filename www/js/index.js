@@ -38,7 +38,6 @@ var app = {
         screen.orientation.lock('portrait');
 
         FCMPlugin.getToken(function (token) {
-            alert(token);
             var datas = { 'device_uuid': device.uuid, 'token': token };
             $.ajax({
                 type: "post",
@@ -93,6 +92,7 @@ var app = {
                 // alert('app off');
                 // var datas =  JSON.stringify(data);
                 alert(data.noti_id);
+                // window.location.href = "notification1.html";
             } else {
                 //Notification was received in foreground. Maybe the user needs to be notified.
                 // var datas = JSON.stringify(data);
