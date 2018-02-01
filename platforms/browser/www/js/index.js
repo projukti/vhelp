@@ -82,12 +82,6 @@ var app = {
                             }
                         });
                     }
-                },
-                error: function (error) {
-                    alert(error);
-                    window.plugins.toast.showLongBottom('Sorry! Check your internet connection', function () {
-                        navigator.app.exitApp();
-                    });
                 }
             });
         });
