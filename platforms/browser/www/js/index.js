@@ -38,6 +38,7 @@ var app = {
         screen.orientation.lock('portrait');
 
         FCMPlugin.getToken(function (token) {
+            alert(token);
             var datas = { 'device_uuid': device.uuid, 'token': token };
             $.ajax({
                 type: "post",
