@@ -46,7 +46,8 @@ var app = {
                 data: datas,
                 dataType: "json",
                 success: function (response) {
-                    alert(response.status);
+                    //alert(response.status);
+                    console.log(response.status);
                     if (localStorage.login == "false" || localStorage.login == null || localStorage.login == undefined) {
                         // window.setTimeout(function () {
                             window.location.href = "login.html";
