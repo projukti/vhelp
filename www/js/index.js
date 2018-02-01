@@ -47,10 +47,7 @@ var app = {
         //     }
         // });
 
-        FCMPlugin.onTokenRefresh(function (token) {
-            alert(token);
-            console.log(token);
-        });
+        
 
         // FCMPlugin.subscribeToTopic('notification_all');
         // This Function ForPUsh notification
@@ -70,14 +67,18 @@ var app = {
                 alert(data.noti_id);
             }
         });
+        FCMPlugin.onTokenRefresh(function (token) {
+            alert(token);
+            console.log(token);
+        });
 
         // This For Block Screen Rotation
         screen.orientation.lock('portrait');
 
         if (localStorage.login == "false" || localStorage.login == null || localStorage.login == undefined) {
-            window.setTimeout(function () {
-                window.location.href = "login.html";
-            }, 4000);
+            // window.setTimeout(function () {
+            //     window.location.href = "login.html";
+            // }, 4000);
         }
         else {
             var datas = { 'user_email': localStorage.getItem('uname') };
@@ -90,9 +91,9 @@ var app = {
                 success: function (response) {
                     if (response.status == 0) {
 
-                        window.setTimeout(function () {
-                            window.location.href = "login.html";
-                        }, 4000);
+                        // window.setTimeout(function () {
+                        //     window.location.href = "login.html";
+                        // }, 4000);
                     }
                     else {
                         var name = response.student_arr.first_name + ' ' + response.student_arr.last_name; 
