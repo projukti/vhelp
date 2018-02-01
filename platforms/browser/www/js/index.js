@@ -45,12 +45,10 @@ var app = {
                 url: "https://bebongstore.com/vhelp/manage_api/get_token",
                 data: datas,
                 dataType: "json",
-                success: function (response) {
-                    //alert(response.status);
-                    console.log(response.status);
+                success: function (response) {                    
                     if (localStorage.login == "false" || localStorage.login == null || localStorage.login == undefined) {
                         // window.setTimeout(function () {
-                            //window.location.href = "login.html";
+                        window.location.href = "login.html";
                         // }, 4000);
                     }
                     else {
