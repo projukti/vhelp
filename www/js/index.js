@@ -38,6 +38,7 @@ var app = {
         screen.orientation.lock('portrait');
 		
 		  FCMPlugin.onNotification(function (data) {
+											 console.log(data);
             if (data.wasTapped) {
                 //Notification was received on device tray and tapped by the user.
                 // alert(JSON.stringify(data));
