@@ -88,7 +88,7 @@ var app = {
         FCMPlugin.onNotification(function (data) {
             if (data.wasTapped) {
                 //Notification was received on device tray and tapped by the user.
-                // alert(JSON.stringify(data));
+                 alert(JSON.stringify(data));
                 // alert('app off');
                 // var datas =  JSON.stringify(data);
                 // alert(data.noti_id);
