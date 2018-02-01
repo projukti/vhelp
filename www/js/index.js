@@ -64,7 +64,7 @@ var app = {
                 success: function (response) {                    
                     if (localStorage.login == "false" || localStorage.login == null || localStorage.login == undefined) {
                         // window.setTimeout(function () {
-                        window.location.href = "login.html";
+                        //window.location.href = "login.html";
                         // }, 4000);
                     }
                     else {
@@ -79,7 +79,7 @@ var app = {
                                 if (response.status == 0) {
 
                                     // window.setTimeout(function () {
-                                        window.location.href = "login.html";
+                                      //  window.location.href = "login.html";
                                     // }, 4000);
                                 }
                                 else {
@@ -92,7 +92,7 @@ var app = {
                                     localStorage.login = "true";
 
                                     // window.setTimeout(function () {
-                                        window.location.href = "home.html";
+                                       // window.location.href = "home.html";
                                     // }, 4000);
                                 }
                             }
