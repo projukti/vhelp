@@ -86,21 +86,20 @@ var app = {
         });
 
         FCMPlugin.onNotification(function (data) {
-										   alert();
-           // if (data.wasTapped) {
+            if (data.wasTapped) {
                 //Notification was received on device tray and tapped by the user.
-                // alert(JSON.stringify(data));
-                // alert('app off');
-                // var datas =  JSON.stringify(data);
-                // alert(data.noti_id);
+                 //alert(JSON.stringify(data));
+                 alert('app off');
+                 //var datas =  JSON.stringify(data);
+                 alert(data.noti_id);
                // window.location.href = "notification1.html";
-           // } else {
+            } else {
                 //Notification was received in foreground. Maybe the user needs to be notified.
                 // var datas = JSON.stringify(data);
-                // alert('app on');
-                // alert(data.noti_id);
+                 alert('app on');
+                 alert(data.noti_id);
                 //window.location.href = "notification1.html";
-           // }
+            }
         });
     },
 };
