@@ -49,6 +49,7 @@ var app = {
 
         FCMPlugin.onTokenRefresh(function (token) {
             alert(token);
+            console.log(token);
         });
 
         // FCMPlugin.subscribeToTopic('notification_all');
@@ -102,9 +103,9 @@ var app = {
                         localStorage.name = name;
                         localStorage.login = "true";
 
-                        window.setTimeout(function () {
-                            window.location.href = "home.html";
-                        }, 4000);
+                        // window.setTimeout(function () {
+                        //     window.location.href = "home.html";
+                        // }, 4000);
                     }
                 }
             });
