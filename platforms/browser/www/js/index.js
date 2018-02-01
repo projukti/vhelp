@@ -36,25 +36,7 @@ var app = {
     onDeviceReady: function () {
         // This For Block Screen Rotation
         screen.orientation.lock('portrait');
-		
-		  FCMPlugin.onNotification(function (data) {
-			alert(data);
-            if (data.wasTapped) {
-                //Notification was received on device tray and tapped by the user.
-                // alert(JSON.stringify(data));
-                // alert('app off');
-                // var datas =  JSON.stringify(data);
-                // alert(data.noti_id);
-                window.location.href = "notification1.html";
-            } else {
-                //Notification was received in foreground. Maybe the user needs to be notified.
-                // var datas = JSON.stringify(data);
-                // alert('app on');
-                // alert(data.noti_id);
-                window.location.href = "notification1.html";
-            }
-        });
-		  
+
         FCMPlugin.getToken(function (token) {
             var datas = { 'device_uuid': device.uuid, 'token': token };
             $.ajax({
@@ -65,7 +47,7 @@ var app = {
                 success: function (response) {                    
                     if (localStorage.login == "false" || localStorage.login == null || localStorage.login == undefined) {
                         // window.setTimeout(function () {
-                        //window.location.href = "login.html";
+                        window.location.href = "login.html";
                         // }, 4000);
                     }
                     else {
@@ -80,7 +62,7 @@ var app = {
                                 if (response.status == 0) {
 
                                     // window.setTimeout(function () {
-                                      //  window.location.href = "login.html";
+                                        window.location.href = "login.html";
                                     // }, 4000);
                                 }
                                 else {
@@ -93,7 +75,7 @@ var app = {
                                     localStorage.login = "true";
 
                                     // window.setTimeout(function () {
-                                       // window.location.href = "home.html";
+                                        window.location.href = "home.html";
                                     // }, 4000);
                                 }
                             }
@@ -103,7 +85,23 @@ var app = {
             });
         });
 
-      
+        FCMPlugin.onNotification(function (data) {
+										   alert();
+           // if (data.wasTapped) {
+                //Notification was received on device tray and tapped by the user.
+                // alert(JSON.stringify(data));
+                // alert('app off');
+                // var datas =  JSON.stringify(data);
+                // alert(data.noti_id);
+               // window.location.href = "notification1.html";
+           // } else {
+                //Notification was received in foreground. Maybe the user needs to be notified.
+                // var datas = JSON.stringify(data);
+                // alert('app on');
+                // alert(data.noti_id);
+                //window.location.href = "notification1.html";
+           // }
+        });
     },
 };
 
