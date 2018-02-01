@@ -18,14 +18,14 @@
  */
 var app = {
     // Application Constructor
-    initialize: function() {
+    initialize: function () {
         this.bindEvents();
     },
     // Bind Event Listeners
     //
     // Bind any events that are required on startup. Common events are:
     // 'load', 'deviceready', 'offline', and 'online'.
-    bindEvents: function() {
+    bindEvents: function () {
         document.addEventListener('deviceready', this.onDeviceReady, false);
         document.addEventListener("offline", checkConnection, false);
     },
@@ -33,8 +33,63 @@ var app = {
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
-    onDeviceReady: function() {
-        var device_uuid = {'device_uuid':device.uuid} ;
+    onDeviceReady: function () {
+        // This For Block Screen Rotation
+        screen.orientation.lock('portrait');
+
+        FCMPlugin.getToken(function (token) {
+            var datas = { 'device_uuid': device.uuid, 'token': token };
+            $.ajax({
+                type: "post",
+                url: "https://bebongstore.com/vhelp/manage_api/get_token",
+                data: datas,
+                dataType: "json",
+                success: function (response) {
+                    if (localStorage.login == "false" || localStorage.login == null || localStorage.login == undefined) {
+                        // window.setTimeout(function () {
+                            window.location.href = "login.html";
+                        // }, 4000);
+                    }
+                    else {
+                        var datas = { 'user_email': localStorage.getItem('uname') };
+                        var urls = "https://bebongstore.com/vhelp/manage_api/splash_screen_check";
+                        $.ajax({
+                            type: "post",
+                            url: urls,
+                            data: datas,
+                            dataType: "JSON",
+                            success: function (response) {
+                                if (response.status == 0) {
+
+                                    // window.setTimeout(function () {
+                                        window.location.href = "login.html";
+                                    // }, 4000);
+                                }
+                                else {
+                                    var name = response.student_arr.first_name + ' ' + response.student_arr.last_name;
+                                    localStorage.setItem('name', name);
+                                    localStorage.setItem('uname', response.student_arr.email);
+
+                                    localStorage.email = response.student_arr.email;
+                                    localStorage.name = name;
+                                    localStorage.login = "true";
+
+                                    // window.setTimeout(function () {
+                                        window.location.href = "home.html";
+                                    // }, 4000);
+                                }
+                            }
+                        });
+                    }
+                },
+                error: function () {
+                    window.plugins.toast.showLongBottom('Sorry! Check your internet connection', function () {
+                        navigator.app.exitApp();
+                    });
+                }
+            });
+        });
+
         FCMPlugin.onNotification(function (data) {
             if (data.wasTapped) {
                 //Notification was received on device tray and tapped by the user.
@@ -48,56 +103,12 @@ var app = {
                 alert(data.noti_id);
             }
         });
-        FCMPlugin.getToken(function (token) {
-            alert(token);
-            console.log(token);
-        });
-
-        // This For Block Screen Rotation
-        screen.orientation.lock('portrait');
-
-        if (localStorage.login == "false" || localStorage.login == null || localStorage.login == undefined) {
-            // window.setTimeout(function () {
-            //     window.location.href = "login.html";
-            // }, 4000);
-        }
-        else {
-            var datas = { 'user_email': localStorage.getItem('uname') };
-            var urls = "https://bebongstore.com/vhelp/manage_api/splash_screen_check";
-            $.ajax({
-                type: "post",
-                url: urls,
-                data: datas,
-                dataType: "JSON",
-                success: function (response) {
-                    if (response.status == 0) {
-
-                        // window.setTimeout(function () {
-                        //     window.location.href = "login.html";
-                        // }, 4000);
-                    }
-                    else {
-                        var name = response.student_arr.first_name + ' ' + response.student_arr.last_name; 
-                        localStorage.setItem('name', name);
-                        localStorage.setItem('uname', response.student_arr.email);
-
-                        localStorage.email = response.student_arr.email;
-                        localStorage.name = name;
-                        localStorage.login = "true";
-
-                        // window.setTimeout(function () {
-                        //     window.location.href = "home.html";
-                        // }, 4000);
-                    }
-                }
-            });
-        }
-    },    
+    },
 };
 
 // This Function For Check Internet Connection
 function checkConnection() {
-    window.plugins.toast.showLongBottom('No internet connection detected', function(){
+    window.plugins.toast.showLongBottom('No internet connection detected', function () {
         navigator.app.exitApp();
     });
 }
