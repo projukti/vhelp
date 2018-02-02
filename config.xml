@@ -58,7 +58,6 @@
     <allow-intent href="geo:*" />
     <platform name="android">
         <allow-intent href="market:*" />
-        
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
