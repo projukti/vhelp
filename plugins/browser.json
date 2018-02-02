@@ -46,11 +46,10 @@
     "cordova-plugin-screen-orientation": {
       "PACKAGE_NAME": "com.phonegap.helloworld"
     },
-    "cordova-plugin-firebase-messaging": {
-      "HANDLER_ACTION": "FCM_NOTIFICATION_HANDLER",
+    "cordova-plugin-fcm": {
       "PACKAGE_NAME": "com.onlineeducationservice.vhelp"
     },
-    "cordova-plugin-fcm": {
+    "cordova-plugin-firebase-messaging": {
       "PACKAGE_NAME": "com.onlineeducationservice.vhelp"
     }
   },
@@ -66,12 +65,6 @@
     },
     "cordova-plugin-compat": {
       "PACKAGE_NAME": "com.phonegap.helloworld"
-    },
-    "cordova-plugin-cocoapod-support": {
-      "PACKAGE_NAME": "com.onlineeducationservice.vhelp"
-    },
-    "cordova-plugin-firebase-core": {
-      "PACKAGE_NAME": "com.onlineeducationservice.vhelp"
     }
   }
 }

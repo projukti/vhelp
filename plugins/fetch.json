@@ -143,16 +143,6 @@
     "is_top_level": false,
     "variables": {}
   },
-  "cordova-plugin-firebase-messaging": {
-    "source": {
-      "type": "registry",
-      "id": "https://github.com/blakgeek/cordova-plugin-firebase-messaging"
-    },
-    "is_top_level": true,
-    "variables": {
-      "HANDLER_ACTION": "FCM_NOTIFICATION_HANDLER"
-    }
-  },
   "cordova-plugin-firebase-core": {
     "source": {
       "type": "registry",
@@ -173,6 +163,14 @@
     "source": {
       "type": "registry",
       "id": "cordova-plugin-fcm"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-firebase-messaging": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-firebase-messaging@latest"
     },
     "is_top_level": true,
     "variables": {}
