@@ -58,7 +58,7 @@
     <allow-intent href="geo:*" />
     <platform name="android">
         <allow-intent href="market:*" />
-        <resource-file src="google-services.json" target="app/google-services.json" />
+        
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
@@ -73,6 +73,6 @@
     <plugin name="cordova-plugin-media-capture" spec="~3.0.1" />
     <plugin name="cordova-plugin-x-toast" spec="~2.6.0" />
     <plugin name="cordova-plugin-screen-orientation" spec="~3.0.1" />
-    <plugin name="cordova-plugin-fcm" />
-    <plugin name="cordova-plugin-firebase-messaging" />
+    <plugin name="cordova-plugin-fcm" spec="~2.1.2" />
+    <plugin name="cordova-plugin-firebase-messaging" spec="~0.12.0" />
 </widget>
