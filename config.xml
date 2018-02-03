@@ -8,6 +8,9 @@
         VTeam
     </author>
     <content src="index.html" />
+    <edit-config target="NSPhotoLibraryUsageDescription" file="*-Info.plist" mode="merge">
+        <string>This is used for your avatar in the application.</string>
+    </edit-config>
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="21" />
     <preference name="Fullscreen" value="false" />

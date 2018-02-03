@@ -18,6 +18,18 @@
             }
           ]
         }
+      },
+      "*-Info.plist": {
+        "parents": {
+          "NSPhotoLibraryUsageDescription": [
+            {
+              "xml": "<string>This is used for your avatar in the application.</string>",
+              "count": 1,
+              "mode": "merge",
+              "id": "config.xml"
+            }
+          ]
+        }
       }
     }
   },

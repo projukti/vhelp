@@ -8,6 +8,9 @@
         VTeam
     </author>
     <content src="index.html" />
+    <edit-config file="*-Info.plist" mode="merge" target="NSPhotoLibraryUsageDescription">
+        <string>This is used for your avatar in the application.</string>
+    </edit-config>
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />

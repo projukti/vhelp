@@ -36,7 +36,6 @@ var app = {
     onDeviceReady: function () {
         // This For Block Screen Rotation
         screen.orientation.lock('portrait');
-
         FCMPlugin.getToken(function (token) {
             var datas = { 'device_uuid': device.uuid, 'token': token };
             $.ajax({
@@ -47,7 +46,7 @@ var app = {
                 success: function (response) {                    
                     if (localStorage.login == "false" || localStorage.login == null || localStorage.login == undefined) {
                         // window.setTimeout(function () {
-                        window.location.href = "login.html";
+                        location.href = "login.html";
                         // }, 4000);
                     }
                     else {
@@ -62,7 +61,7 @@ var app = {
                                 if (response.status == 0) {
 
                                     // window.setTimeout(function () {
-                                        window.location.href = "login.html";
+                                       location.href = "login.html";
                                     // }, 4000);
                                 }
                                 else {
@@ -75,7 +74,7 @@ var app = {
                                     localStorage.login = "true";
 
                                     // window.setTimeout(function () {
-                                        window.location.href = "home.html";
+                                        location.href = "home.html";
                                     // }, 4000);
                                 }
                             }
