@@ -41,7 +41,7 @@ var app = {
         var datas = { 'notification_id': localStorage.getItem('notification_id') };
         $.ajax({
             type: "post",
-            url: "https://bebongstore.com/vhelp/manage_api/notification_detail",
+            url: "http://onlineeducationservice.com/masterpanel/manage_api/notification_detail",
             data: datas,
             dataType: "json",
             beforeSend: function () {
@@ -65,7 +65,7 @@ var app = {
                     var notification_image = text.notification_image;
                     var notification_link = text.notification_link;
 
-                    $('#content-section').append('<div class="well clearfix"><div class="row"><div class="col-xs-12"><div class="row"> <h4 class="col-xs-12"><strong style="font-size:14px">' + notification_title + '</strong></h4></div>' + notification_content + '<br><img src="https://bebongstore.com/vhelp/uploads/notification/' + notification_image + '" alt="" class="img-responsive"><br><strong>' + notification_link + '</strong></div></div></div>');
+                    $('#content-section').append('<div class="well clearfix"><div class="row"><div class="col-xs-12"><div class="row"> <h4 class="col-xs-12"><strong style="font-size:14px">' + notification_title + '</strong></h4></div>' + notification_content + '<br><img src="http://onlineeducationservice.com/masterpanel/uploads/notification/' + notification_image + '" alt="" class="img-responsive"><br><strong>' + notification_link + '</strong></div></div></div>');
                 });
             },
             complete: function () {

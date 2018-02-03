@@ -50,7 +50,7 @@ var app = {
                 $(".se-pre-con").show();
                 $.ajax({
                     type: "post",
-                    url: "http://bebongstore.com/vhelp/manage_api/forgotpassword",
+                    url: "http://onlineeducationservice.com/masterpanel/manage_api/forgotpassword",
                     data: datas,
                     dataType: 'json',
                     beforeSend: function () {

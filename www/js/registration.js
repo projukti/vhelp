@@ -76,7 +76,7 @@ var app = {
                 var datas = { 'first_name': first_name, 'last_name': last_name, 'email': email, 'mobile': mobile, 'password': password, 'confirm_password': confirm_password };
                 $.ajax({
                     type: "post",
-                    url: "https://bebongstore.com/vhelp/manage_api/registration",
+                    url: "http://onlineeducationservice.com/masterpanel/manage_api/registration",
                     data: datas,
                     datatype: 'json',
                     beforeSend: function () {

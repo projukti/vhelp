@@ -39,7 +39,7 @@ var app = {
         // Get All Subject
         $.ajax({
             type: "post",
-            url: "https://bebongstore.com/vhelp/manage_api/get_reference",
+            url: "http://onlineeducationservice.com/masterpanel/manage_api/get_reference",
             data: "data",
             dataType: "json",
             beforeSend: function () {
@@ -52,7 +52,7 @@ var app = {
                     var refrmName = text.ref_name;
 
 
-                    $('#plt').append('<div class="row"><div class="col-xs-12 col-md-12"><div class="alert alert-warning"><img src="https://bebongstore.com/vhelp/uploads/reference/' + refImage + '" width="100%" /></div></div></div>');
+                    $('#plt').append('<div class="row"><div class="col-xs-12 col-md-12"><div class="alert alert-warning"><img src="http://onlineeducationservice.com/masterpanel/uploads/reference/' + refImage + '" width="100%" /></div></div></div>');
                 });
             },
             complete: function () {
