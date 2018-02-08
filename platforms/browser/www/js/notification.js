@@ -40,7 +40,7 @@ var app = {
         // This Section For Get Dynamic Notification
         $.ajax({
             type: "post",
-            url: "https://bebongstore.com/vhelp/manage_api/notification_list",
+            url: "http://onlineeducationservice.com/masterpanel/manage_api/notification_list",
             dataType: "json",
             beforeSend: function () {
                 $(".se-pre-con").show();

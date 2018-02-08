@@ -61,7 +61,7 @@ var app = {
         });
 
         // This Function Get All Data From Server
-        var urls = "https://bebongstore.com/vhelp/manage_api/profile_view";
+        var urls = "http://onlineeducationservice.com/masterpanel/manage_api/profile_view";
         var userdata = localStorage.getItem('uname');
         // console.log(userdata);
         var datas = { 'email': userdata };
@@ -84,7 +84,7 @@ var app = {
                 $('#lblBoard').text(response.studentDetail.twelveth_board);
                 $('#lblPaypalId').text(response.studentDetail.paypalid);
                 $('#lblAddress').text(response.studentDetail.address);
-                $("#pimage").attr("src", "https://bebongstore.com/vhelp/uploads/student/" + response.studentDetail.photo);
+                $("#pimage").attr("src", "http://onlineeducationservice.com/masterpanel/uploads/student/" + response.studentDetail.photo);
                 $(".se-pre-con").hide();
             }
         });
@@ -353,7 +353,7 @@ var app = {
 
 
 function updateProfile(updateValue, updateFld, labelName, editBtn, submitBtn, inputFld) {
-    var urls = "https://bebongstore.com/vhelp/manage_api/profile_update";
+    var urls = "http://onlineeducationservice.com/masterpanel/manage_api/profile_update";
     datas = { 'update_value': updateValue, 'field': updateFld, 'email': localStorage.email };
     $.ajax({
         type: "POST",

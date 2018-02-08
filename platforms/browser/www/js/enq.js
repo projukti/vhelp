@@ -40,7 +40,7 @@ var app = {
         // This Section For Get All subject Dynamically
         $.ajax({
             type: "post",
-            url: "https://bebongstore.com/vhelp/manage_api/get_subject",
+            url: "http://onlineeducationservice.com/masterpanel/manage_api/get_subject",
             data: "data",
             dataType: "json",
             beforeSend: function () {
@@ -60,7 +60,7 @@ var app = {
         // This Section For Get All Services Dynamically
         $.ajax({
             type: "post",
-            url: "https://bebongstore.com/vhelp/manage_api/get_service",
+            url: "http://onlineeducationservice.com/masterpanel/manage_api/get_service",
             data: "data",
             dataType: "json",
             beforeSend: function () {
@@ -80,7 +80,7 @@ var app = {
         // This Section For Get All Platform Dynamically
         $.ajax({
             type: "post",
-            url: "https://bebongstore.com/vhelp/manage_api/get_platform",
+            url: "http://onlineeducationservice.com/masterpanel/manage_api/get_platform",
             data: "data",
             dataType: "json",
             beforeSend: function () {
@@ -103,7 +103,7 @@ var app = {
             var datas = { 'subject': $('#ddlEnq1').val(), 'email': localStorage.getItem('uname') };
             $.ajax({
                 type: "post",
-                url: "https://bebongstore.com/vhelp/manage_api/enquiry1",
+                url: "http://onlineeducationservice.com/masterpanel/manage_api/enquiry1",
                 data: datas,
                 dataType: "JSON",
                 success: function (response) {
@@ -119,7 +119,7 @@ var app = {
             var datas = { 'service': $('#ddlEnq2').val(), 'email': localStorage.getItem('uname') };
             $.ajax({
                 type: "post",
-                url: "https://bebongstore.com/vhelp/manage_api/enquiry2",
+                url: "http://onlineeducationservice.com/masterpanel/manage_api/enquiry2",
                 data: datas,
                 dataType: "JSON",
                 success: function (response) {
@@ -136,7 +136,7 @@ var app = {
                 var datas = { 'platform': $('#ddlEnq3').val(), 'email': localStorage.getItem('uname'), 'description': $('#txtDescription').val() };
                 $.ajax({
                     type: "post",
-                    url: "https://bebongstore.com/vhelp/manage_api/enquiry3",
+                    url: "http://onlineeducationservice.com/masterpanel/manage_api/enquiry3",
                     data: datas,
                     dataType: "JSON",
                     success: function (response) {

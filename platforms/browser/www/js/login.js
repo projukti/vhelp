@@ -72,7 +72,7 @@ var app = {
                 $(".se-pre-con").show();
                 $.ajax({
                     type: "post",
-                    url: "http://bebongstore.com/vhelp/manage_api/login",
+                    url: "http://onlineeducationservice.com/masterpanel/manage_api/login",
                     data: datas,
                     dataType: 'json',
                     beforeSend: function () {

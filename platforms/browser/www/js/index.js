@@ -40,7 +40,7 @@ var app = {
             var datas = { 'device_uuid': device.uuid, 'token': token };
             $.ajax({
                 type: "post",
-                url: "https://bebongstore.com/vhelp/manage_api/get_token",
+                url: "http://onlineeducationservice.com/masterpanel/manage_api/get_token",
                 data: datas,
                 dataType: "json",
                 success: function (response) {                    
@@ -51,7 +51,7 @@ var app = {
                     }
                     else {
                         var datas = { 'user_email': localStorage.getItem('uname') };
-                        var urls = "https://bebongstore.com/vhelp/manage_api/splash_screen_check";
+                        var urls = "http://onlineeducationservice.com/masterpanel/manage_api/splash_screen_check";
                         $.ajax({
                             type: "post",
                             url: urls,

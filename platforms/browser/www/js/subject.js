@@ -39,7 +39,7 @@ var app = {
         // Get All Subject
         $.ajax({
             type: "post",
-            url: "https://bebongstore.com/vhelp/manage_api/get_subject",
+            url: "http://onlineeducationservice.com/masterpanel/manage_api/get_subject",
             data: "data",
             dataType: "json",
             beforeSend: function () {
@@ -59,7 +59,7 @@ var app = {
                         var className = "";
                     }
                     
-                    $('#accordion').append('<div class="panel panel-default"><div class= "panel-heading"><h2 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse' + count + '" style="text-decoration:none;"><img src="https://bebongstore.com/vhelp/uploads/subject/' + subjectImage + '" width="20%" /> ' + subjectName + '</a></h2></div ><div id="collapse' + count + '" class="panel-collapse collapse ' + className +'"><div class="panel-body">' + subjectDescription +'</div></div></div>');
+                    $('#accordion').append('<div class="panel panel-default"><div class= "panel-heading"><h2 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse' + count + '" style="text-decoration:none;"><img src="http://onlineeducationservice.com/masterpanel/uploads/subject/' + subjectImage + '" width="20%" /> ' + subjectName + '</a></h2></div ><div id="collapse' + count + '" class="panel-collapse collapse ' + className +'"><div class="panel-body">' + subjectDescription +'</div></div></div>');
                     count++;
                 });
             },
