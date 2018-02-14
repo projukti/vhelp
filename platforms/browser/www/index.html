@@ -21,14 +21,12 @@
     -->
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
 
-    
+
     <link rel="stylesheet" href="css/font-awesome.min.css" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/style.css" />
     <script src='js/jquery-2.2.4.min.js'></script>
     <script src="js/bootstrap.min.js"></script>
-    
-    <script src='js/TweenMax.min.js'></script>
 
     <title>Hello World</title>
 </head>
@@ -125,13 +123,13 @@
                     break;
             }
 
-            TweenMax.to(piece, 1, {
-                delay: spinDelay,
-                directionalRotation: spin + "_long",
-                onComplete: completeRotation,
-                onCompleteParams: [piece],
-                ease: Power4.easeIn
-            });
+            // TweenMax.to(piece, 1, {
+            //     delay: spinDelay,
+            //     directionalRotation: spin + "_long",
+            //     onComplete: completeRotation,
+            //     onCompleteParams: [piece],
+            //     ease: Power4.easeIn
+            // });
         }
     }
 
@@ -140,11 +138,11 @@
             "background-image",
             "url(images-vhelp/logo-vhelp1.jpg)"
         );
-        TweenMax.to(piece, 2, {
-            directionalRotation: "0_short",
-            onComplete: finishPieceanimation,
-            ease: Elastic.easeOut
-        });
+        // TweenMax.to(piece, 2, {
+        //     directionalRotation: "0_short",
+        //     onComplete: finishPieceanimation,
+        //     ease: Elastic.easeOut
+        // });
     }
 
     function finishPieceanimation() {
@@ -211,23 +209,23 @@
                     break;
             }
 
-            TweenMax.to(piece, 1, {
-                delay: spinDelay,
-                directionalRotation: spin + '_long',
-                onComplete: completeRotation,
-                onCompleteParams: [piece],
-                ease: Power4.easeIn
-            })
+            // TweenMax.to(piece, 1, {
+            //     delay: spinDelay,
+            //     directionalRotation: spin + '_long',
+            //     onComplete: completeRotation,
+            //     onCompleteParams: [piece],
+            //     ease: Power4.easeIn
+            // })
         }
     }
 
     function completeRotation(piece) {
         piece.css('background-image', 'url(images-vhelp/logo-vhelp2.jpg)');
-        TweenMax.to(piece, 2, {
-            directionalRotation: '0_short',
-            onComplete: finishPieceanimation,
-            ease: Elastic.easeOut
-        })
+        // TweenMax.to(piece, 2, {
+        //     directionalRotation: '0_short',
+        //     onComplete: finishPieceanimation,
+        //     ease: Elastic.easeOut
+        // })
     }
 
     function finishPieceanimation() {
@@ -237,4 +235,5 @@
         }
     }
 </script>
+
 </html>
