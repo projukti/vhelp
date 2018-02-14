@@ -46,14 +46,21 @@ var app = {
                 $(".se-pre-con").show();
             },
             success: function (response) {
-                var count = 1;
-                $.each(response.references, function (val, text) {
-                    var refImage = text.ref_image;
-                    var refrmName = text.ref_name;
+                var ct = '';
+                for (cat in response.references) {
+                    division_name = response.references[cat].subdivision;
+                    ct += '<div class="panel"><div class= "panel-heading"><h2 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse' + cat + '" style="text-decoration:none;">' + division_name + '</a></h2></div><div id="collapse' + cat + '" class="panel-collapse collapse"><div class="panel-body">';
 
+                    for(imgl in response.references[cat].refence_image) {
+                        ref_img = response.references[cat].refence_image[imgl].ref_image;
 
-                    $('#plt').append('<div class="row"><div class="col-xs-12 col-md-12"><div class="alert alert-warning"><img src="http://onlineeducationservice.com/masterpanel/uploads/reference/' + refImage + '" width="100%" /></div></div></div>');
-                });
+                        ct += '<img src="http://onlineeducationservice.com/masterpanel/uploads/reference/' + ref_img + '" style="width:100%" alt=""><hr>';
+;                    }
+                    ct += '</div></div></div>';
+                }
+                
+                $('#accordion').append(ct);
+                    
             },
             complete: function () {
                 $(".se-pre-con").hide();

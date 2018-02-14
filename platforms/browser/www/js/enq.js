@@ -116,7 +116,22 @@ var app = {
 
         // Enquery Page 2 Button Click
         $('#btnEnq2').click(function () {
-            var datas = { 'service': $('#ddlEnq2').val(), 'email': localStorage.getItem('uname') };
+            var enq2_val = $('#ddlEnq2').val();
+
+            // if Services Enquery Value is Online Tutoring then this block should be executed
+            if (enq2_val =="Online Tutoring"){
+
+                // validate  Total Weeks and remaing weeks here
+                if(validation_weeks()){
+                    var datas = { 'service': $('#ddlEnq2').val(), 'email': localStorage.getItem('uname'), 'txtTotalWeeks': $('#txtweeksTotal').val(), 'txtRemaingWeeks': $('#txtweeksRemaining').val() }; 
+                }
+                else{
+                    return ;
+                }
+            }
+            else{
+                var datas = { 'service': $('#ddlEnq2').val(), 'email': localStorage.getItem('uname'), 'txtTotalWeeks': '', 'txtRemaingWeeks': '' }; 
+            }
             $.ajax({
                 type: "post",
                 url: "http://onlineeducationservice.com/masterpanel/manage_api/enquiry2",
@@ -128,6 +143,19 @@ var app = {
                     }
                 }
             });
+            
+        });
+
+        // This Section For Select Online Class On Enquery Page Dropdown
+        $('#ddlEnq2').change(function () { 
+            var enquery=$('#ddlEnq2').val();
+
+            if (enquery =='Online Tutoring'){
+                $('#dynamic_control').show();
+            }
+            else{
+                $('#dynamic_control').hide();
+            }
         });
 
         // Enquery Page 3 Button Click
@@ -181,6 +209,28 @@ function checkConnection() {
     states[Connection.NONE] = 'No network connection';
 
     window.plugins.toast.showLongBottom('No internet connection detected');
+}
+
+// This Funtion For Validation Total Weeks And Remaing Weeks
+function validation_weeks() {
+    if ($('#txtweeksTotal').val() == "" || $('#txtweeksRemaining').val() == ""){
+        if ($('#txtweeksTotal').val() == "" && $('#txtweeksRemaining').val() == ""){
+            $('#txtweeksTotal').css('border-color', 'red');
+            $('#txtweeksRemaining').css('border-color', 'red');
+        }
+        else if ($('#txtweeksTotal').val() == "")
+        {
+            $('#txtweeksTotal').css('border-color', 'red');
+        }
+        else if ($('#txtweeksRemaining').val() == ""){
+            $('#txtweeksRemaining').css('border-color', 'red');
+        }
+        
+        return false;
+    }
+    else{
+        return true;
+    }
 }
 
 

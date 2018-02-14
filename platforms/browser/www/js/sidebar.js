@@ -18,3 +18,43 @@ function openNav() {
     function closeNav() {
         document.getElementById("mySidenav").style.width = "0";
     }
+function mypop(msg) {
+    $("#mypopup").html(msg);
+    $('#mypopup').css({
+        'top': $(window).height() + 'px',
+        'box-shadow': '0 0 0 #000000'
+    });
+    var height = $(window).height() - $("#mypopup").outerHeight();
+    $('#mypopup').css({
+        'top': height + 'px',
+        'box-shadow': '0 0 1px #000000'
+    });
+    setTimeout(function () {
+        $('#mypopup').css('top', $(window).height() + 'px');
+        $('#mypopup').css({
+            'top': $(window).height() + 'px',
+            'box-shadow': '0 0 0 #000000'
+        });
+    }, 5000);
+}
+
+// This function for get student data
+function getRequest() {
+    $.ajax({
+        type: "post",
+        url: "http://onlineeducationservice.com/masterpanel/manage_api/get_randome_fake_student",
+        dataType: "html",
+        success: function (response) {
+            if (response != "0") {
+                mypop(response);
+            }
+            else {
+                return;
+            }
+        }
+    });
+}
+
+window.setInterval(function () {
+    getRequest();
+}, 15000);

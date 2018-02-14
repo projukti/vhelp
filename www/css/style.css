@@ -177,7 +177,7 @@ input[type="password"] {
     position: absolute;
     top: -30px;
     right: 25px;
-	margin-bottom::50px;
+	  margin-bottom:50px;
     font-size: 60px;
     margin-left: 50px;
 	border:none;
@@ -186,5 +186,23 @@ input[type="password"] {
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
+}
+
+#mypopup{
+  position: fixed;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: auto;
+  transform: translate3d(0,0,0);
+  box-sizing: border-box;
+  padding: 10px;
+  line-height: 18px;
+  font-size: 14px;
+  color: #2f2f2f;
+  background-color: #ffffff;
+  transition: all ease-in-out 0.3s;
+  box-shadow: 0 0 0 #000000;
+  z-index: 99999;
 }
 /* For Nav Bar ------------------------------------------------------ */
