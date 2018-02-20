@@ -12,6 +12,7 @@
         <string>This is used for your avatar in the application.</string>
     </edit-config>
     <preference name="DisallowOverscroll" value="true" />
+    <preference name="android-minSdkVersion" value="21" />
     <preference name="Fullscreen" value="false" />
     <preference name="Orientation" value="portrait" />
     <preference name="StatusBarOverlaysWebView" value="false" />
@@ -25,7 +26,14 @@
     <plugin name="cordova-plugin-globalization" source="npm" spec="~1.0.7" />
     <plugin name="cordova-plugin-inappbrowser" source="npm" spec="~1.7.1" />
     <plugin name="cordova-plugin-vibration" source="npm" spec="~2.1.5" />
-   
+    <platform name="android">
+        <icon density="ldpi" src="www/res/icon/android/drawable-ldpi-icon.png" />
+        <icon density="mdpi" src="www/res/icon/android/drawable-mdpi-icon.png" />
+        <icon density="hdpi" src="www/res/icon/android/drawable-hdpi-icon.png" />
+        <icon density="xhdpi" src="www/res/icon/android/drawable-xhdpi-icon.png" />
+        <icon density="xxhdpi" src="www/res/icon/android/drawable-xxhdpi-icon.png" />
+        <icon density="xxxhdpi" src="www/res/icon/android/drawable-xxxhdpi-icon.png" />
+    </platform>
     <platform name="ios">
         <icon src="www/res/icon/ios/icon-1024.png" width="1024" height="1024" />
         <icon src="www/res/icon/ios/icon-small.png" width="29" height="29" />
@@ -48,6 +56,22 @@
         <icon src="www/res/icon/ios/icon-167.png" width="167" height="167" />
         <icon src="www/res/icon/ios/icon-83.5@2x.png" width="167" height="167" />
     </platform>
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+        <resource-file src="GoogleService-Info.plist" target="app/GoogleService-Info.plist" />
+    </platform>
+
     <platform name="ios">
     <!-- There are two mechanisms for showing launch images.
       -- Legacy method (supports all devices except iPad Pro 12.9):
@@ -75,21 +99,8 @@
     <splash src="res/screen/ios/Default@3x~universal~comany.png" />
     
 </platform>
-    <access origin="*" />
-    <allow-intent href="http://*/*" />
-    <allow-intent href="https://*/*" />
-    <allow-intent href="tel:*" />
-    <allow-intent href="sms:*" />
-    <allow-intent href="mailto:*" />
-    <allow-intent href="geo:*" />
-    <platform name="android">
-        <allow-intent href="market:*" />
-    </platform>
-    <platform name="ios">
-        <allow-intent href="itms:*" />
-        <allow-intent href="itms-apps:*" />
-        <resource-file src="GoogleService-Info.plist" target="app/GoogleService-Info.plist" />
-    </platform>
+
+
     <plugin name="cordova-plugin-whitelist" spec="~1.3.3" />
     <plugin name="cordova-plugin-network-information" spec="~1.3.4" />
     <plugin name="cordova-plugin-camera" spec="~2.4.1" />
