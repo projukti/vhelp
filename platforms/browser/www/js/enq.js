@@ -119,7 +119,7 @@ var app = {
             var enq2_val = $('#ddlEnq2').val();
 
             // if Services Enquery Value is Online Tutoring then this block should be executed
-            if (enq2_val =="Online Tutoring"){
+            if (enq2_val =="Online Class"){
 
                 // validate  Total Weeks and remaing weeks here
                 if(validation_weeks()){
@@ -150,7 +150,7 @@ var app = {
         $('#ddlEnq2').change(function () { 
             var enquery=$('#ddlEnq2').val();
 
-            if (enquery =='Online Tutoring'){
+            if (enquery =='Online Class'){
                 $('#dynamic_control').show();
             }
             else{

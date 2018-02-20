@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/font-awesome.min.css" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/style.css" />
-    <script src='js/jquery-2.2.4.min.js'></script>
+    <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/sidebar.js"></script>
     <style>
@@ -37,7 +37,8 @@
             z-index: 9999;
             background: url(img/Interwind.gif) center no-repeat #fff;
         }
-         .well {
+
+        .well {
             padding: 10px;
             font-size: 15px;
             min-height: 20px;
@@ -54,7 +55,7 @@
 
 <body style="background-color:#FFFFFF;" id="main">
     <div id="mypopup"></div>
-    <!-- <div class="se-pre-con"></div> -->
+    <div class="se-pre-con"></div>
     <div style="background-color:#FFCC00; color:#333333; padding:16px 16px 16px 16px; margin-bottom:500px;" class="topperone">
         <div id="mySidenav" class="sidenav">
 
@@ -73,18 +74,12 @@
 
 
     <div onclick="closeNav()">
-        <div id="content-section" style="padding:120px 15px 15px 15px;">            
+        <div id="content-section" style="padding:120px 15px 15px 15px;">
             <div class="well" style="text-align:justify; font-family:Georgia, 'Times New Roman', Times, serif;">
-                <p align="center"><img src="images-vhelp/icon-vhelp.png" class="img-responsive" style="width:15%;"></p>
-                VHelp is one of the most efficient online tutoring applications with world class experts chosen to give you the very best
-                solutions and in depth explanations in Statistics, Geometry, Calculus, Trigonometry, Financial Accounting, Managerial
-                Accounting, Economics, Physics, Chemistry, Biology &amp; Psychology. VHelp offers various services for its student to
-                keep them engaged even when they are not online. Online Classes are held along with homework after each class for evaluation
-                and assessment of each individual student. Mid-Term and Final Assessments for Grading and checking the statistics for
-                students which will be used over at Online Discussion panel to guide students in places where they are weak and to improve
-                them further in subjects where they are strong. There are also Quiz section for casual learning while the students are
-                on the go . All of these section complement and completes the Online Tutoring package which is bound to improve and change
-                any interested student for the better .
+                <p align="center">
+                    <img src="images-vhelp/icon-vhelp.png" class="img-responsive" style="width:15%;">
+                </p>
+                <p id="about_us"></p>
             </div>
         </div>
     </div>
@@ -93,6 +88,10 @@
 
     </div>
     <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/about_us.js"></script>
+    <script type="text/javascript">
+        app.initialize();
+    </script>
 </body>
 
 
