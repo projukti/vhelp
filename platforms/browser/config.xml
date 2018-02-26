@@ -24,5 +24,6 @@
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarStyle" value="default" />
     <preference name="StatusBarBackgroundColor" value="#323232" />
+    <preference name="deployment-target" value="7.1.2" />
     <preference name="phonegap-version" value="cli-8.0.0" />
 </widget>
