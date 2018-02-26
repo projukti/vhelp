@@ -43,7 +43,7 @@ var app = {
                 url: "http://onlineeducationservice.com/masterpanel/manage_api/get_token",
                 data: datas,
                 dataType: "json",
-                success: function (response) {                    
+                success: function (response) {  
                     if (localStorage.login == "false" || localStorage.login == null || localStorage.login == undefined) {
                         // window.setTimeout(function () {
                         location.href = "login.html";
