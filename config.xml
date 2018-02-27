@@ -11,13 +11,13 @@
     <edit-config file="*-Info.plist" mode="merge" target="NSPhotoLibraryUsageDescription">
         <string>This is used for your avatar in the application.</string>
     </edit-config>
+    <preference name="SplashScreenBackgroundColor" value="0xFFFFFFFF"/>
     <preference name="DisallowOverscroll" value="true" />
     <preference name="Fullscreen" value="false" />
     <preference name="Orientation" value="portrait" />
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarStyle" value="default" />
     <preference name="StatusBarBackgroundColor" value="#323232" />
-    <!-- <preference name="deployment-target" value="7.1.2" />  -->
     <preference name="phonegap-version" value="cli-8.0.0" />
     <plugin name="cordova-plugin-battery-status" source="npm" spec="~1.2.4" />
     <plugin name="cordova-plugin-device" source="npm" spec="~1.1.6" />
@@ -26,7 +26,6 @@
     <plugin name="cordova-plugin-globalization" source="npm" spec="~1.0.7" />
     <plugin name="cordova-plugin-inappbrowser" source="npm" spec="~1.7.1" />
     <plugin name="cordova-plugin-vibration" source="npm" spec="~2.1.5" />
-    
     <platform name="ios">
         <icon height="1024" src="www/res/icon/ios/icon-1024.png" width="1024" />
         <icon height="29" src="www/res/icon/ios/icon-small.png" width="29" />
@@ -56,11 +55,13 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
-    
     <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
         <resource-file src="GoogleService-Info.plist" target="app/GoogleService-Info.plist" />
+        <preference name="FadeSplashScreenDuration" value="0"/>
+        <preference name="SplashScreenDelay" value="0"/>
+        <preference name="ShowSplashScreenSpinner" value="false"/>
     </platform>
     <plugin name="cordova-plugin-whitelist" spec="~1.3.3" />
     <plugin name="cordova-plugin-network-information" spec="~1.3.4" />
@@ -72,4 +73,5 @@
     <plugin name="cordova-plugin-screen-orientation" spec="~3.0.1" />
     <plugin name="cordova-plugin-fcm" spec="~2.1.2" />
     <plugin name="cordova-plugin-firebase-messaging" spec="~0.12.0" />
+    <plugin name="cordova-plugin-splashscreen" spec="~5.0.2" />
 </widget>
