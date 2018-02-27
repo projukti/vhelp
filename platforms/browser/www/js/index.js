@@ -34,6 +34,8 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function () {
+        navigator.splashscreen.show();
+        
         // This For Block Screen Rotation
         screen.orientation.lock('portrait');
         FCMPlugin.getToken(function (token) {
