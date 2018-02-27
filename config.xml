@@ -11,7 +11,7 @@
     <edit-config file="*-Info.plist" mode="merge" target="NSPhotoLibraryUsageDescription">
         <string>This is used for your avatar in the application.</string>
     </edit-config>
-    <preference name="SplashScreenBackgroundColor" value="0xFFFFFFFF"/>
+    <preference name="SplashScreenBackgroundColor" value="0xFFFFFFFF" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="Fullscreen" value="false" />
     <preference name="Orientation" value="portrait" />
@@ -70,5 +70,4 @@
     <plugin name="cordova-plugin-screen-orientation" spec="~3.0.1" />
     <plugin name="cordova-plugin-fcm" spec="~2.1.2" />
     <plugin name="cordova-plugin-firebase-messaging" spec="~0.12.0" />
-    <plugin name="cordova-plugin-splashscreen" spec="~5.0.2" />
 </widget>
