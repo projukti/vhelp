@@ -131,6 +131,6 @@ function checkConnection() {
 
 // this function for update app button click
 function onConfirm(button) {
-    window.location.replace('https://play.google.com/store/apps/details?id=com.onlineeducationservice.vhelp');
+    window.location.replace('https://itunes.apple.com/in/app/vhelp/id1343750421?mt=8');
     navigator.app.exitApp();
 }
