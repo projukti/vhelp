@@ -51,6 +51,7 @@ var app = {
                     var subjectName = text.subject_name;
                     $('#ddlEnq1').append($('<option></option>').val(subjectName).html(subjectName));
                 });
+                $('#ddlEnq1').append($('<option></option>').val('Other').html('Other'));
             },
             complete: function () {
                 $(".se-pre-con").hide();
@@ -67,10 +68,16 @@ var app = {
                 $(".se-pre-con").show();
             },
             success: function (response) {
-                $.each(response.services, function (val, text) {
-                    var serviceName = text.service_name;
-                    $('#ddlEnq2').append($('<option></option>').val(serviceName).html(serviceName));
-                });
+                if (localStorage.getItem('subject_details') != "Writing Paper") {
+                    $.each(response.services, function (val, text) {
+                        var serviceName = text.service_name;
+                        $('#ddlEnq2').append($('<option></option>').val(serviceName).html(serviceName));
+                    });
+                }
+                else {
+                    $('#ddlEnq2').html('<option value="Admission Essay">Admission Essay</option><option value="Article Review">Article Review</option><option value="Research Paper">Research Paper</option><option value="Resume">Resume</option><option value="Thesis Paper">Thesis Paper</option><option value="Case Analysis Review">Case Analysis Review</option>');
+                    $('#dynamic_esay').show();
+                }
             },
             complete: function () {
                 $(".se-pre-con").hide();
@@ -98,9 +105,23 @@ var app = {
         });
 
 
+        // This Section For Select Subject On Enquery Page Dropdown
+        $('#ddlEnq1').change(function (e) { 
+            var enq1_val = $('#ddlEnq1').val();
+            if (enq1_val =="Other"){
+                $('#dynamic_text').show();
+            }
+        });
+
+
         // Enquery Page 1 Button Click
         $('#btnEnq1').click(function () {
-            var datas = { 'subject': $('#ddlEnq1').val(), 'email': localStorage.getItem('uname') };
+            if ($('#ddlEnq1').val() == "Other" && $('#txtOtherSub').val()=="")
+            {
+                $('#txtOtherSub').css('border-color', 'red');
+                return;
+            }
+            var datas = { 'subject': $('#ddlEnq1').val(), 'email': localStorage.getItem('uname'), 'othersubject': $('#txtOtherSub').val() };
             $.ajax({
                 type: "post",
                 url: "http://onlineeducationservice.com/masterpanel/manage_api/enquiry1",
@@ -108,6 +129,7 @@ var app = {
                 dataType: "JSON",
                 success: function (response) {
                     if (response.status==1){
+                        localStorage.setItem('subject_details', $('#ddlEnq1').val());
                         window.location.href = "enq2.html";
                     }
                 }
@@ -120,7 +142,6 @@ var app = {
 
             // if Services Enquery Value is Online Tutoring then this block should be executed
             if (enq2_val =="Online Class"){
-
                 // validate  Total Weeks and remaing weeks here
                 if(validation_weeks()){
                     var datas = { 'service': $('#ddlEnq2').val(), 'email': localStorage.getItem('uname'), 'txtTotalWeeks': $('#txtweeksTotal').val(), 'txtRemaingWeeks': $('#txtweeksRemaining').val() }; 
@@ -129,9 +150,18 @@ var app = {
                     return ;
                 }
             }
-            else{
-                var datas = { 'service': $('#ddlEnq2').val(), 'email': localStorage.getItem('uname'), 'txtTotalWeeks': '', 'txtRemaingWeeks': '' }; 
+            else if (localStorage.getItem('subject_details') == "Writing Paper"){
+                if (validate_style()) {
+                    var datas = { 'service': $('#ddlEnq2').val(), 'email': localStorage.getItem('uname'), 'ddlPages': $('#ddlPages option:selected').text(), 'ddlStyle': $('#ddlStyle option:selected').text()};
+                }
+                else{
+                    return ;
+                }
             }
+            else{
+                var datas = { 'service': $('#ddlEnq2').val(), 'email': localStorage.getItem('uname'), 'ddlPages': '', 'ddlStyle': '' }; 
+            }
+            console.log(datas);
             $.ajax({
                 type: "post",
                 url: "http://onlineeducationservice.com/masterpanel/manage_api/enquiry2",
@@ -146,7 +176,7 @@ var app = {
             
         });
 
-        // This Section For Select Online Class On Enquery Page Dropdown
+        // This Section For Select Online Tutorial On Enquery Page Dropdown
         $('#ddlEnq2').change(function () { 
             var enquery=$('#ddlEnq2').val();
 
@@ -169,7 +199,7 @@ var app = {
                     dataType: "JSON",
                     success: function (response) {
                         if (response.status==1){
-                            window.plugins.toast.showLongBottom('Your enquiry has been submitted');
+                            window.plugins.toast.showLongBottom('Your enquiry has been submitted successfully');
                             window.location.href = "home.html";
                         }
                     }
@@ -179,6 +209,7 @@ var app = {
                 $('#txtDescription').css('border-color', 'red');
             }
         });
+
     },
     // Update DOM on a Received Event
     receivedEvent: function (id) {
@@ -229,6 +260,27 @@ function validation_weeks() {
         return false;
     }
     else{
+        return true;
+    }
+}
+
+// This Function For Validate Number Of Pages and Writting Style
+function validate_style(){
+    if ($('#ddlPages').val() == "" || $('#ddlStyle').val() == "") {
+        if ($('#ddlPages').val() == "" && $('#ddlStyle').val() == "") {
+            $('#ddlPages').css('border-color', 'red');
+            $('#ddlStyle').css('border-color', 'red');
+        }
+        else if ($('#ddlPages').val() == "") {
+            $('#ddlPages').css('border-color', 'red');
+        }
+        else if ($('#ddlStyle').val() == "") {
+            $('#ddlStyle').css('border-color', 'red');
+        }
+
+        return false;
+    }
+    else {
         return true;
     }
 }
