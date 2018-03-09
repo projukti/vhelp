@@ -49,13 +49,22 @@ var app = {
             },
             success: function (response) {
                 console.log(response.blogDetail.blog_id);
-                    var blog_id = response.blogDetail.blog_id;
-                    var blog_title = response.blogDetail.blog_title;
-                    var blog_date = response.blogDetail.blog_date;
-                    var blog_by = response.blogDetail.blog_by;
-                    var blog_image = response.blogDetail.blog_image;
-                    var blog_content = response.blogDetail.blog_content;
-                $('#content-section').append('<div class="well clearfix"><div class="row"><div class="col-xs-12"><div class="row"> <h2 class="col-xs-12"><strong style="font-size:14px">' + blog_title + '</strong></h2></div>' + blog_content + '<br><img src="http://onlineeducationservice.com/masterpanel/uploads/blog/' + blog_image + '" alt="" class="img-responsive"><br><p align="left">By- <strong>' + blog_by + '</strong> (' + blog_date + ')</p></div></div></div>');
+                var blog_id = response.blogDetail.blog_id;
+                var blog_title = response.blogDetail.blog_title;
+                var blog_date = response.blogDetail.blog_date;
+                var blog_by = response.blogDetail.blog_by;
+                var blog_image = response.blogDetail.blog_image;
+                var blog_content = response.blogDetail.blog_content;
+
+                var formattedDate = new Date(blog_date);
+                var d = formattedDate.getDate();
+                var m = formattedDate.getMonth();
+                m += 1;
+                // JavaScript months are 0-11 
+                var y = formattedDate.getFullYear();
+                var noti_date = d + "-" + m + "-" + y;
+
+                $('#content-section').append('<div class="well clearfix"><div class="row"><div class="col-xs-12"><div class="row"> <h2 class="col-xs-12"><strong style="font-size:14px">' + blog_title + '</strong></h2></div>' + blog_content + '<br><img src="http://onlineeducationservice.com/masterpanel/uploads/blog/' + blog_image + '" alt="" class="img-responsive"><br><p align="left">By- <strong>' + blog_by + '</strong> (' + formattedDate + ')</p></div></div></div>');
             },
             complete: function () {
                 $(".se-pre-con").hide();
