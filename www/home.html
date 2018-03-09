@@ -6,14 +6,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="format-detection" content="telephone=no" />
     <meta name="msapplication-tap-highlight" content="no" />
-    <meta http-equiv="Content-Security-Policy" content="default-src ‘self’ gap://ready file://* * 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *"
-    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src * content: data:; media-src *"
+    />
     <title>Dashboard</title>
     <link rel="stylesheet" href="css/font-awesome.min.css" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/style.css" />
-    <script src='js/jquery-2.2.4.min.js'></script>
+    <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/sidebar.js"></script>
     <style>
@@ -37,7 +37,8 @@
             z-index: 9999;
             background: url(img/Interwind.gif) center no-repeat #fff;
         }
-         .well {
+
+        .well {
             padding: 25pxdesign change;
             font-size: 18px;
             min-height: 20px;
@@ -49,14 +50,15 @@
             -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
             box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
         }
+        
     </style>
 </head>
 
 <body style="background-color:#FFFFFF;" id="main">
     <div id="mypopup"></div>
+    <!-- <div class="se-pre-con"></div> -->
     <div style="background-color:#FFCC00; color:#333333; padding:16px 16px 16px 16px; margin-bottom:500px;" class="topperone">
         <div id="mySidenav" class="sidenav">
-
         </div>
 
         <!--<h2>Animated Sidenav Example</h2> -->
@@ -65,8 +67,10 @@
             &#9776;
             <strong>VHelp</strong>
         </span>
-
         <span class="pull-right">
+            <a class="social" href="https://www.facebook.com/VHelp-1568013686568101"><i class="fa fa-facebook"></i></a>
+            <a class="social" href="https://twitter.com/VhelpStudents"><i class="fa fa-twitter"></i></a>
+            <a class="social" href="https://www.instagram.com/askvhelp/" style="margin-right: 15px;"><i class="fa fa-instagram"></i></a>
             <i class="fa fa-dashboard"></i> &nbsp;Dashboard</span>
     </div>
 
@@ -76,15 +80,16 @@
 
         </div>
     </div>
-
-    <div class="footer" style="z-index:9999;"></div>
-    <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/home.js"></script>
-    <script type="text/javascript">
-        app.initialize();
-    </script>
-</body>
     <div id="content-section" class="container" style="padding-top:75px">
+        <p class="form-group text-center" style="background-image:url(images-vhelp/homebanner.png); background-repeat:no-repeat;background-size:cover; height:200px;"></p>
+        <h4 class="well text-justify">
+            <p align="center" style="font-size:24px;"><strong>Hire us. We are within your affordability</strong></p>
+            <p>VHELP is an online platform for students, to conveniently and efficiently help them cover and finish their online homework,
+            classes, quizzes, assignments, term paper and more ! We help students by working on their behalf, enabling them more time to enjoy other things in life. Download the VHELP app for your Android or IOS system and install to avail our services. Our range of websites and expertise panel will
+        help you get excellent grades for any subject in your course.</p> <p>VHELP is 100% legit and believe in complete transparency with the students. You will be open to our teaching panels, work procedures, study materials, discussion forums and much more.
+        Nothing will be disclosed from you.</p> 
+</h4>
+        <div class="clearfix"></div>
         <a href="enq1.html">
             <div class="well clearfix">
                 <div class="row" align="center">
@@ -138,12 +143,13 @@
                 </div>
             </div>
         </a>
+    
         <a href="enq1.html">
             <div class="well clearfix">
                 <div class="row" align="center">
                     <div class="col-xs-12">
-                        <img src="images-vhelp/mba.png" class="img-responsive" style="width:10%;display: inline-block;display: inline-block;"
-                        /><br> &nbsp;Online MBA Classes
+                        <img src="images-vhelp/mba.png" class="img-responsive" style="width:10%;display: inline-block;display: inline-block;" />
+                        <br> &nbsp;Take My Online MBA Classes
                     </div>
                 </div>
             </div>
@@ -152,19 +158,19 @@
             <div class="well clearfix">
                 <div class="row" align="center">
                     <div class="col-xs-12">
-                        <img src="images-vhelp/algebra.png" class="img-responsive" style="width:10%;display: inline-block;display: inline-block;" />
-                        <br> &nbsp;Online Math Classes
-                    </div>
-                </div>
-            </div>
-        </a>
-        <a href="enq1.html">
-            <div class="well clearfix">
-                <div class="row" align="center">
-                    <div class="col-xs-12">
-                        <img src="images-vhelp/econ.png" class="img-responsive" style="width:10%;display: inline-block;display: inline-block;"
+                        <img src="images-vhelp/algebra.png" class="img-responsive" style="width:10%;display: inline-block;display: inline-block;"
                         />
-                        <br> &nbsp;Online Accounting Classes
+                        <br> &nbsp;Take My Online Math Classes
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a href="enq1.html">
+            <div class="well clearfix">
+                <div class="row" align="center">
+                    <div class="col-xs-12">
+                        <img src="images-vhelp/econ.png" class="img-responsive" style="width:10%;display: inline-block;display: inline-block;" />
+                        <br> &nbsp;Take My Online Accounting Classes
                     </div>
                 </div>
             </div>
@@ -174,11 +180,19 @@
                 <div class="row" align="center">
                     <div class="col-xs-12">
                         <img src="images-vhelp/class.png" class="img-responsive" style="width:10%;display: inline-block;display: inline-block;" />
-                        <br> &nbsp;Online Science Classes
+                        <br> &nbsp;Take My Online Science Classes
                     </div>
                 </div>
             </div>
         </a>
         <br>
     </div>
+
+    <div class="footer" style="z-index:9999;"></div>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/home.js"></script>
+    <script type="text/javascript">
+        app.initialize();
+    </script>
+</body>
 </html>
