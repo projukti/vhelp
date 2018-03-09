@@ -206,3 +206,12 @@ input[type="password"] {
   z-index: 99999;
 }
 /* For Nav Bar ------------------------------------------------------ */
+
+.social{
+    border-radius: 4px;
+    padding: 5px 8px;
+    /* background: black; */
+    color: #ea5e5e;
+    margin-right: 3px;
+    border: 1px solid #ea5e5e;
+}
