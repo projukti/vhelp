@@ -128,3 +128,9 @@ function checkConnection() {
         navigator.app.exitApp();
     });
 }
+
+// this function for update app button click
+function onConfirm(button) {
+    window.location.replace('https://play.google.com/store/apps/details?id=com.onlineeducationservice.vhelp');
+    navigator.app.exitApp();
+}
