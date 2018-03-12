@@ -525,6 +525,20 @@ module.exports = [
         "merges": [
             "cordova.plugins.firebase.messaging"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
+        "id": "cordova-plugin-statusbar.statusbar",
+        "pluginId": "cordova-plugin-statusbar",
+        "clobbers": [
+            "window.StatusBar"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-statusbar/src/browser/StatusBarProxy.js",
+        "id": "cordova-plugin-statusbar.StatusBarProxy",
+        "pluginId": "cordova-plugin-statusbar",
+        "runs": true
     }
 ];
 module.exports.metadata = 
@@ -548,7 +562,8 @@ module.exports.metadata =
     "cordova-plugin-x-toast": "2.6.0",
     "cordova-plugin-screen-orientation": "3.0.1",
     "cordova-plugin-fcm": "2.1.2",
-    "cordova-plugin-firebase-messaging": "0.12.0"
+    "cordova-plugin-firebase-messaging": "0.12.0",
+    "cordova-plugin-statusbar": "2.4.1"
 }
 // BOTTOM OF METADATA
 });

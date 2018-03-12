@@ -51,6 +51,9 @@
     },
     "cordova-plugin-firebase-messaging": {
       "PACKAGE_NAME": "com.onlineeducationservice.vhelp"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "com.onlineeducationservice.vhelp"
     }
   },
   "dependent_plugins": {
