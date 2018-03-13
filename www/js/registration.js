@@ -70,6 +70,7 @@ var app = {
             var expr = /^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/;
             if (email != "" && !$.trim(email).match(expr)) {
                 $('#email').css('border-color', 'red');
+                return;
             }
             if (first_name != "" && last_name != "" && email != "" && mobile != "" && password != "" && confirm_password != "") {
                 $(".se-pre-con").show();
@@ -156,3 +157,5 @@ function checkConnection() {
 
     window.plugins.toast.showLongBottom('No internet connection detected');
 }
+
+
