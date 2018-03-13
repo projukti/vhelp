@@ -36,86 +36,89 @@ var app = {
     onDeviceReady: function () {
         // This For Block Screen Rotation
         screen.orientation.lock('portrait');
-        // this section for check app version from app store
+
+        // this section for check app version from google play
         $.ajax({
             type: "post",
             url: "http://onlineeducationservice.com/masterpanel/manage_api/get_site_settings",
             dataType: "JSON",
             success: function (response) {
                 cordova.getAppVersion.getVersionNumber().then(function (version) {
-                    var current_var = response.site_settings[0]['ipa_version'];
-                    if (version == current_var) {
-                        FCMPlugin.getToken(function (token) {
-                            var datas = { 'device_uuid': device.uuid, 'token': token };
-                            $.ajax({
-                                type: "post",
-                                url: "http://onlineeducationservice.com/masterpanel/manage_api/get_token",
-                                data: datas,
-                                dataType: "json",
-                                success: function (response) {
-                                    if (localStorage.login == "false" || localStorage.login == null || localStorage.login == undefined) {
-                                        // window.setTimeout(function () {
-                                        location.href = "login.html";
-                                        // }, 4000);
-                                    }
-                                    else {
-                                        var datas = { 'user_email': localStorage.getItem('uname') };
-                                        var urls = "http://onlineeducationservice.com/masterpanel/manage_api/splash_screen_check";
-                                        $.ajax({
-                                            type: "post",
-                                            url: urls,
-                                            data: datas,
-                                            dataType: "JSON",
-                                            success: function (response) {
-                                                if (response.status == 0) {
+                    // var app_var = version;
+                    alert(version);
+                    // var current_var = response.site_settings[0]['ipa_version'];
+                    // if (version == current_var) {
+                    //     FCMPlugin.getToken(function (token) {
+                    //         var datas = { 'device_uuid': device.uuid, 'token': token };
+                    //         $.ajax({
+                    //             type: "post",
+                    //             url: "http://onlineeducationservice.com/masterpanel/manage_api/get_token",
+                    //             data: datas,
+                    //             dataType: "json",
+                    //             success: function (response) {
+                    //                 if (localStorage.login == "false" || localStorage.login == null || localStorage.login == undefined) {
+                    //                     // window.setTimeout(function () {
+                    //                     window.location.href = "login.html";
+                    //                     // }, 4000);
+                    //                 }
+                    //                 else {
+                    //                     var datas = { 'user_email': localStorage.getItem('uname') };
+                    //                     var urls = "http://onlineeducationservice.com/masterpanel/manage_api/splash_screen_check";
+                    //                     $.ajax({
+                    //                         type: "post",
+                    //                         url: urls,
+                    //                         data: datas,
+                    //                         dataType: "JSON",
+                    //                         success: function (response) {
+                    //                             if (response.status == 0) {
 
-                                                    // window.setTimeout(function () {
-                                                    location.href = "login.html";
-                                                    // }, 4000);
-                                                }
-                                                else {
-                                                    var name = response.student_arr.first_name + ' ' + response.student_arr.last_name;
-                                                    localStorage.setItem('name', name);
-                                                    localStorage.setItem('uname', response.student_arr.email);
+                    //                                 // window.setTimeout(function () {
+                    //                                 window.location.href = "login.html";
+                    //                                 // }, 4000);
+                    //                             }
+                    //                             else {
+                    //                                 var name = response.student_arr.first_name + ' ' + response.student_arr.last_name;
+                    //                                 localStorage.setItem('name', name);
+                    //                                 localStorage.setItem('uname', response.student_arr.email);
 
-                                                    localStorage.email = response.student_arr.email;
-                                                    localStorage.name = name;
-                                                    localStorage.login = "true";
+                    //                                 localStorage.email = response.student_arr.email;
+                    //                                 localStorage.name = name;
+                    //                                 localStorage.login = "true";
 
-                                                    // window.setTimeout(function () {
-                                                    location.href = "home.html";
-                                                    // }, 4000);
-                                                }
-                                            }
-                                        });
-                                    }
-                                }
-                            });
-                        });
+                    //                                 // window.setTimeout(function () {
+                    //                                 window.location.href = "home.html";
+                    //                                 // }, 4000);
+                    //                             }
+                    //                         }
+                    //                     });
+                    //                 }
+                    //             }
+                    //         });
+                    //     });
 
-                        FCMPlugin.onNotification(function (data) {
-                            if (data.wasTapped) {
-                                //Notification was received on device tray and tapped by the user.
-                                //alert(JSON.stringify(data));
+                    //     FCMPlugin.onNotification(function (data) {
+                    //         if (data.wasTapped) {
+                    //             //Notification was received on device tray and tapped by the user.
+                    //             //alert(JSON.stringify(data));
 
-                                //alert(data.noti_id);
-                                // window.location.href = "notification1.html";
-                                localStorage.setItem('notification_id', data.noti_id);
-                                location.href = "notification_details.html";
-                            } else {
-                                //Notification was received in foreground. Maybe the user needs to be notified.
-                                // var datas = JSON.stringify(data);
-                                localStorage.setItem('notification_id', data.noti_id);
-                                location.href = "notification_details.html";
-                                //  alert(data.noti_id);
-                                //window.location.href = "notification1.html";
-                            }
-                        });
-                    }
-                    else {
-                        navigator.notification.beep(1);
-                        navigator.notification.confirm("Please Update this app", onConfirm, "Alert!", "Update");
-                    }
+                    //             //alert(data.noti_id);
+                    //             // window.location.href = "notification1.html";
+                    //             localStorage.setItem('notification_id', data.noti_id);
+                    //             location.href = "notification_details.html";
+                    //         } else {
+                    //             //Notification was received in foreground. Maybe the user needs to be notified.
+                    //             // var datas = JSON.stringify(data);
+                    //             localStorage.setItem('notification_id', data.noti_id);
+                    //             location.href = "notification_details.html";
+                    //             //  alert(data.noti_id);
+                    //             //window.location.href = "notification1.html";
+                    //         }
+                    //     });
+                    // }
+                    // else {
+                    //     navigator.notification.beep(1);
+                    //     navigator.notification.confirm("Please Update this app", onConfirm, "Alert!", "Update");
+                    // }
                 });
             }
         });
@@ -129,7 +132,8 @@ function checkConnection() {
     });
 }
 
-// this function for update app button click
+
+
 function onConfirm(button) {
     window.location.replace('https://itunes.apple.com/in/app/vhelp/id1343750421?mt=8');
     navigator.app.exitApp();
