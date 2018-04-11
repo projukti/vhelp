@@ -66,6 +66,35 @@ var app = {
                 });
             }
         });
+
+        // This Section For Call Back Request
+        $('#btnRequestNow').click(function (e) {
+            // Validation
+            if ($("#txtCallbackPhone").val() == "") {
+                $('#txtCallbackPhone').css('border-color', 'red');
+            }
+            else if ($("#txtCallbackName").val() == "") {
+                $('#txtCallbackName').css('border-color', 'red');
+            }
+            else if ($("#txtPrefarableTime").val() == "") {
+                $('#txtPrefarableTime').css('border-color', 'red');
+            }
+            else {
+                // callback($("#txtCallbackPhone").val(), $("#txtCallbackName").val(), $("#txtPrefarableTime").val());
+                $.ajax({
+                    type: "POST",
+                    url: "http://onlineeducationservice.com/masterpanel/manage_api/get_callback",
+                    data: { email: localStorage.getItem('uname'), callback_mobile: $("#txtCallbackPhone").val(), callback_name: $("#txtCallbackName").val(), callback_time: $("#txtPrefarableTime").val() },
+                    dataType: "JSON",
+                    success: function (response) {
+                        $("#txtCallbackPhone").val("");
+                        $("#txtCallbackName").val("");
+                        $("#txtPrefarableTime").val("");
+                        window.plugins.toast.showLongBottom('Request submited successfully');
+                    }
+                });
+            }
+        });
     },
     // Update DOM on a Received Event
     receivedEvent: function (id) {
