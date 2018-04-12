@@ -105,10 +105,3 @@ function checkConnection() {
         navigator.app.exitApp();
     });
 }
-
-
-
-function onConfirm(button) {
-    window.location.replace('https://itunes.apple.com/in/app/vhelp/id1343750421?mt=8');
-    navigator.app.exitApp();
-}
