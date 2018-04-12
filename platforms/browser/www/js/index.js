@@ -43,11 +43,11 @@ var app = {
             url: "http://onlineeducationservice.com/masterpanel/manage_api/get_site_settings",
             dataType: "JSON",
             success: function (response) {
-                cordova.getAppVersion.getVersionNumber().then(function (version) {
-                    // var app_var = version;
-                    //alert(version);
-                    var current_var = response.site_settings[0]['ipa_version'];
-                    if (version == current_var) {
+                // cordova.getAppVersion.getVersionNumber().then(function (version) {
+                //     // var app_var = version;
+                //     //alert(version);
+                //     var current_var = response.site_settings[0]['ipa_version'];
+                //     if (version == current_var) {
                         FCMPlugin.getToken(function (token) {
                             var datas = { 'device_uuid': device.uuid, 'token': token };
                             $.ajax({
@@ -114,12 +114,12 @@ var app = {
                                 //window.location.href = "notification1.html";
                             }
                         });
-                    }
-                    else {
-                        navigator.notification.beep(1);
-                        navigator.notification.confirm("Please Update this app", onConfirm, "Alert!", "Update");
-                    }
-                });
+                //     }
+                //     else {
+                //         navigator.notification.beep(1);
+                //         navigator.notification.confirm("Please Update this app", onConfirm, "Alert!", "Update");
+                //     }
+                // });
             }
         });
     },
