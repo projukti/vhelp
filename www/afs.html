@@ -1,0 +1,219 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src * content: data:; media-src *"
+    />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/sidebar.js"></script>
+    <style>
+        .no-js #loader {
+            display: none;
+        }
+
+        .js #loader {
+            display: block;
+            position: absolute;
+            left: 100px;
+            top: 0;
+        }
+
+        .se-pre-con {
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background: url(img/Interwind.gif) center no-repeat #fff;
+        }
+
+        .well {
+            padding: 25pxdesign change;
+            font-size: 18px;
+            min-height: 20px;
+            text-align: justify;
+            margin-bottom: 15px;
+            background-color: #f5f5f5;
+            border: 1px solid #e3e3e3;
+            border-radius: 4px;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+        }
+    </style>
+</head>
+
+<body style="background-color:#FFFFFF;" id="main">
+    <div id="mypopup"></div>
+    <!-- <div class="se-pre-con"></div> -->
+    <div style="background-color:#ffea00; color:#333333; padding:16px 16px 16px 16px; margin-bottom:500px;" class="topperone">
+        <div id="mySidenav" class="sidenav">
+        </div>
+
+        <!--<h2>Animated Sidenav Example</h2> -->
+
+        <span onclick="openNav()" style="font-size:18px;">
+            &#9776;
+            <strong>VHelp</strong>
+        </span>
+        <span class="pull-right">
+            <a class="social" href="https://www.facebook.com/VHelp-1568013686568101">
+                <i class="fa fa-facebook"></i>
+            </a>
+            <a class="social" href="https://twitter.com/VhelpStudents">
+                <i class="fa fa-twitter"></i>
+            </a>
+            <a class="social" href="https://www.instagram.com/askvhelp/" style="margin-right: 15px;">
+                <i class="fa fa-instagram"></i>
+            </a>
+            <i class="fa fa-dashboard"></i> &nbsp;Dashboard</span>
+    </div>
+
+
+    <div onclick="closeNav()">
+        <div id="content-section" style="padding:10px 15px 15px 15px;">
+
+        </div>
+    </div>
+    <div id="content-section" class="container">
+        <marquee direction="left" style="padding-top:40px;padding-bottom:7px;color: #666;">
+            <h4>
+                <strong>
+                    Speak to an expert now &nbsp;
+                    <a href="tel:209442432" style="color:red;">
+                        <i class="fa fa-phone-square"></i> 209 442 4327</a>
+                </strong>
+            </h4>
+        </marquee>
+        <div class="float-button" data-toggle="modal" data-target="#myModal">
+            <span class="height-fix">
+                <a class="content">
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                </a>
+            </span>
+        </div>
+        <p class="form-group text-center" style="background-image:url(images-vhelp/afs.png); background-repeat:no-repeat;background-size:cover; height:200px;"></p>
+        <h4 class="well text-justify">
+            <p align="center" style="font-size:24px;">
+                <strong>Armed Forces Specials</strong>
+            </p>
+            <p>Vhelp will take classes for Armed Forces. Vhelp here to support veterans, active-duty service members and spouses who are pursuing
+            their education. Our main objective is to "MAKE GOOD GRADE ACHIEVABLE FOR THOSE WHO SERVE". We take a pride in serving the
+            interests of the military people.</p>
+            <p>At Vhelp can subscribe to our services and let our experts do your online classes homework quizzes
+            and tests, while you are stationed at some foreign location defending the interests of our country.We take this as an opportunity
+            to serve our nation by serving the military members who protect us and the boundaries of our nation from all troubles.</p>
+            <p>At Vhelp, we proudly salute the men and women of the United States armed forces whose personal sacrifices,
+            hard work and courage protect our great nation. So if you’re having trouble with a particular online class, reach out to
+            us by requesting a free quote.</p>
+        </h4>
+        <div class="clearfix"></div>
+        <div class="row">
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <img src="images-vhelp/af.png">
+                    <div class="caption">
+                        <h3 style="text-align: center;">Air Force</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <img src="images-vhelp/navy.png">
+                    <div class="caption">
+                        <h3 style="text-align: center;">Navy</h3>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <img src="images-vhelp/army.png">
+                    <div class="caption">
+                        <h3 style="text-align: center;">Army</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <img src="images-vhelp/cg.png">
+                    <div class="caption">
+                        <h3 style="text-align: center;">Coast Guard</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <img src="images-vhelp/marine.png">
+                    <div class="caption">
+                        <h3 style="text-align: center;">Marine</h3>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <br>
+    </div>
+
+    <br>
+    <div class="footer" style="padding: 0px 0px 0px 0px;">
+        <marquee direction="left">
+            <h4>
+                <strong>
+                    &nbsp;
+                    <a href="mailto:askvhelp@gmail.com" style="color:red;">
+                        <i class="fa fa-envelope"></i> askvhelp@gmail.com</a>
+                </strong>
+            </h4>
+        </marquee>
+    </div>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document" style="margin-top: 40%">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Call Back Request</h4>
+                </div>
+                <div class="modal-body">
+                    <form role="form">
+                        <div class="form-group">
+                            <label for="txtCallbackPhone">Enter Your Phonenumber</label>
+                            <input type="number" class="form-control" id="txtCallbackPhone" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="txtCallbackName">Enter Name</label>
+                            <input type="text" class="form-control" id="txtCallbackName" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="txtPrefarableTime">Time to call</label>
+                            <input type="time" class="form-control" id="txtPrefarableTime" placeholder="Enter Name">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" id="btnCloseModal" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="btnRequestNow">Request Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/home.js"></script>
+    <script type="text/javascript">
+        app.initialize();
+    </script>
+</body>
+
+</html>
