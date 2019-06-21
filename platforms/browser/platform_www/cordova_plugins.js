@@ -539,6 +539,14 @@ module.exports = [
         "id": "cordova-plugin-statusbar.StatusBarProxy",
         "pluginId": "cordova-plugin-statusbar",
         "runs": true
+    },
+    {
+        "file": "plugins/cordova-plugin-fcm-with-dependecy-updated/www/FCMPlugin.js",
+        "id": "cordova-plugin-fcm-with-dependecy-updated.FCMPlugin",
+        "pluginId": "cordova-plugin-fcm-with-dependecy-updated",
+        "clobbers": [
+            "FCMPlugin"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -563,7 +571,8 @@ module.exports.metadata =
     "cordova-plugin-screen-orientation": "3.0.1",
     "cordova-plugin-fcm": "2.1.2",
     "cordova-plugin-firebase-messaging": "0.12.0",
-    "cordova-plugin-statusbar": "2.4.1"
+    "cordova-plugin-statusbar": "2.4.1",
+    "cordova-plugin-fcm-with-dependecy-updated": "2.4.0"
 }
 // BOTTOM OF METADATA
 });

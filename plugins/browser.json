@@ -54,6 +54,9 @@
     },
     "cordova-plugin-statusbar": {
       "PACKAGE_NAME": "com.onlineeducationservice.vhelp"
+    },
+    "cordova-plugin-fcm-with-dependecy-updated": {
+      "PACKAGE_NAME": "com.onlineeducationservice.vhelp"
     }
   },
   "dependent_plugins": {
