@@ -162,7 +162,7 @@
   "cordova-plugin-fcm": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-fcm"
+      "id": "cordova-plugin-fcm@~2.1.2"
     },
     "is_top_level": true,
     "variables": {}

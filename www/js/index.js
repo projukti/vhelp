@@ -45,6 +45,7 @@ var app = {
             success: function (response) {
 
                 FCMPlugin.getToken(function (token) {
+                    console.log(token)
                     var datas = { 'device_uuid': device.uuid, 'token': token };
                     $.ajax({
                         type: "post",

@@ -78,8 +78,8 @@
     <plugin name="cordova-plugin-file-transfer" spec="~1.6.1" />
     <plugin name="cordova-plugin-x-toast" spec="~2.6.0" />
     <plugin name="cordova-plugin-screen-orientation" spec="~3.0.1" />
-    <plugin name="cordova-plugin-fcm" spec="~2.1.2" />
     <plugin name="cordova-plugin-splashscreen" />
     <plugin name="cordova-plugin-app-version" />
     <plugin name="cordova-plugin-statusbar" />
+    <plugin name="cordova-plugin-fcm" spec="~2.1.2" />
 </widget>
