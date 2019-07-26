@@ -19,6 +19,11 @@
     <preference name="StatusBarStyle" value="default" />
     <preference name="StatusBarBackgroundColor" value="#FFCC00" />
     <preference name="phonegap-version" value="cli-8.0.0" />
+    <preference name="target-device" value="universal" />
+    <preference name="prerendered-icon" value="true" />
+    <preference name="detect-data-types" value="true" />
+    <preference name="exit-on-suspend" value="true" />
+    <preference name="deployment-target" value="7.0" />
     <plugin name="cordova-plugin-battery-status" source="npm" spec="~1.2.4" />
     <plugin name="cordova-plugin-device" source="npm" spec="~1.1.6" />
     <plugin name="cordova-plugin-dialogs" source="npm" spec="~1.3.3" />
