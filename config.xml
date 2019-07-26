@@ -81,6 +81,5 @@
     <plugin name="cordova-plugin-splashscreen" />
     <plugin name="cordova-plugin-app-version" />
     <plugin name="cordova-plugin-statusbar" />
-    <plugin name="cordova-plugin-fcm" spec="~2.1.2" />
     <plugin name="cordova-plugin-fcm-with-dependecy-updated" spec="~2.4.0" />
 </widget>
