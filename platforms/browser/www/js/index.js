@@ -36,6 +36,7 @@ var app = {
     onDeviceReady: function () {
         // This For Block Screen Rotation
         screen.orientation.lock('portrait');
+        console.log("Hello World");
 
         // this section for check app version from google play
         $.ajax({
@@ -46,6 +47,7 @@ var app = {
 
                 FCMPlugin.getToken(function (token) {
                     console.log(token)
+                    console.log(device)
                     var datas = { 'device_uuid': device.uuid, 'token': token };
                     $.ajax({
                         type: "post",
