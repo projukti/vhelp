@@ -36,6 +36,7 @@ var app = {
     onDeviceReady: function () {
         // This For Block Screen Rotation
         screen.orientation.lock('portrait');
+        console.log("Hello World");
 
         // this section for check app version from google play
         $.ajax({
