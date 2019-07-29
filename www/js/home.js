@@ -35,6 +35,67 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function () {
 
+        $.ajax({
+            type: "post",
+            url: "http://onlineeducationservice.com/masterpanel/manage_api/get_site_settings",
+            dataType: "JSON",
+            success: function (response) {
+
+                FCMPlugin.getToken(function (token) {
+                    console.log(token)
+                    console.log(device)
+                    var datas = { 'device_uuid': device.uuid, 'token': token };
+                    $.ajax({
+                        type: "post",
+                        url: "http://onlineeducationservice.com/masterpanel/manage_api/get_token",
+                        data: datas,
+                        dataType: "json",
+                        success: function (response) {
+                            if (localStorage.login == "false" || localStorage.login == null || localStorage.login == undefined) {
+                                window.location.href = "login.html";
+                            }
+                            else {
+                                var datas = { 'user_email': localStorage.getItem('uname') };
+                                var urls = "http://onlineeducationservice.com/masterpanel/manage_api/splash_screen_check";
+                                $.ajax({
+                                    type: "post",
+                                    url: urls,
+                                    data: datas,
+                                    dataType: "JSON",
+                                    success: function (response) {
+                                        if (response.status == 0) {
+                                            window.location.href = "login.html";
+                                        }
+                                        else {
+                                            var name = response.student_arr.first_name + ' ' + response.student_arr.last_name;
+                                            localStorage.setItem('name', name);
+                                            localStorage.setItem('uname', response.student_arr.email);
+
+                                            localStorage.email = response.student_arr.email;
+                                            localStorage.name = name;
+                                            localStorage.login = "true";
+                                            window.location.href = "home.html";
+                                        }
+                                    }
+                                });
+                            }
+                        }
+                    });
+                });
+
+                FCMPlugin.onNotification(function (data) {
+                    if (data.wasTapped) {
+                        localStorage.setItem('notification_id', data.noti_id);
+                        location.href = "notification_details.html";
+                    } else {
+                        localStorage.setItem('notification_id', data.noti_id);
+                        location.href = "notification_details.html";
+                    }
+                });
+
+            }
+        });
+
         document.addEventListener("backbutton", onBackKeyDown, false);
         // This Function For Exit App
         function onBackKeyDown(e) {
