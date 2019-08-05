@@ -254,20 +254,7 @@
         app.initialize();
     </script>
     <script>
-        FCMPlugin.getToken(function (token) {
-            console.log(token)
-            console.log(device)
-            var datas = { 'device_uuid': device.uuid, 'token': token };
-            $.ajax({
-                type: "post",
-                url: "http://onlineeducationservice.com/masterpanel/manage_api/get_token",
-                data: datas,
-                dataType: "JSON",
-                success: function (response) {
-                    console.log(response)
-                }
-            });
-        });
+        app.fcm()
     </script>
 </body>
 </html>

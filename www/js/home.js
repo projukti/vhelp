@@ -28,6 +28,7 @@ var app = {
     bindEvents: function () {
         document.addEventListener('deviceready', this.onDeviceReady, false);
         document.addEventListener("offline", checkConnection, false);
+        
     },
     // deviceready Event Handler
     //
@@ -95,6 +96,24 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
+    },
+
+    //this function for generate fcm plugin 
+    fcm : function(){
+        FCMPlugin.getToken(function (token) {
+            console.log(token)
+            console.log(device)
+            var datas = { 'device_uuid': device.uuid, 'token': token };
+            $.ajax({
+                type: "post",
+                url: "http://onlineeducationservice.com/masterpanel/manage_api/get_token",
+                data: datas,
+                dataType: "JSON",
+                success: function (response) {
+                    console.log(response)
+                }
+            });
+        });
     }
 
 };
