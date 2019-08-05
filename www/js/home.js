@@ -35,33 +35,7 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function () {
 
-        FCMPlugin.getToken(function (token) {
-            console.log(token)
-            console.log(device)
-            var datas = { 'device_uuid': device.uuid, 'token': token };
-            $.ajax({
-                type: "post",
-                url: urls,
-                data: datas,
-                dataType: "JSON",
-                success: function (response) {
-                    console.log(response)
-                    // if (response.status == 0) {
-                    //     window.location.href = "login.html";
-                    // }
-                    // else {
-                    //     var name = response.student_arr.first_name + ' ' + response.student_arr.last_name;
-                    //     localStorage.setItem('name', name);
-                    //     localStorage.setItem('uname', response.student_arr.email);
-
-                    //     localStorage.email = response.student_arr.email;
-                    //     localStorage.name = name;
-                    //     localStorage.login = "true";
-                    //     window.location.href = "home.html";
-                    // }
-                }
-            });
-        });
+        
 
         document.addEventListener("backbutton", onBackKeyDown, false);
         // This Function For Exit App
